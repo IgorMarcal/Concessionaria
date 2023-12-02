@@ -60,6 +60,62 @@ char ***leArquivo(char arquivo[], int *linhas, int *colunas){
 
 }
 
+
+bool reescreArquivos(char ***dados[],char arq1[], char arq2[], int codigoVeiculo, int *linhas, int *colunas){
+    FILE *arquivo1 = NULL;
+    FILE *arquivo2 = NULL;
+    char ***ptrDados = *dados;
+    
+
+    if (access(arq2, F_OK) == -1) {
+        arquivo2 = fopen(arq2, "a+");
+        fprintf(arquivo2,"preco,ano,marca,modelo,condicao,combustivel,odometro,status,cambio,tamanho,tipo,cor\n");
+    }else{
+        arquivo2 = fopen(arq2, "a+");
+    }
+
+    arquivo1 = fopen(arq1, "w");
+    fflush(arquivo2);
+    fprintf(arquivo1,"preco,ano,marca,modelo,condicao,combustivel,odometro,status,cambio,tamanho,tipo,cor\n");
+
+    if(arquivo2 == NULL){
+        printf("\n Nao foi possivel abrir arquivo\n");
+        return false;
+    }
+
+    if (arquivo1 == NULL) {
+        printf("\n Nao foi possivel abrir arquivo\n");
+        fclose(arquivo2);
+        return false;
+    }
+
+  
+
+    for (int i = 2; i < *linhas; i++) {
+        if (i == codigoVeiculo) {
+            for (int k = 0; k < *colunas; k++) {
+                fprintf(arquivo2, "%s", ptrDados[i][k]);
+                if (k < 11) {
+                    fprintf(arquivo2, ",");
+                }
+            }
+        }else{
+            for (int j = 0; j < *colunas; j++) {
+                fprintf(arquivo1, "%s", ptrDados[i][j]);
+                if (j < 11) {
+                    fprintf(arquivo1, ",");
+                }
+            }
+            
+        }
+    }
+    
+    fclose(arquivo1);
+    fclose(arquivo2);
+    return true;
+
+}
+
 int compraVeiculos(FILE *arq,  char arquivo[]){
 
     int tamanhoMaximo = 10000;
@@ -80,7 +136,7 @@ int compraVeiculos(FILE *arq,  char arquivo[]){
         if(strcmp(marcaVeiculo, dados[i][2])==0){
             encontrou = true;
             codigoInterno[qtdVeicPorMarca] = i; 
-        }else{
+        }else if (encontrou && strcmp(marcaVeiculo, dados[i][2]) != 0) {
             break;
         }
         qtdVeicPorMarca++;
@@ -104,64 +160,15 @@ int compraVeiculos(FILE *arq,  char arquivo[]){
     printf("Selecione por codigo qual veiculo deseja: \n");
     scanf("%d", &codigoVeiculo);
 
-    FILE *arq2 = NULL;
-    FILE *arqTmp = NULL;
-
-
-    char veiculos_estoque[50] = "veiculos_estoque.csv";
+    char veiculosEstoque[50] = "veiculos_estoque.csv";
     char veiculosOfertas[50] = "veiculos_ofertas.csv";
     remove(veiculosOfertas);
-
-    if (access(veiculos_estoque, F_OK) == -1) {
-        arq2 = fopen(veiculos_estoque, "a+");
-        fprintf(arq2,"preco,ano,marca,modelo,condicao,combustivel,odometro,status,cambio,tamanho,tipo,cor\n");
-    }else{
-        arq2 = fopen(veiculos_estoque, "a+");
-    }
-
-    arqTmp = fopen(veiculosOfertas, "w");
-    fflush(arq2);
-    fprintf(arqTmp,"preco,ano,marca,modelo,condicao,combustivel,odometro,status,cambio,tamanho,tipo,cor\n");
-
-    if(arq2 == NULL){
-        printf("\n Nao foi possivel abrir arquivo\n");
-        return 1;
-    }
-    if (arqTmp == NULL) {
-        printf("\n Nao foi possivel abrir arquivo\n");
-        fclose(arq2);
-        return 1;
-    }
-
-  
-
-    for (int i = 2; i < linhas; i++) {
-        if (i == codigoVeiculo) {
-            for (int k = 0; k < colunas; k++) {
-                fprintf(arq2, "%s", dados[i][k]);
-                if (k < 11) {
-                    fprintf(arq2, ",");
-                }
-            }
-        }else{
-            for (int j = 0; j < colunas; j++) {
-                fprintf(arqTmp, "%s", dados[i][j]);
-                if (j < 11) {
-                    fprintf(arqTmp, ",");
-                }
-            }
-            
-        }
-    }
     
-    free(arq);
-    free(arq2);
-    free(arqTmp);
+    bool retorno = reescreArquivos(&dados, veiculosOfertas, veiculosEstoque, codigoVeiculo, &linhas, &colunas );
 
+    free(arq);
     free(dados);
     fclose(arq);
-    fclose(arq2);
-    fclose(arqTmp);
 
     return 0;
 }
