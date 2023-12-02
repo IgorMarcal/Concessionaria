@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <unistd.h>
-
+#include <stdbool.h>
 
 char ***leArquivo(char arquivo[], int *linhas, int *colunas){
     FILE *arq = NULL;
@@ -67,26 +67,32 @@ int compraVeiculos(FILE *arq,  char arquivo[]){
     int linhas = 0, colunas =0;
     char veiculoComprado[60];
     char marcaVeiculo[60];
-    int qtdVeicPorMarca=0;
+    int qtdVeicPorMarca=2;
+    bool encontrou = false;
 
     printf("Digite a marca do veiculo que quer comprar: ");
     scanf(" %[^\n]", &marcaVeiculo); 
     fflush(stdin);
 
     dados = leArquivo(arquivo, &linhas, &colunas);
-    int *codigoInterno = (int * )malloc(tamanhoMaximo * sizeof(int *));
-    for(int i = 1; i <= linhas;i++){
+    int codigoInterno[tamanhoMaximo];
+    for(int i = 2; i <= linhas;i++){
         if(strcmp(marcaVeiculo, dados[i][2])==0){
-            qtdVeicPorMarca++;
+            encontrou = true;
             codigoInterno[qtdVeicPorMarca] = i; 
-        }else if(strcmp(marcaVeiculo, dados[i-1][2])==0) {
-            printf("\nMarca %s nao encontrada", marcaVeiculo);
+        }else{
             break;
         }
+        qtdVeicPorMarca++;
+    }
+
+    if(!encontrou){
+        printf("\nMarca %s nao encontrada", marcaVeiculo);
+        return 1;
     }
 
 
-    for(int i = 1; i <= qtdVeicPorMarca;i++){
+    for(int i = 2; i < qtdVeicPorMarca;i++){
         printf("Codigo: %d|", codigoInterno[i]);
         for(int j = 0; j< colunas; j++){
             printf("%-40s| ", dados[i][j]); 
@@ -112,9 +118,10 @@ int compraVeiculos(FILE *arq,  char arquivo[]){
     }else{
         arq2 = fopen(veiculos_estoque, "a+");
     }
+
     arqTmp = fopen(veiculosOfertas, "w");
     fflush(arq2);
-
+    fprintf(arqTmp,"preco,ano,marca,modelo,condicao,combustivel,odometro,status,cambio,tamanho,tipo,cor\n");
 
     if(arq2 == NULL){
         printf("\n Nao foi possivel abrir arquivo\n");
@@ -128,7 +135,7 @@ int compraVeiculos(FILE *arq,  char arquivo[]){
 
   
 
-    for (int i = 0; i < linhas; i++) {
+    for (int i = 2; i < linhas; i++) {
         if (i == codigoVeiculo) {
             for (int k = 0; k < colunas; k++) {
                 fprintf(arq2, "%s", dados[i][k]);
