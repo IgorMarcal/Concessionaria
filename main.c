@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <unistd.h>
 
 
 char ***leArquivo(char arquivo[], int *linhas, int *colunas){
@@ -10,7 +11,7 @@ char ***leArquivo(char arquivo[], int *linhas, int *colunas){
     int qtdItensPorLinha = 12;
     int contador;
 
-    arq = fopen(arquivo, "a");
+    arq = fopen(arquivo, "r");
 
     if(arq == NULL){
         printf("Falha ao abrir o arquivo para leitura.\n");
@@ -84,7 +85,6 @@ int compraVeiculos(FILE *arq,  char arquivo[]){
         }
     }
 
-    printf("\n\n\n\n");
 
     for(int i = 1; i <= qtdVeicPorMarca;i++){
         printf("Codigo: %d|", codigoInterno[i]);
@@ -102,38 +102,55 @@ int compraVeiculos(FILE *arq,  char arquivo[]){
     FILE *arqTmp = NULL;
 
 
-    arqTmp = fopen(arquivo, "w");
     char veiculos_estoque[50] = "veiculos_estoque.csv";
     char veiculosOfertas[50] = "veiculos_ofertas.csv";
     remove(veiculosOfertas);
 
-    arq2 = fopen(veiculos_estoque, "w");
+    if (access(veiculos_estoque, F_OK) == -1) {
+        arq2 = fopen(veiculos_estoque, "a+");
+        fprintf(arq2,"preco,ano,marca,modelo,condicao,combustivel,odometro,status,cambio,tamanho,tipo,cor\n");
+    }else{
+        arq2 = fopen(veiculos_estoque, "a+");
+    }
+    arqTmp = fopen(veiculosOfertas, "w");
+    fflush(arq2);
+
+
     if(arq2 == NULL){
         printf("\n Nao foi possivel abrir arquivo\n");
         return 1;
     }
-    printf("Chega aq");
-    return 0;
-    fprintf(arq2,"preco,ano,marca,modelo,condicao,combustivel,odometro,status,cambio,tamanho,tipo,cor\n");
-    for(int i = 0; i < linhas; i++){
-        for(int j = 0; j < colunas; j++){
-            if(i == codigoVeiculo){
-                fprintf(arq2,"%s", dados[i][j]);
-                fprintf(arq2, ",");
-            }else{
-                fprintf(arqTmp,"%s", dados[i][j]);
-                fprintf(arqTmp, ",");
+    if (arqTmp == NULL) {
+        printf("\n Nao foi possivel abrir arquivo\n");
+        fclose(arq2);
+        return 1;
+    }
+
+  
+
+    for (int i = 0; i < linhas; i++) {
+        if (i == codigoVeiculo) {
+            for (int k = 0; k < colunas; k++) {
+                fprintf(arq2, "%s", dados[i][k]);
+                if (k < 11) {
+                    fprintf(arq2, ",");
+                }
             }
+        }else{
+            for (int j = 0; j < colunas; j++) {
+                fprintf(arqTmp, "%s", dados[i][j]);
+                if (j < 11) {
+                    fprintf(arqTmp, ",");
+                }
+            }
+            
         }
-        fprintf(arq2, "\n");
     }
     
-
     free(arq);
     free(arq2);
     free(arqTmp);
 
-    free(dados);
     free(dados);
     fclose(arq);
     fclose(arq2);
