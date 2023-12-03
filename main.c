@@ -3,7 +3,6 @@
 #include <string.h>
 #include <unistd.h>
 #include <stdbool.h>
-#include <time.h>
 
 char ***leArquivo(char arquivo[], int *linhas, int *colunas){
     FILE *arq = NULL;
@@ -62,17 +61,15 @@ char ***leArquivo(char arquivo[], int *linhas, int *colunas){
 }
 
 
-bool reescreArquivos(char ***dados[],char arq1[], char arq2[], int codigoVeiculo, int *linhas, int *colunas, char novoValor[]){
+bool reescreArquivos(char ***dados[],char arq1[], char arq2[], int codigoVeiculo, int *linhas, int *colunas){
     FILE *arquivo1 = NULL;
     FILE *arquivo2 = NULL;
-    FILE *arquivo3 = NULL;
-    char historicoCompras[138] = "historico_compras.csv";
-
-    char ***ptrDados = *dados;   
+    char ***ptrDados = *dados;
+    
 
     if (access(arq2, F_OK) == -1) {
         arquivo2 = fopen(arq2, "a+");
-        fprintf(arquivo2,"venda,ano,marca,modelo,condicao,combustivel,odometro,status,cambio,tamanho,tipo,cor\n");
+        fprintf(arquivo2,"preco,ano,marca,modelo,condicao,combustivel,odometro,status,cambio,tamanho,tipo,cor\n");
     }else{
         arquivo2 = fopen(arq2, "a+");
     }
@@ -80,86 +77,41 @@ bool reescreArquivos(char ***dados[],char arq1[], char arq2[], int codigoVeiculo
     arquivo1 = fopen(arq1, "w");
     fflush(arquivo2);
     fprintf(arquivo1,"preco,ano,marca,modelo,condicao,combustivel,odometro,status,cambio,tamanho,tipo,cor\n");
-    fflush(arquivo1);
 
-    if (access(historicoCompras, F_OK) == -1) {
-        arquivo3 = fopen(historicoCompras, "a+");
-        fprintf(arquivo3,"venda,ano,marca,modelo,condicao,combustivel,odometro,status,cambio,tamanho,tipo,cor, dataHora\n");
-    }else{
-        arquivo3 = fopen(historicoCompras, "a+");
-    }
-
-    if(arquivo1 == NULL  || arquivo2 == NULL || arquivo3 == NULL ){
+    if(arquivo2 == NULL){
         printf("\n Nao foi possivel abrir arquivo\n");
         return false;
     }
-    fflush(arquivo3);
 
-
-    time_t currentTime;
-    time(&currentTime);
-    char dateTime[100];  
-    strftime(dateTime, sizeof(dateTime), "%Y-%m-%d %H:%M:%S", localtime(&currentTime));
-
-    char ***novaMatriz = (char ***)malloc(*linhas * sizeof(char **));
-    for (int i = 0; i < *linhas; i++) {
-        novaMatriz[i] = (char **)malloc((*colunas + 1) * sizeof(char *));
+    if (arquivo1 == NULL) {
+        printf("\n Nao foi possivel abrir arquivo\n");
+        fclose(arquivo2);
+        return false;
     }
 
-    for (int i = 0; i < *linhas; i++) {
-        for (int j = 0; j < *colunas; j++) {
-            novaMatriz[i][j] = strdup(ptrDados[i][j]);
-        }
-        novaMatriz[i][*colunas] = strdup(dateTime); 
-    }
+  
 
     for (int i = 2; i < *linhas; i++) {
         if (i == codigoVeiculo) {
-            char linhaConcatenada[1000];  
-            linhaConcatenada[0] = '\0';  
-
-            for (int k = 1; k < *colunas; k++) {
-                if (k == 1) {
-                    sprintf(linhaConcatenada, "%s%s,", linhaConcatenada, novoValor);
-                }
-
-                sprintf(linhaConcatenada, "%s%s", linhaConcatenada, ptrDados[i][k]);
-
-                if (k < *colunas - 1) {
-                    sprintf(linhaConcatenada, "%s,", linhaConcatenada);
-                }
-            }
-            sprintf(linhaConcatenada, "%s,%s", linhaConcatenada, currentTime);
-
-            fprintf(arquivo3, "%s", linhaConcatenada);
-
-            for (int k = 1; k < *colunas; k++) {
-                if (k == 1) {
-                    fprintf(arquivo2, "%s,", novoValor);
-                }
-
+            for (int k = 0; k < *colunas; k++) {
                 fprintf(arquivo2, "%s", ptrDados[i][k]);
-
-                if (k < *colunas - 1) {
+                if (k < 11) {
                     fprintf(arquivo2, ",");
                 }
             }
-
-        } else {
+        }else{
             for (int j = 0; j < *colunas; j++) {
                 fprintf(arquivo1, "%s", ptrDados[i][j]);
                 if (j < 11) {
                     fprintf(arquivo1, ",");
                 }
             }
-
+            
         }
     }
     
     fclose(arquivo1);
     fclose(arquivo2);
-    fclose(arquivo3);
-
     return true;
 
 }
@@ -212,11 +164,7 @@ int compraVeiculos(FILE *arq,  char arquivo[]){
     char veiculosOfertas[50] = "veiculos_ofertas.csv";
     remove(veiculosOfertas);
     
-    char novoValor[1000];
-    printf("Digite o valor de venda pretendido: ");
-    scanf(" %[^\n]", &novoValor);
-
-    bool retorno = reescreArquivos(&dados, veiculosOfertas, veiculosEstoque, codigoVeiculo, &linhas, &colunas, novoValor);
+    bool retorno = reescreArquivos(&dados, veiculosOfertas, veiculosEstoque, codigoVeiculo, &linhas, &colunas );
 
     free(arq);
     free(dados);
