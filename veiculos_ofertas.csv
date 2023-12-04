@@ -1,0 +1,955 @@
+preco,ano,marca,modelo,condicao,combustivel,odometro,status,cambio,tamanho,tipo,cor
+3500,1997,acura,3.0cl,excelente,gasolina,190000,desconhecido,automatico,compacto,coupe,cinza
+6000,2003,acura,3.2 cl type s,excelente,gasolina,186567,sucata,manual,medio,coupe,fantasia
+9999,2003,acura,3.2 cl type s,excelente,gasolina,136371,alienado,manual,grande,coupe,prata
+9999,2003,acura,3.2 cl type s,excelente,gasolina,136371,alienado,manual,grande,coupe,prata
+1299,2003,acura,3.2 tl,razoavel,gasolina,388931,desconhecido,automatico,grande,sedan,azul
+3200,2005,acura,3.2 tl,seminovo,gasolina,180000,desconhecido,manual,medio,sedan,preto
+4500,2005,acura,3.2 tl,excelente,gasolina,161260,desconhecido,automatico,medio,sedan,prata
+4700,2006,acura,3.2 tl,seminovo,gasolina,185000,sucata,automatico,grande,sedan,verde
+5000,2005,acura,3.2 tl,excelente,gasolina,161260,sucata,automatico,medio,sedan,prata
+5500,2003,acura,3.2 tl,excelente,gasolina,154100,sucata,automatico,grande,sedan,branco
+5995,2003,acura,3.2 tl,excelente,gasolina,145836,sucata,automatico,medio,sedan,cinza
+4500,1996,acura,3.2tl,excelente,gasolina,206544,desconhecido,automatico,medio,sedan,verde
+4400,2003,acura,3.5 rl,excelente,gasolina,210520,desconhecido,automatico,medio,sedan,branco
+3500,2000,acura,3.5rl,excelente,gasolina,179000,desconhecido,automatico,grande,sedan,marrom
+3500,2000,acura,3.5rl,excelente,gasolina,178000,desconhecido,automatico,grande,sedan,marrom
+5200,2004,acura,3.5rl,excelente,gasolina,125300,sucata,automatico,grande,sedan,cinza
+3500,1999,acura,cl,bom,gasolina,206100,desconhecido,automatico,medio,coupe,fantasia
+3900,2001,acura,cl,bom,gasolina,151500,desconhecido,automatico,medio,coupe,branco
+10995,2003,acura,cl,bom,gasolina,46000,alienado,automatico,medio,coupe,vermelho
+3750,1997,acura,cl 3.0,excelente,gasolina,145000,desconhecido,automatico,compacto,coupe,verde
+4995,2003,acura,cl 3.2 type s,excelente,gasolina,182842,sucata,automatico,compacto,coupe,preto
+2500,2002,acura,cl type s,bom,gasolina,179000,desconhecido,automatico,medio,coupe,vermelho
+3990,2003,acura,cl type s,bom,gasolina,99000,desconhecido,automatico,medio,coupe,fantasia
+7500,2003,acura,cl type s,bom,gasolina,322000,sucata,manual,compacto,coupe,cinza
+8000,2013,acura,ilx,excelente,gasolina,140044,sucata,automatico,medio,sedan,branco
+8500,2013,acura,ilx,bom,gasolina,169000,sucata,automatico,grande,sedan,preto
+8950,2017,acura,ilx,desconhecido,gasolina,38256,sucata,automatico,compacto,sedan,preto
+8950,2017,acura,ilx,desconhecido,gasolina,38256,sucata,automatico,compacto,sedan,preto
+8950,2017,acura,ilx,desconhecido,gasolina,38256,sucata,automatico,compacto,sedan,preto
+9750,2013,acura,ilx,excelente,gasolina,132000,sucata,automatico,medio,sedan,prata
+10950,2015,acura,ilx,excelente,gasolina,118000,alienado,manual,compacto,sedan,preto
+10999,2013,acura,ilx,excelente,gasolina,80956,alienado,automatico,compacto,sedan,prata
+10999,2013,acura,ilx,excelente,gasolina,80956,alienado,automatico,compacto,sedan,prata
+10999,2013,acura,ilx,excelente,gasolina,80956,alienado,automatico,compacto,sedan,prata
+11995,2016,acura,ilx,desconhecido,gasolina,116939,alienado,automatico,compacto,sedan,preto
+11999,2013,acura,ilx,excelente,gasolina,80956,alienado,automatico,compacto,sedan,prata
+11999,2013,acura,ilx,excelente,gasolina,80956,alienado,automatico,compacto,sedan,prata
+12499,2014,acura,ilx,excelente,gasolina,150454,alienado,automatico,compacto,sedan,branco
+12500,2014,acura,ilx,excelente,gasolina,114000,alienado,automatico,medio,sedan,cinza
+12500,2013,acura,ilx,excelente,gasolina,99802,alienado,automatico,compacto,sedan,prata
+12777,2013,acura,ilx,desconhecido,gasolina,88905,alienado,automatico,compacto,sedan,branco
+12777,2013,acura,ilx,desconhecido,gasolina,88905,alienado,automatico,compacto,sedan,branco
+12998,2016,acura,ilx,desconhecido,gasolina,97309,alienado,automatico,compacto,sedan,preto
+13495,2016,acura,ilx,desconhecido,gasolina,63858,alienado,manual,compacto,sedan,branco
+13495,2016,acura,ilx,desconhecido,gasolina,63858,alienado,manual,compacto,sedan,branco
+13500,2013,acura,ilx,excelente,gasolina,86315,alienado,automatico,medio,sedan,branco
+13900,2018,acura,ilx,novo,gasolina,11345,alienado,automatico,compacto,coupe,branco
+14995,2014,acura,ilx,desconhecido,gasolina,124199,alienado,automatico,compacto,sedan,vermelho
+14999,2015,acura,ilx,desconhecido,gasolina,78131,alienado,automatico,compacto,sedan,fantasia
+16935,2015,acura,ilx,desconhecido,gasolina,56540,alienado,automatico,compacto,sedan,cinza
+16990,2015,acura,ilx,bom,gasolina,99859,alienado,automatico,grande,SUV,branco
+17300,2019,acura,ilx,excelente,gasolina,23800,alienado,automatico,medio,sedan,preto
+17590,2016,acura,ilx,desconhecido,gasolina,59619,alienado,automatico,compacto,sedan,vermelho
+17950,2014,acura,ilx,excelente,gasolina,24668,alienado,automatico,grande,sedan,cinza
+17950,2014,acura,ilx,excelente,gasolina,24668,alienado,automatico,grande,sedan,cinza
+17950,2014,acura,ilx,excelente,gasolina,24668,alienado,automatico,grande,sedan,cinza
+18696,2016,acura,ilx,desconhecido,gasolina,54841,restaurado,automatico,compacto,sedan,branco
+18750,2017,acura,ilx,seminovo,gasolina,35400,restaurado,automatico,compacto,sedan,branco
+18999,2018,acura,ilx,desconhecido,gasolina,66726,restaurado,automatico,compacto,sedan,branco
+19999,2018,acura,ilx,desconhecido,gasolina,28199,restaurado,automatico,compacto,sedan,branco
+21995,2017,acura,ilx,excelente,gasolina,48182,restaurado,automatico,subcompacto,sedan,azul
+24999,2019,acura,ilx,desconhecido,gasolina,11319,restaurado,automatico,compacto,sedan,branco
+30995,2019,acura,ilx,excelente,gasolina,17501,novo,automatico,grande,sedan,preto
+9998,2013,acura,ilx 2.0l,bom,gasolina,108522,alienado,automatico,medio,sedan,cinza
+18134,2015,acura,ilx 2.0l,seminovo,gasolina,42320,restaurado,automatico,medio,sedan,branco
+18134,2015,acura,ilx 2.0l,seminovo,gasolina,42320,restaurado,automatico,medio,sedan,branco
+13998,2014,acura,ilx premium,excelente,gasolina,79298,alienado,automatico,medio,sedan,branco
+11995,2013,acura,ilx premium fwd,desconhecido,gasolina,114846,alienado,automatico,grande,sedan,branco
+11999,2013,acura,ilx premium fwd,bom,gasolina,105139,alienado,automatico,medio,sedan,branco
+13995,2013,acura,ilx premium fwd,excelente,gasolina,45568,alienado,automatico,grande,sedan,preto
+14495,2013,acura,ilx premium fwd,excelente,gasolina,45568,alienado,automatico,grande,sedan,branco
+17983,2016,acura,ilx premium fwd,seminovo,gasolina,10663,alienado,manual,compacto,sedan,vermelho
+13250,2014,acura,ilx sedan,excelente,gasolina,93000,alienado,automatico,medio,sedan,prata
+13500,2015,acura,ilx sedan 4d,excelente,gasolina,75000,alienado,automatico,medio,sedan,branco
+12495,2016,acura,ilx tech,seminovo,gasolina,116883,alienado,automatico,medio,sedan,prata
+2500,2000,acura,integra,bom,gasolina,191420,desconhecido,automatico,grande,hatchback,cinza
+2950,1999,acura,integra,bom,gasolina,157000,desconhecido,automatico,compacto,hatchback,verde
+3200,1992,acura,integra,bom,gasolina,200000,desconhecido,automatico,compacto,coupe,fantasia
+4000,1997,acura,integra,bom,gasolina,119000,desconhecido,automatico,compacto,sedan,verde
+4000,2001,acura,integra,bom,gasolina,180000,desconhecido,automatico,compacto,hatchback,azul
+5000,1997,acura,integra,excelente,gasolina,102000,sucata,automatico,compacto,sedan,cinza
+5500,1999,acura,integra,excelente,gasolina,156000,sucata,manual,compacto,hatchback,vermelho
+6800,1994,acura,integra,excelente,gasolina,112000,sucata,manual,compacto,coupe,verde
+1000,1993,acura,integra gs,bom,gasolina,200000,desconhecido,manual,compacto,hatchback,branco
+2500,1998,acura,integra gs,razoavel,gasolina,248307,desconhecido,automatico,compacto,hatchback,vermelho
+1800,1994,acura,integra ls,bom,gasolina,186231,desconhecido,automatico,compacto,coupe,branco
+2000,1998,acura,integra ls,razoavel,gasolina,204000,desconhecido,automatico,medio,sedan,branco
+2000,1998,acura,integra ls,razoavel,gasolina,205000,desconhecido,automatico,medio,sedan,branco
+2600,2000,acura,integra ls,excelente,gasolina,225257,desconhecido,automatico,compacto,sedan,cinza
+9500,2000,acura,integra ls,excelente,gasolina,89086,sucata,manual,compacto,coupe,branco
+2500,1995,acura,integra se,razoavel,gasolina,52336,desconhecido,manual,compacto,sedan,branco
+1900,1993,acura,legend,bom,gasolina,313000,desconhecido,automatico,grande,sedan,branco
+1000,1991,acura,legend coupe,razoavel,gasolina,181603,desconhecido,automatico,medio,coupe,prata
+4495,1994,acura,legend l,excelente,gasolina,144267,desconhecido,automatico,grande,sedan,prata
+2995,2005,acura,md-x awd,excelente,gasolina,1,desconhecido,automatico,grande,SUV,branco
+1000,2004,acura,mdx,bom,gasolina,198000,desconhecido,automatico,grande,SUV,laranja
+1200,2006,acura,mdx,razoavel,gasolina,181000,desconhecido,automatico,medio,SUV,cinza
+1200,2001,acura,mdx,bom,gasolina,204000,desconhecido,automatico,medio,SUV,cinza
+1650,2003,acura,mdx,bom,gasolina,150000,desconhecido,automatico,grande,SUV,fantasia
+1700,2002,acura,mdx,bom,gasolina,240909,desconhecido,automatico,grande,SUV,preto
+1750,2003,acura,mdx,bom,gasolina,150000,desconhecido,automatico,grande,SUV,fantasia
+1900,2001,acura,mdx,razoavel,gasolina,190000,desconhecido,automatico,medio,SUV,verde
+2000,2002,acura,mdx,bom,gasolina,209428,desconhecido,automatico,grande,SUV,preto
+2000,2006,acura,mdx,bom,gasolina,100000,desconhecido,automatico,compacto,SUV,cinza
+2399,2003,acura,mdx,razoavel,gasolina,143000,desconhecido,automatico,grande,SUV,prata
+2400,2005,acura,mdx,razoavel,gasolina,227840,desconhecido,automatico,grande,SUV,azul
+2499,2006,acura,mdx,excelente,gasolina,271000,desconhecido,automatico,grande,SUV,preto
+2499,2006,acura,mdx,excelente,gasolina,271000,desconhecido,automatico,grande,SUV,preto
+2650,2003,acura,mdx,bom,gasolina,150000,desconhecido,automatico,grande,SUV,fantasia
+2800,2004,acura,mdx,bom,gasolina,182395,desconhecido,automatico,grande,SUV,verde
+3000,2005,acura,mdx,bom,gasolina,173889,desconhecido,automatico,grande,SUV,cinza
+3199,2006,acura,mdx,excelente,gasolina,180694,desconhecido,automatico,grande,SUV,cinza
+3200,2006,acura,mdx,razoavel,gasolina,238113,desconhecido,automatico,medio,SUV,azul
+3500,2002,acura,mdx,bom,gasolina,245200,desconhecido,automatico,grande,SUV,fantasia
+3500,2004,acura,mdx,excelente,gasolina,185967,desconhecido,automatico,grande,SUV,cinza
+3650,2005,acura,mdx,bom,gasolina,199000,desconhecido,automatico,grande,SUV,cinza
+3650,2005,acura,mdx,excelente,gasolina,148000,desconhecido,automatico,grande,SUV,branco
+3750,2004,acura,mdx,razoavel,gasolina,205000,desconhecido,automatico,grande,SUV,vermelho
+3900,2006,acura,mdx,bom,gasolina,197000,desconhecido,automatico,grande,SUV,marrom
+3900,2006,acura,mdx,bom,gasolina,183619,desconhecido,automatico,grande,SUV,azul
+3950,2002,acura,mdx,seminovo,gasolina,151002,desconhecido,automatico,grande,SUV,branco
+3995,2003,acura,mdx,bom,gasolina,161000,desconhecido,automatico,grande,SUV,branco
+4000,2005,acura,mdx,bom,gasolina,145000,desconhecido,automatico,grande,caminhao,preto
+4000,2004,acura,mdx,excelente,gasolina,201000,desconhecido,automatico,medio,SUV,preto
+4495,2003,acura,mdx,bom,gasolina,179750,desconhecido,automatico,grande,SUV,preto
+4495,2003,acura,mdx,desconhecido,gasolina,207185,desconhecido,automatico,grande,SUV,cinza
+4495,2003,acura,mdx,desconhecido,gasolina,207185,desconhecido,automatico,grande,SUV,cinza
+4495,2003,acura,mdx,desconhecido,gasolina,207185,desconhecido,automatico,grande,SUV,cinza
+4499,2004,acura,mdx,bom,gasolina,161000,desconhecido,automatico,grande,SUV,verde
+4500,2003,acura,mdx,excelente,gasolina,174000,desconhecido,automatico,grande,SUV,prata
+4500,2004,acura,mdx,bom,gasolina,195000,desconhecido,automatico,medio,SUV,azul
+4650,2006,acura,mdx,excelente,gasolina,185000,sucata,automatico,medio,SUV,cinza
+4850,2005,acura,mdx,bom,gasolina,164000,sucata,automatico,grande,SUV,cinza
+4950,2006,acura,mdx,excelente,gasolina,187600,sucata,automatico,grande,SUV,marrom
+4987,2003,acura,mdx,bom,gasolina,176715,sucata,automatico,medio,SUV,fantasia
+4995,2008,acura,mdx,bom,gasolina,174000,sucata,automatico,grande,SUV,prata
+4997,2001,acura,mdx,excelente,gasolina,145377,sucata,automatico,grande,SUV,azul
+5000,2008,acura,mdx,bom,gasolina,210000,sucata,automatico,medio,SUV,preto
+5200,2006,acura,mdx,bom,gasolina,150000,sucata,automatico,grande,SUV,cinza
+5200,2004,acura,mdx,bom,gasolina,152702,sucata,automatico,grande,SUV,vermelho
+5400,2007,acura,mdx,seminovo,gasolina,171200,sucata,automatico,grande,SUV,prata
+5499,2006,acura,mdx,excelente,gasolina,230000,sucata,automatico,medio,SUV,azul
+5499,2006,acura,mdx,excelente,gasolina,230000,sucata,automatico,medio,SUV,azul
+5500,2007,acura,mdx,bom,gasolina,165000,sucata,automatico,medio,SUV,roxo
+5900,2006,acura,mdx,bom,gasolina,176000,sucata,automatico,medio,SUV,vermelho
+5900,2007,acura,mdx,excelente,gasolina,199000,sucata,automatico,medio,SUV,verde
+5995,2005,acura,mdx,bom,gasolina,188066,sucata,automatico,medio,SUV,branco
+5995,2008,acura,mdx,bom,gasolina,236000,sucata,automatico,medio,SUV,branco
+6000,2005,acura,mdx,seminovo,gasolina,173000,sucata,automatico,grande,SUV,cinza
+6000,2007,acura,mdx,bom,gasolina,177000,sucata,automatico,grande,SUV,prata
+6300,2003,acura,mdx,excelente,gasolina,155000,sucata,automatico,grande,SUV,azul
+6399,2007,acura,mdx,excelente,gasolina,201714,sucata,automatico,medio,SUV,verde
+6400,2005,acura,mdx,excelente,gasolina,140116,sucata,automatico,grande,SUV,cinza
+6495,2006,acura,mdx,bom,gasolina,228657,sucata,automatico,medio,SUV,branco
+6500,2006,acura,mdx,bom,gasolina,173213,sucata,automatico,grande,SUV,preto
+6500,2008,acura,mdx,bom,gasolina,192000,sucata,automatico,grande,SUV,prata
+6500,2001,acura,mdx,excelente,gasolina,175000,sucata,automatico,grande,SUV,prata
+6700,2004,acura,mdx,excelente,gasolina,199000,sucata,automatico,medio,SUV,cinza
+6995,2007,acura,mdx,excelente,gasolina,153530,sucata,automatico,grande,SUV,branco
+6999,2007,acura,mdx,excelente,gasolina,199000,sucata,automatico,medio,SUV,preto
+6999,2007,acura,mdx,excelente,gasolina,199000,sucata,automatico,medio,SUV,preto
+7300,2008,acura,mdx,excelente,gasolina,164050,sucata,automatico,medio,SUV,branco
+7495,2008,acura,mdx,bom,gasolina,150175,sucata,automatico,grande,SUV,azul
+7500,2009,acura,mdx,excelente,gasolina,227000,sucata,automatico,grande,SUV,vermelho
+7500,2009,acura,mdx,bom,gasolina,153450,sucata,automatico,grande,SUV,fantasia
+7500,2007,acura,mdx,bom,gasolina,177000,sucata,automatico,grande,SUV,prata
+7500,2008,acura,mdx,excelente,gasolina,157000,sucata,automatico,grande,SUV,branco
+7600,2013,acura,mdx,excelente,gasolina,111164,sucata,automatico,grande,van,azul
+7699,2008,acura,mdx,bom,gasolina,172000,sucata,automatico,grande,SUV,preto
+7800,2008,acura,mdx,excelente,gasolina,170000,sucata,automatico,subcompacto,SUV,vermelho
+7991,2009,acura,mdx,desconhecido,gasolina,190422,sucata,automatico,medio,SUV,preto
+7995,2009,acura,mdx,razoavel,gasolina,97085,sucata,automatico,medio,SUV,prata
+7999,2007,acura,mdx,desconhecido,gasolina,144824,sucata,automatico,medio,SUV,fantasia
+7999,2007,acura,mdx,desconhecido,gasolina,144824,sucata,automatico,medio,SUV,fantasia
+8000,2008,acura,mdx,bom,gasolina,146000,sucata,automatico,subcompacto,SUV,preto
+8200,2008,acura,mdx,excelente,gasolina,172423,sucata,automatico,grande,SUV,prata
+8500,2011,acura,mdx,bom,gasolina,157000,sucata,automatico,grande,SUV,cinza
+8500,2008,acura,mdx,bom,gasolina,203000,sucata,automatico,grande,SUV,prata
+8500,2006,acura,mdx,seminovo,gasolina,120000,sucata,automatico,grande,SUV,azul
+8700,2009,acura,mdx,bom,gasolina,137395,sucata,automatico,medio,SUV,cinza
+9788,2009,acura,mdx,desconhecido,gasolina,147547,sucata,automatico,medio,SUV,prata
+9950,2008,acura,mdx,excelente,gasolina,131488,sucata,automatico,medio,SUV,branco
+9975,2007,acura,mdx,bom,gasolina,131099,sucata,automatico,grande,SUV,prata
+9995,2011,acura,mdx,desconhecido,gasolina,158906,sucata,automatico,medio,SUV,fantasia
+9999,2006,acura,mdx,excelente,gasolina,88000,alienado,automatico,medio,SUV,preto
+10200,2009,acura,mdx,excelente,gasolina,112500,alienado,automatico,grande,SUV,cinza
+10399,2009,acura,mdx,excelente,gasolina,157025,alienado,automatico,grande,SUV,cinza
+10400,2009,acura,mdx,excelente,gasolina,150000,alienado,automatico,medio,SUV,branco
+10500,2010,acura,mdx,excelente,gasolina,173000,alienado,automatico,grande,SUV,prata
+10500,2012,acura,mdx,bom,gasolina,126000,alienado,automatico,grande,SUV,prata
+10800,2010,acura,mdx,excelente,gasolina,130000,alienado,automatico,medio,SUV,branco
+10900,2010,acura,mdx,excelente,gasolina,115000,alienado,automatico,grande,SUV,prata
+10900,2009,acura,mdx,bom,gasolina,118950,alienado,automatico,grande,SUV,fantasia
+10900,2011,acura,mdx,bom,gasolina,127000,alienado,automatico,grande,SUV,azul
+10950,2012,acura,mdx,excelente,gasolina,122588,alienado,automatico,medio,SUV,cinza
+10950,2009,acura,mdx,bom,gasolina,147800,alienado,automatico,grande,SUV,branco
+10998,2011,acura,mdx,desconhecido,gasolina,165129,alienado,automatico,medio,SUV,prata
+10999,2011,acura,mdx,excelente,gasolina,206942,alienado,automatico,grande,SUV,branco
+11840,2011,acura,mdx,desconhecido,gasolina,124118,alienado,automatico,medio,SUV,marrom
+11955,2010,acura,mdx,desconhecido,gasolina,169053,alienado,automatico,medio,SUV,prata
+11995,2008,acura,mdx,excelente,gasolina,118359,alienado,automatico,grande,SUV,azul
+11995,2010,acura,mdx,excelente,gasolina,123122,alienado,automatico,medio,SUV,cinza
+11995,2009,acura,mdx,excelente,gasolina,148173,alienado,automatico,grande,wagon,preto
+11995,2009,acura,mdx,excelente,gasolina,148173,alienado,automatico,medio,wagon,preto
+11999,2011,acura,mdx,excelente,gasolina,160500,alienado,automatico,grande,SUV,preto
+12000,2010,acura,mdx,excelente,gasolina,170500,alienado,automatico,medio,SUV,prata
+12490,2014,acura,mdx,excelente,gasolina,176518,alienado,automatico,grande,SUV,prata
+12499,2012,acura,mdx,excelente,gasolina,123901,alienado,automatico,medio,SUV,cinza
+12650,2010,acura,mdx,excelente,gasolina,134000,alienado,automatico,medio,SUV,branco
+12690,2009,acura,mdx,desconhecido,gasolina,108213,alienado,automatico,medio,SUV,cinza
+12952,2011,acura,mdx,desconhecido,gasolina,119954,alienado,automatico,medio,SUV,prata
+12983,2013,acura,mdx,desconhecido,gasolina,146943,alienado,automatico,medio,SUV,preto
+12995,2011,acura,mdx,excelente,gasolina,116000,alienado,automatico,medio,SUV,cinza
+12999,2011,acura,mdx,excelente,gasolina,148663,alienado,automatico,grande,SUV,branco
+13500,2014,acura,mdx,excelente,gasolina,71321,alienado,automatico,medio,SUV,vermelho
+13759,2013,acura,mdx,desconhecido,gasolina,114765,alienado,automatico,medio,SUV,preto
+13999,2012,acura,mdx,desconhecido,gasolina,126322,alienado,automatico,grande,SUV,prata
+13999,2013,acura,mdx,seminovo,gasolina,124000,alienado,automatico,grande,SUV,preto
+14000,2014,acura,mdx,excelente,gasolina,124000,alienado,automatico,grande,SUV,branco
+14599,2011,acura,mdx,excelente,gasolina,120935,alienado,automatico,medio,SUV,prata
+14777,2012,acura,mdx,desconhecido,gasolina,114404,alienado,automatico,medio,SUV,fantasia
+14901,2012,acura,mdx,excelente,gasolina,134092,alienado,automatico,grande,SUV,prata
+14901,2012,acura,mdx,excelente,gasolina,134092,alienado,automatico,grande,SUV,prata
+14901,2012,acura,mdx,excelente,gasolina,134092,alienado,automatico,grande,SUV,prata
+14952,2012,acura,mdx,desconhecido,gasolina,115682,alienado,automatico,medio,SUV,prata
+14983,2013,acura,mdx,desconhecido,gasolina,95698,alienado,automatico,medio,SUV,cinza
+14983,2012,acura,mdx,desconhecido,gasolina,96227,alienado,automatico,medio,SUV,preto
+14988,2011,acura,mdx,bom,gasolina,126677,alienado,automatico,grande,SUV,cinza
+14988,2011,acura,mdx,bom,gasolina,126677,alienado,automatico,grande,SUV,cinza
+14988,2011,acura,mdx,bom,gasolina,126677,alienado,automatico,grande,SUV,cinza
+14995,2012,acura,mdx,bom,gasolina,128000,alienado,automatico,grande,SUV,prata
+14995,2014,acura,mdx,seminovo,gasolina,117895,alienado,automatico,medio,SUV,branco
+15500,2013,acura,mdx,seminovo,gasolina,85750,alienado,automatico,grande,SUV,cinza
+15900,2015,acura,mdx,seminovo,gasolina,72000,alienado,automatico,grande,SUV,azul
+15942,2013,acura,mdx,desconhecido,gasolina,96464,alienado,automatico,medio,SUV,vermelho
+15942,2013,acura,mdx,desconhecido,gasolina,96464,alienado,automatico,medio,SUV,vermelho
+15950,2014,acura,mdx,excelente,gasolina,123000,alienado,automatico,medio,SUV,preto
+16500,2013,acura,mdx,excelente,gasolina,92315,alienado,automatico,medio,SUV,cinza
+16500,2012,acura,mdx,bom,gasolina,80479,alienado,automatico,grande,SUV,branco
+16952,2013,acura,mdx,desconhecido,gasolina,96669,alienado,automatico,medio,SUV,branco
+16986,2013,acura,mdx,bom,gasolina,127452,alienado,automatico,grande,SUV,fantasia
+16995,2011,acura,mdx,excelente,gasolina,89430,alienado,automatico,grande,SUV,fantasia
+17000,2011,acura,mdx,novo,gasolina,39000,alienado,automatico,grande,SUV,preto
+17495,2012,acura,mdx,desconhecido,gasolina,70975,alienado,automatico,medio,SUV,fantasia
+17500,2016,acura,mdx,excelente,gasolina,163764,alienado,automatico,medio,SUV,branco
+17995,2012,acura,mdx,desconhecido,gasolina,79260,restaurado,automatico,medio,SUV,azul
+18000,2015,acura,mdx,excelente,gasolina,107000,restaurado,automatico,grande,SUV,branco
+18350,2012,acura,mdx,desconhecido,gasolina,112698,restaurado,automatico,medio,SUV,preto
+18399,2013,acura,mdx,desconhecido,gasolina,94271,restaurado,automatico,medio,SUV,preto
+18399,2013,acura,mdx,desconhecido,gasolina,94271,restaurado,automatico,medio,SUV,preto
+18500,2014,acura,mdx,excelente,gasolina,85883,restaurado,automatico,grande,SUV,preto
+18900,2014,acura,mdx,excelente,gasolina,118000,restaurado,automatico,grande,SUV,preto
+18995,2016,acura,mdx,seminovo,gasolina,89661,restaurado,automatico,grande,SUV,prata
+18995,2016,acura,mdx,bom,gasolina,98000,restaurado,automatico,grande,SUV,branco
+19300,2012,acura,mdx,seminovo,gasolina,59708,restaurado,automatico,grande,SUV,cinza
+19985,2015,acura,mdx,desconhecido,gasolina,88672,restaurado,automatico,medio,SUV,preto
+20491,2014,acura,mdx,desconhecido,gasolina,70239,restaurado,automatico,medio,SUV,branco
+20951,2015,acura,mdx,desconhecido,gasolina,86686,restaurado,automatico,medio,SUV,prata
+21000,2015,acura,mdx,excelente,gasolina,91800,restaurado,automatico,medio,SUV,cinza
+22000,2015,acura,mdx,excelente,gasolina,75800,restaurado,automatico,medio,SUV,branco
+22500,2014,acura,mdx,bom,gasolina,64000,restaurado,automatico,grande,SUV,vermelho
+22990,2017,acura,mdx,desconhecido,gasolina,60412,restaurado,automatico,medio,SUV,preto
+23000,2012,acura,mdx,excelente,gasolina,35000,restaurado,automatico,grande,SUV,prata
+24495,2017,acura,mdx,desconhecido,gasolina,84377,restaurado,automatico,medio,SUV,branco
+24900,2015,acura,mdx,desconhecido,gasolina,43256,restaurado,automatico,medio,SUV,prata
+24968,2016,acura,mdx,desconhecido,gasolina,47127,restaurado,automatico,medio,SUV,fantasia
+24983,2017,acura,mdx,desconhecido,gasolina,49544,restaurado,automatico,medio,SUV,prata
+25000,2016,acura,mdx,seminovo,gasolina,87574,restaurado,automatico,grande,SUV,branco
+25500,2015,acura,mdx,excelente,gasolina,51609,restaurado,automatico,medio,SUV,cinza
+25875,2016,acura,mdx,desconhecido,gasolina,56293,restaurado,automatico,medio,SUV,cinza
+25992,2016,acura,mdx,desconhecido,gasolina,48298,restaurado,automatico,medio,SUV,prata
+25992,2016,acura,mdx,desconhecido,gasolina,48298,restaurado,automatico,medio,SUV,prata
+25999,2016,acura,mdx,excelente,gasolina,63892,restaurado,automatico,grande,SUV,preto
+26423,2016,acura,mdx,excelente,gasolina,75386,restaurado,automatico,compacto,sedan,cinza
+26423,2016,acura,mdx,excelente,gasolina,75386,restaurado,automatico,compacto,sedan,cinza
+26423,2016,acura,mdx,excelente,gasolina,75386,restaurado,automatico,compacto,sedan,cinza
+26423,2016,acura,mdx,excelente,gasolina,75386,restaurado,automatico,compacto,sedan,cinza
+26423,2016,acura,mdx,excelente,gasolina,75386,restaurado,automatico,compacto,sedan,cinza
+26423,2016,acura,mdx,excelente,gasolina,75386,restaurado,automatico,grande,SUV,cinza
+26591,2016,acura,mdx,desconhecido,gasolina,54320,restaurado,automatico,medio,SUV,branco
+26952,2014,acura,mdx,desconhecido,gasolina,15556,restaurado,automatico,medio,SUV,vermelho
+27900,2016,acura,mdx,excelente,gasolina,48919,restaurado,automatico,medio,SUV,cinza
+27900,2017,acura,mdx,excelente,gasolina,45681,restaurado,automatico,medio,SUV,preto
+27900,2017,acura,mdx,excelente,gasolina,45681,restaurado,automatico,medio,SUV,preto
+27900,2017,acura,mdx,excelente,gasolina,45681,restaurado,automatico,medio,SUV,preto
+27988,2016,acura,mdx,excelente,gasolina,45763,restaurado,automatico,medio,SUV,cinza
+27995,2016,acura,mdx,desconhecido,gasolina,46286,restaurado,automatico,medio,SUV,branco
+27999,2017,acura,mdx,seminovo,gasolina,40185,restaurado,automatico,grande,SUV,prata
+28999,2018,acura,mdx,desconhecido,gasolina,48192,restaurado,automatico,medio,SUV,branco
+31299,2018,acura,mdx,desconhecido,gasolina,51890,novo,automatico,medio,SUV,cinza
+31345,2019,acura,mdx,desconhecido,gasolina,33252,novo,automatico,medio,SUV,fantasia
+31952,2018,acura,mdx,desconhecido,gasolina,33593,novo,automatico,medio,SUV,branco
+32654,2018,acura,mdx,seminovo,gasolina,36483,novo,automatico,grande,SUV,preto
+34900,2016,acura,mdx,seminovo,gasolina,20720,novo,automatico,grande,SUV,prata
+35898,2017,acura,mdx,desconhecido,gasolina,32049,novo,automatico,medio,SUV,cinza
+35999,2018,acura,mdx,excelente,gasolina,44347,novo,automatico,grande,SUV,cinza
+36637,2018,acura,mdx,desconhecido,gasolina,34716,novo,automatico,medio,SUV,branco
+36759,2018,acura,mdx,desconhecido,gasolina,28256,novo,automatico,medio,SUV,branco
+36952,2018,acura,mdx,desconhecido,gasolina,31079,novo,automatico,medio,SUV,preto
+36998,2017,acura,mdx,desconhecido,gasolina,25804,novo,automatico,medio,SUV,prata
+37999,2019,acura,mdx,desconhecido,gasolina,10669,novo,automatico,medio,SUV,branco
+37999,2019,acura,mdx,desconhecido,gasolina,10669,novo,automatico,medio,SUV,branco
+39995,2020,acura,mdx,seminovo,gasolina,10,novo,automatico,grande,SUV,vermelho
+39995,2020,acura,mdx,seminovo,gasolina,10,novo,automatico,grande,SUV,vermelho
+46567,2020,acura,mdx,seminovo,gasolina,18280,novo,automatico,grande,SUV,branco
+24995,2016,acura,mdx 3.5l w/advance,excelente,gasolina,82451,restaurado,automatico,grande,SUV,prata
+24995,2016,acura,mdx 3.5l w/advance,excelente,gasolina,82451,restaurado,automatico,grande,SUV,prata
+24995,2016,acura,mdx 3.5l w/advance,excelente,gasolina,82451,restaurado,automatico,grande,SUV,prata
+24995,2016,acura,mdx 3.5l w/advance,excelente,gasolina,82451,restaurado,automatico,grande,SUV,prata
+24995,2016,acura,mdx 3.5l w/advance,excelente,gasolina,82451,restaurado,automatico,grande,SUV,prata
+1200,2004,acura,mdx awd,razoavel,gasolina,188543,desconhecido,automatico,grande,van,azul
+2850,2001,acura,mdx awd,bom,gasolina,156098,desconhecido,automatico,compacto,SUV,prata
+5999,2005,acura,mdx awd,excelente,gasolina,200000,sucata,automatico,grande,SUV,preto
+6150,2010,acura,mdx awd,desconhecido,gasolina,174111,sucata,automatico,grande,SUV,prata
+10990,2007,acura,mdx awd,excelente,gasolina,137180,alienado,automatico,compacto,SUV,preto
+10990,2007,acura,mdx awd,excelente,gasolina,137180,alienado,automatico,compacto,SUV,preto
+10990,2007,acura,mdx awd,bom,gasolina,137180,alienado,automatico,compacto,SUV,preto
+11500,2013,acura,mdx awd,excelente,gasolina,153000,alienado,automatico,medio,SUV,preto
+11600,2011,acura,mdx awd,excelente,gasolina,133411,alienado,automatico,grande,SUV,marrom
+11600,2011,acura,mdx awd,excelente,gasolina,133411,alienado,automatico,grande,SUV,marrom
+11600,2011,acura,mdx awd,excelente,gasolina,133411,alienado,automatico,grande,SUV,marrom
+11600,2011,acura,mdx awd,excelente,gasolina,133411,alienado,automatico,grande,SUV,marrom
+11800,2011,acura,mdx awd,bom,gasolina,99962,alienado,automatico,medio,SUV,marrom
+12000,2010,acura,mdx awd,excelente,gasolina,120400,alienado,automatico,compacto,SUV,cinza
+14750,2014,acura,mdx awd,excelente,gasolina,142145,alienado,automatico,grande,SUV,preto
+9495,2011,acura,mdx awd camera,excelente,gasolina,159,sucata,automatico,grande,SUV,prata
+8700,2007,acura,mdx awd tech pkg,desconhecido,gasolina,189800,sucata,automatico,grande,SUV,prata
+10995,2012,acura,mdx sh awd,excelente,gasolina,137207,alienado,automatico,medio,SUV,branco
+11895,2009,acura,mdx sh awd,excelente,gasolina,101890,alienado,automatico,grande,SUV,preto
+12950,2011,acura,mdx sh awd,desconhecido,gasolina,119000,alienado,automatico,medio,SUV,branco
+25500,2016,acura,mdx sh awd,seminovo,gasolina,62248,restaurado,automatico,medio,SUV,branco
+9000,2007,acura,mdx sh awd avance,excelente,gasolina,169000,sucata,automatico,grande,SUV,preto
+13995,2012,acura,mdx sh awd tech,excelente,gasolina,134118,alienado,automatico,grande,SUV,prata
+10495,2009,acura,mdx sh-awd,bom,gasolina,125000,alienado,automatico,medio,SUV,prata
+10499,2008,acura,mdx sh-awd,excelente,gasolina,104959,alienado,automatico,grande,SUV,azul
+10999,2011,acura,mdx sh-awd,excelente,gasolina,161000,alienado,automatico,medio,SUV,preto
+13500,2013,acura,mdx sh-awd,bom,gasolina,103473,alienado,automatico,grande,SUV,cinza
+6700,2008,acura,mdx sh-awd 4dr suv,bom,gasolina,188000,sucata,automatico,medio,SUV,branco
+19900,2011,acura,mdx sh-awd w/advance,excelente,gasolina,89600,restaurado,automatico,medio,SUV,preto
+21750,2016,acura,mdx sh-awd w/advance,excelente,gasolina,73385,restaurado,automatico,grande,SUV,branco
+21750,2016,acura,mdx sh-awd w/advance,excelente,gasolina,73385,restaurado,automatico,grande,SUV,branco
+6295,2009,acura,mdx sh-awd w/sport w/res,excelente,gasolina,167293,sucata,automatico,medio,SUV,branco
+6890,2009,acura,mdx sh-awd w/tech,excelente,gasolina,224100,sucata,automatico,medio,SUV,branco
+6890,2009,acura,mdx sh-awd w/tech,excelente,gasolina,224100,sucata,automatico,medio,SUV,branco
+6890,2009,acura,mdx sh-awd w/tech,excelente,gasolina,224100,sucata,automatico,medio,SUV,branco
+6980,2009,acura,mdx sh-awd w/tech,excelente,gasolina,221501,sucata,automatico,medio,SUV,branco
+6995,2008,acura,mdx sh-awd w/tech,seminovo,gasolina,169000,sucata,automatico,grande,SUV,cinza
+7990,2007,acura,mdx sh-awd w/tech,excelente,gasolina,152000,sucata,automatico,grande,SUV,preto
+7990,2007,acura,mdx sh-awd w/tech,excelente,gasolina,152000,sucata,automatico,grande,SUV,preto
+12999,2011,acura,mdx sh-awd w/tech,excelente,gasolina,132000,alienado,automatico,grande,SUV,cinza
+13499,2011,acura,mdx sh-awd w/tech,excelente,gasolina,130504,alienado,automatico,grande,SUV,cinza
+14500,2012,acura,mdx sh-awd w/tech,excelente,gasolina,118000,alienado,automatico,grande,SUV,prata
+22900,2014,acura,mdx sh-awd w/tech,excelente,gasolina,107000,restaurado,automatico,grande,SUV,prata
+27500,2015,acura,mdx sh-awd w/tech,excelente,gasolina,59806,restaurado,automatico,grande,SUV,vermelho
+36500,2017,acura,mdx sh-awd w/tech,excelente,gasolina,41000,novo,automatico,medio,SUV,preto
+42800,2018,acura,mdx sh-awd w/tech,seminovo,gasolina,1555,novo,automatico,grande,SUV,branco
+7395,2008,acura,mdx sport,excelente,gasolina,171000,sucata,automatico,grande,SUV,branco
+9250,2009,acura,mdx sport,bom,gasolina,168504,sucata,automatico,medio,SUV,preto
+11950,2012,acura,mdx sport,excelente,gasolina,160000,alienado,automatico,medio,SUV,preto
+3995,2009,acura,mdx tech package,desconhecido,gasolina,151000,desconhecido,automatico,grande,SUV,branco
+10995,2013,acura,mdx tech package,excelente,gasolina,207538,alienado,automatico,medio,SUV,cinza
+13999,2012,acura,mdx tech package,excelente,gasolina,131227,alienado,automatico,medio,SUV,preto
+13999,2012,acura,mdx tech package,excelente,gasolina,131227,alienado,automatico,medio,SUV,preto
+6995,2008,acura,mdx tech package awd,excelente,gasolina,144325,sucata,automatico,grande,SUV,azul
+9987,2009,acura,mdx technology,excelente,gasolina,127000,sucata,automatico,medio,SUV,branco
+17499,2012,acura,mdx technology awd,excelente,gasolina,84000,alienado,automatico,grande,SUV,branco
+17499,2012,acura,mdx technology awd,excelente,gasolina,84000,alienado,automatico,grande,SUV,branco
+1200,2005,acura,mdx touring,bom,gasolina,190000,desconhecido,manual,grande,SUV,vermelho
+2500,2004,acura,mdx touring,bom,gasolina,190000,desconhecido,automatico,compacto,SUV,prata
+3000,2003,acura,mdx touring,razoavel,gasolina,237000,desconhecido,automatico,medio,hatchback,vermelho
+3471,2004,acura,mdx touring,bom,gasolina,200000,desconhecido,automatico,grande,SUV,preto
+3800,2005,acura,mdx touring,bom,gasolina,235000,desconhecido,automatico,grande,SUV,azul
+4949,2003,acura,mdx touring,excelente,gasolina,161000,sucata,automatico,medio,SUV,cinza
+5000,2005,acura,mdx touring,bom,gasolina,184125,sucata,automatico,grande,SUV,prata
+6500,2003,acura,mdx touring,bom,gasolina,199000,sucata,automatico,grande,SUV,azul
+8999,2006,acura,mdx touring,bom,gasolina,158904,sucata,automatico,medio,SUV,verde
+6400,2005,acura,mdx touring sport 4wd,excelente,gasolina,124000,sucata,automatico,grande,SUV,prata
+6949,2006,acura,mdx touring w/navi w/res,excelente,gasolina,162000,sucata,automatico,medio,SUV,prata
+6949,2006,acura,mdx touring w/navi w/res,excelente,gasolina,162000,sucata,automatico,medio,SUV,prata
+6949,2006,acura,mdx touring w/navi w/res,excelente,gasolina,162000,sucata,automatico,medio,SUV,prata
+6950,2006,acura,mdx touring w/navi w/res,excelente,gasolina,162000,sucata,automatico,medio,SUV,prata
+53900,1991,acura,nsx,bom,gasolina,66609,novo,manual,medio,coupe,preto
+2500,2011,acura,rdx,seminovo,gasolina,73921,desconhecido,automatico,grande,SUV,branco
+3500,2008,acura,rdx,excelente,gasolina,230000,desconhecido,automatico,compacto,SUV,prata
+3800,2014,acura,rdx,seminovo,gasolina,86805,desconhecido,automatico,grande,SUV,branco
+4450,2008,acura,rdx,bom,gasolina,150000,desconhecido,automatico,compacto,SUV,preto
+4500,2010,acura,rdx,bom,gasolina,71490,desconhecido,automatico,grande,SUV,cinza
+5000,2008,acura,rdx,seminovo,gasolina,110000,sucata,automatico,grande,SUV,prata
+5500,2007,acura,rdx,bom,gasolina,160000,sucata,automatico,medio,SUV,branco
+5500,2007,acura,rdx,bom,gasolina,182974,sucata,automatico,medio,SUV,prata
+6995,2007,acura,rdx,excelente,gasolina,139365,sucata,automatico,grande,SUV,vermelho
+6995,2007,acura,rdx,excelente,gasolina,139365,sucata,automatico,grande,SUV,vermelho
+6995,2007,acura,rdx,excelente,gasolina,139365,sucata,automatico,grande,SUV,vermelho
+6995,2007,acura,rdx,excelente,gasolina,152808,sucata,automatico,compacto,SUV,azul
+6995,2007,acura,rdx,excelente,gasolina,152808,sucata,automatico,compacto,SUV,azul
+7500,2009,acura,rdx,excelente,gasolina,154000,sucata,automatico,medio,SUV,prata
+7700,2009,acura,rdx,seminovo,gasolina,125000,sucata,automatico,grande,SUV,prata
+8700,2008,acura,rdx,excelente,gasolina,135000,sucata,automatico,medio,SUV,branco
+9995,2009,acura,rdx,bom,gasolina,125106,sucata,automatico,grande,SUV,branco
+11000,2011,acura,rdx,bom,gasolina,91288,alienado,automatico,medio,SUV,cinza
+11492,2012,acura,rdx,desconhecido,gasolina,119588,alienado,automatico,compacto,SUV,fantasia
+11800,2014,acura,rdx,excelente,gasolina,96000,alienado,automatico,grande,sedan,branco
+11950,2019,acura,rdx,desconhecido,gasolina,34770,alienado,automatico,medio,SUV,preto
+11950,2019,acura,rdx,desconhecido,gasolina,34770,alienado,automatico,medio,SUV,preto
+12495,2014,acura,rdx,bom,gasolina,145769,alienado,automatico,grande,SUV,preto
+12495,2014,acura,rdx,bom,gasolina,145769,alienado,automatico,grande,SUV,preto
+12495,2014,acura,rdx,bom,gasolina,145769,alienado,automatico,grande,SUV,preto
+12495,2014,acura,rdx,bom,gasolina,145769,alienado,automatico,grande,SUV,preto
+12495,2014,acura,rdx,bom,gasolina,145769,alienado,automatico,grande,SUV,preto
+12895,2013,acura,rdx,desconhecido,gasolina,144752,alienado,automatico,compacto,SUV,prata
+12990,2009,acura,rdx,bom,gasolina,109765,alienado,automatico,grande,SUV,prata
+13699,2014,acura,rdx,excelente,gasolina,91000,alienado,automatico,medio,SUV,preto
+13900,2015,acura,rdx,excelente,gasolina,65000,alienado,automatico,grande,SUV,azul
+13900,2015,acura,rdx,excelente,gasolina,65000,alienado,automatico,medio,van,azul
+14000,2014,acura,rdx,excelente,gasolina,106000,alienado,automatico,medio,SUV,prata
+14500,2014,acura,rdx,excelente,gasolina,111000,alienado,manual,medio,SUV,marrom
+14700,2013,acura,rdx,excelente,gasolina,108200,alienado,automatico,medio,SUV,vermelho
+15999,2013,acura,rdx,excelente,gasolina,93400,alienado,automatico,grande,SUV,cinza
+15999,2013,acura,rdx,excelente,gasolina,93400,alienado,automatico,grande,SUV,cinza
+16850,2015,acura,rdx,excelente,gasolina,80893,alienado,automatico,medio,SUV,preto
+16980,2014,acura,rdx,desconhecido,gasolina,81138,alienado,automatico,compacto,SUV,marrom
+16990,2013,acura,rdx,seminovo,gasolina,67488,alienado,automatico,grande,SUV,cinza
+16998,2014,acura,rdx,desconhecido,gasolina,89204,alienado,automatico,compacto,SUV,vermelho
+16999,2013,acura,rdx,desconhecido,gasolina,77658,alienado,automatico,compacto,SUV,cinza
+17492,2013,acura,rdx,desconhecido,gasolina,41337,alienado,automatico,compacto,SUV,vermelho
+17500,2013,acura,rdx,excelente,gasolina,63074,alienado,automatico,medio,SUV,prata
+18000,2016,acura,rdx,excelente,gasolina,87500,restaurado,automatico,medio,SUV,branco
+20289,2017,acura,rdx,desconhecido,gasolina,105821,restaurado,automatico,compacto,SUV,prata
+20959,2016,acura,rdx,desconhecido,gasolina,89286,restaurado,automatico,compacto,SUV,prata
+20997,2015,acura,rdx,desconhecido,gasolina,64587,restaurado,automatico,compacto,SUV,preto
+21998,2016,acura,rdx,desconhecido,gasolina,53456,restaurado,automatico,compacto,SUV,prata
+22495,2017,acura,rdx,desconhecido,gasolina,43422,restaurado,automatico,compacto,SUV,preto
+23200,2016,acura,rdx,seminovo,gasolina,58011,restaurado,automatico,grande,SUV,branco
+23489,2018,acura,rdx,desconhecido,gasolina,39948,restaurado,automatico,compacto,SUV,preto
+23890,2018,acura,rdx,desconhecido,gasolina,30676,restaurado,automatico,compacto,SUV,preto
+25752,2018,acura,rdx,desconhecido,gasolina,25922,restaurado,automatico,compacto,SUV,azul
+26000,2018,acura,rdx,excelente,gasolina,21000,restaurado,automatico,medio,SUV,cinza
+26430,2018,acura,rdx,desconhecido,gasolina,35498,restaurado,automatico,compacto,SUV,vermelho
+26991,2018,acura,rdx,desconhecido,gasolina,10825,restaurado,automatico,compacto,SUV,branco
+26995,2018,acura,rdx,desconhecido,gasolina,28714,restaurado,automatico,compacto,SUV,branco
+26995,2018,acura,rdx,desconhecido,gasolina,25035,restaurado,automatico,compacto,SUV,branco
+26995,2018,acura,rdx,desconhecido,gasolina,38072,restaurado,automatico,compacto,SUV,branco
+26998,2016,acura,rdx,desconhecido,gasolina,19393,restaurado,automatico,compacto,SUV,preto
+27819,2018,acura,rdx,desconhecido,gasolina,19133,restaurado,automatico,compacto,SUV,preto
+28491,2018,acura,rdx,desconhecido,gasolina,18678,restaurado,automatico,compacto,SUV,branco
+28888,2018,acura,rdx,seminovo,gasolina,57500,restaurado,automatico,medio,SUV,cinza
+28980,2018,acura,rdx,desconhecido,gasolina,29972,restaurado,automatico,compacto,SUV,azul
+28998,2017,acura,rdx,desconhecido,gasolina,27870,restaurado,automatico,compacto,SUV,fantasia
+30895,2018,acura,rdx,desconhecido,gasolina,21238,novo,automatico,compacto,SUV,branco
+31636,2019,acura,rdx,desconhecido,gasolina,22788,novo,automatico,medio,SUV,branco
+32985,2019,acura,rdx,desconhecido,gasolina,17374,novo,automatico,medio,SUV,azul
+33990,2017,acura,rdx,bom,gasolina,19969,novo,automatico,grande,SUV,cinza
+37500,2019,acura,rdx,excelente,gasolina,25996,novo,automatico,grande,SUV,prata
+37995,2020,acura,rdx,desconhecido,gasolina,11182,novo,automatico,medio,SUV,preto
+38250,1900,acura,rdx,novo,gasolina,4500,novo,automatico,medio,SUV,cinza
+41800,2020,acura,rdx a+spec,seminovo,gasolina,6800,novo,automatico,grande,SUV,azul
+6000,2007,acura,rdx awd,excelente,gasolina,175000,sucata,automatico,medio,SUV,prata
+10500,2009,acura,rdx awd,seminovo,gasolina,129536,alienado,automatico,grande,SUV,cinza
+11450,2013,acura,rdx awd,desconhecido,gasolina,144000,alienado,automatico,medio,SUV,prata
+11500,2014,acura,rdx awd,excelente,gasolina,92000,alienado,automatico,medio,SUV,preto
+23500,2016,acura,rdx awd,bom,gasolina,71000,restaurado,automatico,medio,SUV,preto
+4850,2008,acura,rdx sh-awd,razoavel,gasolina,170000,sucata,automatico,medio,SUV,marrom
+4900,2009,acura,rdx sh-awd,excelente,gasolina,180000,sucata,automatico,medio,SUV,preto
+6395,2007,acura,rdx sh-awd,bom,gasolina,176000,sucata,automatico,medio,SUV,cinza
+7800,2007,acura,rdx sh-awd,excelente,gasolina,195250,sucata,automatico,medio,SUV,azul
+8900,2009,acura,rdx sh-awd,excelente,gasolina,98600,sucata,automatico,medio,SUV,cinza
+6990,2007,acura,rdx sh-awd w/tech,excelente,gasolina,144649,sucata,automatico,medio,SUV,azul
+7900,2007,acura,rdx sh-awd w/tech,seminovo,gasolina,148000,sucata,automatico,grande,SUV,preto
+7900,2009,acura,rdx sh-awd w/tech,excelente,gasolina,165342,sucata,automatico,grande,SUV,prata
+10400,2010,acura,rdx sh-awd w/tech,bom,gasolina,96000,alienado,automatico,medio,SUV,vermelho
+13995,2013,acura,rdx sh-awd w/tech,excelente,gasolina,141000,alienado,automatico,subcompacto,SUV,branco
+21995,2015,acura,rdx tech,seminovo,gasolina,55780,restaurado,automatico,compacto,SUV,prata
+27500,2018,acura,rdx tech,seminovo,gasolina,36016,restaurado,automatico,compacto,SUV,azul
+14500,2013,acura,rdx tech pkg,excelente,gasolina,108100,alienado,automatico,medio,SUV,vermelho
+11800,2011,acura,rdx technology,excelente,gasolina,113710,alienado,automatico,medio,SUV,prata
+11800,2011,acura,rdx technology,excelente,gasolina,113710,alienado,automatico,medio,SUV,prata
+16600,2014,acura,rdx technology,bom,gasolina,100784,alienado,automatico,medio,SUV,cinza
+25498,2018,acura,rdx technology,excelente,gasolina,36615,restaurado,automatico,medio,SUV,preto
+7895,2010,acura,rdx turbo,excelente,gasolina,141000,sucata,automatico,medio,SUV,prata
+8900,2009,acura,rdx turbo,excelente,gasolina,121000,sucata,automatico,grande,SUV,branco
+2950,2002,acura,rl,bom,gasolina,192000,desconhecido,automatico,grande,sedan,branco
+2999,1996,acura,rl,seminovo,gasolina,236802,desconhecido,automatico,grande,sedan,branco
+3995,2005,acura,rl,excelente,gasolina,144267,desconhecido,automatico,medio,sedan,prata
+5000,2005,acura,rl,excelente,gasolina,141000,sucata,automatico,subcompacto,sedan,prata
+5000,2005,acura,rl,bom,gasolina,150000,sucata,automatico,grande,sedan,cinza
+5000,2006,acura,rl,bom,gasolina,262000,sucata,outro,medio,sedan,azul
+5200,2004,acura,rl,excelente,gasolina,138400,sucata,automatico,grande,sedan,preto
+6000,2006,acura,rl,excelente,gasolina,190000,sucata,automatico,grande,sedan,cinza
+6500,2006,acura,rl,excelente,gasolina,95000,sucata,automatico,grande,sedan,azul
+6500,2005,acura,rl,excelente,gasolina,141228,sucata,automatico,grande,sedan,cinza
+7888,2008,acura,rl,excelente,gasolina,112284,sucata,automatico,medio,sedan,cinza
+7888,2008,acura,rl,excelente,gasolina,112284,sucata,automatico,medio,sedan,cinza
+8500,2005,acura,rl,excelente,gasolina,74300,sucata,automatico,grande,sedan,cinza
+8995,2008,acura,rl,excelente,gasolina,112284,sucata,automatico,medio,sedan,cinza
+8995,2008,acura,rl,excelente,gasolina,112284,sucata,automatico,medio,sedan,cinza
+8995,2008,acura,rl,excelente,gasolina,112284,sucata,automatico,medio,sedan,cinza
+9000,2010,acura,rl,excelente,gasolina,81320,sucata,automatico,grande,coupe,preto
+11000,2010,acura,rl,seminovo,gasolina,75000,alienado,automatico,grande,sedan,preto
+11199,2009,acura,rl,seminovo,gasolina,101186,alienado,automatico,compacto,sedan,branco
+11199,2009,acura,rl,seminovo,gasolina,101186,alienado,automatico,compacto,sedan,branco
+2800,2004,acura,rl 3.5,bom,gasolina,167500,desconhecido,automatico,medio,sedan,cinza
+3995,2000,acura,rl 3.5,seminovo,gasolina,135000,desconhecido,automatico,medio,sedan,marrom
+11600,2009,acura,rl awd,excelente,gasolina,122000,alienado,automatico,medio,sedan,verde
+5490,2008,acura,rl sh-awd,excelente,gasolina,155480,sucata,automatico,medio,sedan,cinza
+5500,2005,acura,rl sh-awd,razoavel,gasolina,119000,sucata,automatico,grande,sedan,prata
+6995,2008,acura,rl sh-awd,bom,gasolina,149130,sucata,automatico,medio,sedan,azul
+7500,2006,acura,rl sh-awd,seminovo,gasolina,155432,sucata,automatico,medio,sedan,branco
+7500,2006,acura,rl sh-awd,seminovo,gasolina,155432,sucata,automatico,medio,sedan,branco
+8999,2005,acura,rl sh-awd,excelente,gasolina,124939,sucata,automatico,grande,sedan,cinza
+11495,2014,acura,rlx,excelente,gasolina,157000,alienado,automatico,grande,sedan,preto
+13995,2014,acura,rlx,bom,gasolina,114669,alienado,automatico,medio,sedan,preto
+17500,2014,acura,rlx,excelente,gasolina,63000,alienado,automatico,grande,sedan,cinza
+17500,2014,acura,rlx,excelente,gasolina,82477,alienado,automatico,grande,sedan,preto
+18490,2014,acura,rlx,desconhecido,gasolina,74912,restaurado,automatico,medio,sedan,fantasia
+18500,2014,acura,rlx,excelente,gasolina,88717,restaurado,automatico,grande,sedan,preto
+15495,2014,acura,rlx 4dr sdn,seminovo,gasolina,95000,alienado,automatico,grande,sedan,prata
+15495,2014,acura,rlx 4dr sdn,seminovo,gasolina,95000,alienado,automatico,grande,sedan,prata
+16000,2014,acura,rlx adance,excelente,gasolina,114000,alienado,automatico,grande,sedan,preto
+34998,2020,acura,rlx technology,excelente,gasolina,11009,novo,automatico,grande,sedan,prata
+1000,2006,acura,rsx,sucata,gasolina,150000,desconhecido,manual,subcompacto,coupe,prata
+1200,2006,acura,rsx,bom,gasolina,96,desconhecido,automatico,compacto,hatchback,cinza
+1500,2005,acura,rsx,razoavel,gasolina,199000,desconhecido,automatico,compacto,coupe,cinza
+1895,2004,acura,rsx,razoavel,gasolina,174000,desconhecido,automatico,medio,hatchback,preto
+1999,2003,acura,rsx,bom,gasolina,180000,desconhecido,automatico,compacto,coupe,branco
+2000,2004,acura,rsx,bom,gasolina,184000,desconhecido,automatico,compacto,coupe,prata
+2500,2004,acura,rsx,razoavel,gasolina,193890,desconhecido,automatico,subcompacto,hatchback,branco
+2550,2006,acura,rsx,razoavel,gasolina,184000,desconhecido,automatico,compacto,coupe,preto
+2695,2005,acura,rsx,razoavel,gasolina,14085,desconhecido,automatico,medio,coupe,prata
+2995,2005,acura,rsx,bom,gasolina,141085,desconhecido,automatico,grande,coupe,prata
+3000,2006,acura,rsx,excelente,gasolina,139000,desconhecido,automatico,compacto,coupe,prata
+3600,2002,acura,rsx,bom,gasolina,210000,desconhecido,automatico,compacto,coupe,prata
+4500,2004,acura,rsx,bom,gasolina,123000,desconhecido,automatico,compacto,coupe,azul
+4500,2004,acura,rsx,bom,gasolina,186000,desconhecido,automatico,compacto,coupe,cinza
+4500,2004,acura,rsx,bom,gasolina,186599,desconhecido,automatico,compacto,coupe,cinza
+4500,2004,acura,rsx,bom,gasolina,186400,desconhecido,automatico,compacto,coupe,cinza
+4999,2006,acura,rsx,bom,gasolina,127875,sucata,manual,compacto,coupe,azul
+5000,2006,acura,rsx,excelente,gasolina,130000,sucata,automatico,compacto,coupe,cinza
+5950,2006,acura,rsx,excelente,gasolina,200600,sucata,automatico,subcompacto,coupe,preto
+6499,2006,acura,rsx,excelente,gasolina,150500,sucata,automatico,compacto,coupe,azul
+7990,2004,acura,rsx,desconhecido,gasolina,133651,sucata,automatico,subcompacto,hatchback,cinza
+7995,2003,acura,rsx,desconhecido,alcool,139091,sucata,automatico,subcompacto,hatchback,vermelho
+9300,2006,acura,rsx,sucata,gasolina,123940,sucata,manual,medio,coupe,preto
+5995,2003,acura,rsx base,bom,gasolina,121300,sucata,automatico,compacto,hatchback,preto
+7500,2004,acura,rsx type s,bom,gasolina,189000,sucata,manual,compacto,coupe,vermelho
+13500,2006,acura,rsx type s,excelente,gasolina,122000,alienado,manual,compacto,hatchback,branco
+6000,2004,acura,rsx type-s,excelente,gasolina,178001,sucata,manual,compacto,coupe,branco
+3850,1999,acura,slx,excelente,gasolina,165000,desconhecido,automatico,grande,SUV,preto
+1000,2000,acura,tl,razoavel,gasolina,347000,desconhecido,automatico,medio,sedan,branco
+1000,2004,acura,tl,bom,gasolina,111000,desconhecido,automatico,medio,sedan,azul
+1100,2003,acura,tl,bom,gasolina,220000,desconhecido,automatico,medio,sedan,prata
+1200,2002,acura,tl,razoavel,gasolina,187000,desconhecido,automatico,medio,sedan,preto
+1300,2003,acura,tl,razoavel,gasolina,203000,desconhecido,automatico,medio,sedan,azul
+1450,2000,acura,tl,bom,gasolina,208550,desconhecido,automatico,medio,sedan,preto
+1450,2000,acura,tl,bom,gasolina,208550,desconhecido,automatico,medio,sedan,preto
+1500,2001,acura,tl,bom,gasolina,265703,desconhecido,automatico,subcompacto,sedan,cinza
+1800,2005,acura,tl,razoavel,gasolina,178000,desconhecido,automatico,grande,sedan,fantasia
+2000,1999,acura,tl,razoavel,gasolina,208000,desconhecido,automatico,grande,sedan,verde
+2000,2001,acura,tl,desconhecido,gasolina,280000,desconhecido,automatico,compacto,sedan,branco
+2000,2001,acura,tl,razoavel,gasolina,280000,desconhecido,automatico,compacto,sedan,branco
+2000,2001,acura,tl,razoavel,gasolina,185000,desconhecido,automatico,compacto,sedan,cinza
+2200,2000,acura,tl,bom,gasolina,180000,desconhecido,automatico,grande,sedan,preto
+2300,2001,acura,tl,bom,gasolina,209000,desconhecido,automatico,grande,sedan,vermelho
+2500,2003,acura,tl,razoavel,gasolina,235000,desconhecido,automatico,grande,sedan,preto
+2500,2000,acura,tl,excelente,gasolina,293192,desconhecido,automatico,grande,sedan,cinza
+2500,2003,acura,tl,bom,gasolina,250000,desconhecido,automatico,medio,sedan,preto
+2800,2004,acura,tl,bom,gasolina,216500,desconhecido,automatico,grande,sedan,prata
+2900,2005,acura,tl,bom,gasolina,232000,desconhecido,automatico,medio,sedan,preto
+3000,2000,acura,tl,excelente,gasolina,188000,desconhecido,automatico,medio,sedan,vermelho
+3000,1999,acura,tl,razoavel,gasolina,300000,desconhecido,automatico,medio,sedan,vermelho
+3000,2004,acura,tl,razoavel,gasolina,220000,desconhecido,automatico,medio,sedan,preto
+3200,2006,acura,tl,razoavel,gasolina,160250,desconhecido,automatico,grande,sedan,cinza
+3200,2006,acura,tl,bom,gasolina,244000,desconhecido,automatico,medio,sedan,cinza
+3295,2005,acura,tl,bom,gasolina,242000,desconhecido,automatico,medio,sedan,cinza
+3300,2003,acura,tl,bom,gasolina,135000,desconhecido,automatico,grande,sedan,preto
+3300,2005,acura,tl,bom,gasolina,189600,desconhecido,automatico,grande,sedan,preto
+3300,2008,acura,tl,bom,gasolina,186000,desconhecido,automatico,medio,sedan,azul
+3300,2008,acura,tl,bom,gasolina,186000,desconhecido,automatico,medio,sedan,azul
+3400,2005,acura,tl,seminovo,gasolina,241133,desconhecido,automatico,medio,sedan,vermelho
+3400,2005,acura,tl,seminovo,gasolina,241133,desconhecido,automatico,medio,sedan,branco
+3400,2005,acura,tl,seminovo,gasolina,241133,desconhecido,automatico,medio,sedan,branco
+3500,2008,acura,tl,bom,gasolina,242000,desconhecido,automatico,medio,sedan,prata
+3500,2005,acura,tl,bom,gasolina,203000,desconhecido,automatico,medio,sedan,branco
+3500,1999,acura,tl,excelente,gasolina,112000,desconhecido,automatico,medio,sedan,verde
+3500,1999,acura,tl,bom,gasolina,165000,desconhecido,automatico,medio,sedan,cinza
+3500,1999,acura,tl,bom,gasolina,165000,desconhecido,automatico,medio,sedan,cinza
+3750,2008,acura,tl,bom,gasolina,198950,desconhecido,automatico,medio,sedan,preto
+3900,2006,acura,tl,excelente,gasolina,195448,desconhecido,automatico,grande,sedan,preto
+3950,2004,acura,tl,bom,gasolina,167740,desconhecido,automatico,grande,sedan,preto
+4000,2006,acura,tl,bom,gasolina,100000,desconhecido,manual,medio,sedan,preto
+4000,2005,acura,tl,bom,gasolina,110000,desconhecido,automatico,grande,sedan,prata
+4000,2005,acura,tl,bom,gasolina,110000,desconhecido,automatico,grande,sedan,vermelho
+4000,2005,acura,tl,bom,gasolina,110000,desconhecido,automatico,grande,sedan,branco
+4400,2006,acura,tl,excelente,gasolina,240000,desconhecido,automatico,medio,sedan,prata
+4400,2006,acura,tl,excelente,gasolina,240000,desconhecido,automatico,medio,sedan,prata
+4500,2005,acura,tl,excelente,gasolina,131210,desconhecido,automatico,grande,sedan,cinza
+4500,2006,acura,tl,bom,gasolina,1630002,desconhecido,automatico,grande,sedan,preto
+4500,2005,acura,tl,bom,gasolina,148000,desconhecido,automatico,medio,sedan,branco
+4500,2007,acura,tl,excelente,gasolina,225000,desconhecido,outro,medio,outro,branco
+4500,2006,acura,tl,bom,gasolina,168000,desconhecido,automatico,medio,sedan,branco
+4750,2005,acura,tl,excelente,gasolina,112000,sucata,automatico,grande,sedan,azul
+4800,2002,acura,tl,seminovo,gasolina,144000,sucata,automatico,medio,sedan,azul
+4800,2006,acura,tl,bom,gasolina,220000,sucata,automatico,medio,sedan,prata
+4850,2005,acura,tl,seminovo,gasolina,165000,sucata,automatico,compacto,sedan,prata
+4922,2006,acura,tl,excelente,gasolina,223603,sucata,automatico,medio,sedan,fantasia
+4995,2006,acura,tl,excelente,gasolina,207000,sucata,automatico,grande,sedan,branco
+4995,2006,acura,tl,bom,gasolina,179594,sucata,automatico,grande,sedan,preto
+5000,2006,acura,tl,excelente,gasolina,200000,sucata,manual,medio,coupe,preto
+5000,2007,acura,tl,excelente,gasolina,150,sucata,automatico,grande,sedan,azul
+5000,2005,acura,tl,desconhecido,gasolina,132000,sucata,automatico,grande,sedan,cinza
+5000,2005,acura,tl,excelente,gasolina,205000,sucata,automatico,medio,sedan,preto
+5200,2006,acura,tl,excelente,gasolina,122000,sucata,manual,medio,sedan,preto
+5335,2008,acura,tl,bom,gasolina,140800,sucata,automatico,medio,sedan,preto
+5495,2003,acura,tl,excelente,gasolina,128532,sucata,automatico,medio,sedan,preto
+5495,2003,acura,tl,excelente,gasolina,128532,sucata,automatico,medio,sedan,preto
+5495,2003,acura,tl,excelente,gasolina,128532,sucata,automatico,medio,sedan,preto
+5495,2003,acura,tl,excelente,gasolina,128532,sucata,automatico,medio,sedan,preto
+5499,2006,acura,tl,bom,gasolina,176000,sucata,automatico,grande,sedan,cinza
+5500,2007,acura,tl,bom,gasolina,156460,sucata,automatico,grande,sedan,branco
+5500,2006,acura,tl,seminovo,gasolina,160000,sucata,automatico,grande,sedan,preto
+5500,2004,acura,tl,excelente,gasolina,195225,sucata,automatico,medio,sedan,verde
+5500,2005,acura,tl,seminovo,gasolina,160581,sucata,automatico,grande,sedan,cinza
+5695,2006,acura,tl,excelente,gasolina,125036,sucata,automatico,medio,sedan,prata
+5695,2006,acura,tl,excelente,gasolina,125036,sucata,automatico,medio,sedan,prata
+5750,1999,acura,tl,excelente,gasolina,104000,sucata,automatico,medio,sedan,verde
+5800,2007,acura,tl,bom,gasolina,163000,sucata,automatico,grande,sedan,cinza
+5895,2006,acura,tl,bom,gasolina,168000,sucata,manual,medio,sedan,prata
+5900,2005,acura,tl,bom,gasolina,148542,sucata,automatico,medio,sedan,azul
+5900,2008,acura,tl,seminovo,gasolina,139271,sucata,automatico,medio,sedan,marrom
+5900,2004,acura,tl,excelente,gasolina,115000,sucata,automatico,medio,sedan,azul
+5950,2007,acura,tl,excelente,gasolina,163080,sucata,automatico,medio,sedan,prata
+5950,2007,acura,tl,excelente,gasolina,163080,sucata,automatico,medio,sedan,prata
+5995,2006,acura,tl,excelente,gasolina,125036,sucata,automatico,medio,sedan,prata
+5999,2009,acura,tl,bom,gasolina,154000,sucata,automatico,grande,sedan,cinza
+5999,2006,acura,tl,novo,gasolina,158000,sucata,automatico,medio,sedan,prata
+5999,2006,acura,tl,excelente,gasolina,158000,sucata,automatico,medio,sedan,prata
+6000,2005,acura,tl,bom,gasolina,98000,sucata,automatico,grande,sedan,branco
+6000,2011,acura,tl,bom,gasolina,200000,sucata,automatico,grande,sedan,cinza
+6000,2008,acura,tl,bom,gasolina,146000,sucata,automatico,grande,sedan,prata
+6200,2007,acura,tl,bom,gasolina,178000,sucata,automatico,grande,sedan,prata
+6200,2006,acura,tl,excelente,gasolina,125000,sucata,automatico,medio,sedan,amarelo
+6299,2007,acura,tl,bom,gasolina,178000,sucata,automatico,medio,sedan,cinza
+6495,2005,acura,tl,excelente,gasolina,129879,sucata,automatico,medio,sedan,prata
+6500,2009,acura,tl,bom,gasolina,142321,sucata,automatico,medio,sedan,vermelho
+6500,2005,acura,tl,bom,gasolina,110198,sucata,automatico,grande,sedan,cinza
+6500,2007,acura,tl,excelente,gasolina,238698,sucata,automatico,medio,sedan,azul
+6500,2008,acura,tl,bom,gasolina,184698,sucata,automatico,medio,sedan,branco
+6500,2005,acura,tl,bom,gasolina,201792,sucata,automatico,compacto,sedan,azul
+6750,2005,acura,tl,excelente,gasolina,49875,sucata,automatico,grande,sedan,azul
+6850,2007,acura,tl,excelente,gasolina,163080,sucata,automatico,medio,sedan,prata
+6850,2007,acura,tl,excelente,gasolina,163080,sucata,automatico,medio,sedan,prata
+6900,2014,acura,tl,excelente,gasolina,112000,sucata,automatico,grande,sedan,branco
+6900,2008,acura,tl,excelente,gasolina,119500,sucata,automatico,grande,sedan,prata
+6900,2007,acura,tl,excelente,gasolina,105400,sucata,automatico,grande,sedan,azul
+6900,2004,acura,tl,excelente,gasolina,105000,sucata,manual,medio,sedan,verde
+6950,2007,acura,tl,desconhecido,gasolina,102000,sucata,automatico,medio,sedan,preto
+6950,2007,acura,tl,desconhecido,gasolina,102000,sucata,automatico,medio,sedan,preto
+6950,2007,acura,tl,desconhecido,gasolina,102000,sucata,automatico,medio,sedan,preto
+6995,2006,acura,tl,excelente,gasolina,125201,sucata,automatico,medio,sedan,prata
+6995,2006,acura,tl,excelente,gasolina,125201,sucata,automatico,medio,sedan,prata
+6995,2006,acura,tl,excelente,gasolina,125201,sucata,automatico,medio,sedan,prata
+6995,2006,acura,tl,excelente,gasolina,125201,sucata,automatico,medio,sedan,prata
+6995,2004,acura,tl,excelente,gasolina,107398,sucata,automatico,medio,sedan,branco
+7000,2007,acura,tl,desconhecido,gasolina,140000,sucata,automatico,medio,sedan,prata
+7000,2009,acura,tl,novo,gasolina,162000,sucata,automatico,medio,sedan,branco
+7495,2007,acura,tl,excelente,gasolina,144000,sucata,automatico,medio,sedan,branco
+7500,2009,acura,tl,excelente,gasolina,166637,sucata,automatico,grande,coupe,branco
+7850,2010,acura,tl,bom,gasolina,135000,sucata,automatico,grande,sedan,preto
+7950,2006,acura,tl,excelente,gasolina,79875,sucata,automatico,medio,sedan,preto
+7999,2009,acura,tl,bom,gasolina,139571,sucata,automatico,grande,sedan,preto
+7999,2009,acura,tl,bom,gasolina,139571,sucata,automatico,grande,sedan,preto
+8000,2008,acura,tl,excelente,gasolina,151000,sucata,automatico,medio,sedan,azul
+8500,2012,acura,tl,bom,gasolina,129865,sucata,automatico,grande,sedan,preto
+8500,2010,acura,tl,bom,gasolina,113000,sucata,automatico,medio,sedan,vermelho
+8800,2009,acura,tl,bom,gasolina,142110,sucata,automatico,medio,sedan,branco
+8850,2004,acura,tl,excelente,gasolina,68000,sucata,automatico,grande,sedan,verde
+8992,2009,acura,tl,desconhecido,gasolina,108048,sucata,automatico,medio,sedan,prata
+8995,2005,acura,tl,excelente,gasolina,96642,sucata,manual,medio,sedan,prata
+8999,2008,acura,tl,excelente,gasolina,144360,sucata,automatico,medio,sedan,branco
+8999,2008,acura,tl,excelente,gasolina,144360,sucata,automatico,medio,sedan,branco
+8999,2008,acura,tl,excelente,gasolina,144360,sucata,automatico,medio,sedan,branco
+8999,2008,acura,tl,excelente,gasolina,144360,sucata,automatico,medio,sedan,branco
+8999,2008,acura,tl,excelente,gasolina,144360,sucata,automatico,medio,sedan,branco
+8999,2004,acura,tl,excelente,gasolina,61914,sucata,automatico,grande,sedan,branco
+9000,2004,acura,tl,excelente,gasolina,190000,sucata,automatico,medio,sedan,preto
+9000,2009,acura,tl,excelente,gasolina,161900,sucata,automatico,medio,sedan,preto
+9000,2013,acura,tl,excelente,gasolina,90000,sucata,automatico,medio,sedan,branco
+9200,2009,acura,tl,excelente,gasolina,138150,sucata,automatico,medio,sedan,prata
+9300,2010,acura,tl,excelente,gasolina,119000,sucata,automatico,compacto,sedan,prata
+9477,2005,acura,tl,excelente,gasolina,62000,sucata,automatico,medio,sedan,vermelho
+9500,2013,acura,tl,excelente,gasolina,112000,sucata,automatico,medio,sedan,prata
+9500,2013,acura,tl,bom,gasolina,65000,sucata,automatico,grande,sedan,branco
+9750,2009,acura,tl,excelente,gasolina,100500,sucata,automatico,grande,sedan,fantasia
+9750,2007,acura,tl,excelente,gasolina,136750,sucata,automatico,medio,sedan,preto
+9795,2010,acura,tl,desconhecido,gasolina,148665,sucata,automatico,medio,sedan,branco
+9850,2010,acura,tl,seminovo,gasolina,175000,sucata,automatico,grande,sedan,cinza
+9900,2012,acura,tl,excelente,gasolina,127000,sucata,automatico,grande,sedan,cinza
+9900,2011,acura,tl,seminovo,gasolina,110000,sucata,automatico,medio,sedan,prata
+10495,2008,acura,tl,excelente,gasolina,90000,alienado,automatico,medio,sedan,branco
+10500,2012,acura,tl,excelente,gasolina,111000,alienado,outro,grande,sedan,cinza
+10787,2012,acura,tl,excelente,gasolina,124287,alienado,automatico,medio,sedan,prata
+10900,2011,acura,tl,excelente,gasolina,116236,alienado,automatico,compacto,sedan,prata
+10998,2012,acura,tl,excelente,gasolina,99866,alienado,automatico,medio,sedan,prata
+10998,2012,acura,tl,excelente,gasolina,99866,alienado,automatico,medio,sedan,prata
+10998,2012,acura,tl,excelente,gasolina,99866,alienado,automatico,grande,sedan,prata
+11000,2012,acura,tl,bom,gasolina,91600,alienado,manual,compacto,sedan,vermelho
+11409,2013,acura,tl,desconhecido,gasolina,120058,alienado,automatico,medio,sedan,preto
+11500,2012,acura,tl,excelente,gasolina,125000,alienado,automatico,grande,sedan,prata
+11995,2012,acura,tl,seminovo,gasolina,97234,alienado,automatico,medio,sedan,cinza
+11998,2013,acura,tl,desconhecido,gasolina,115765,alienado,automatico,medio,sedan,preto
+12900,2012,acura,tl,bom,gasolina,53454,alienado,automatico,grande,sedan,cinza
+12900,2012,acura,tl,bom,gasolina,53454,alienado,automatico,grande,sedan,cinza
+12900,2012,acura,tl,bom,gasolina,53454,alienado,automatico,grande,sedan,cinza
+12900,2012,acura,tl,bom,gasolina,53454,alienado,automatico,grande,sedan,cinza
+12995,2013,acura,tl,excelente,gasolina,96000,alienado,automatico,medio,sedan,branco
+12999,2012,acura,tl,excelente,gasolina,120865,alienado,automatico,medio,sedan,prata
+12999,2012,acura,tl,excelente,gasolina,120865,alienado,automatico,medio,sedan,prata
+12999,2012,acura,tl,excelente,gasolina,120865,alienado,automatico,medio,sedan,prata
+12999,2012,acura,tl,excelente,gasolina,120865,alienado,automatico,medio,sedan,prata
+13816,2013,acura,tl,desconhecido,gasolina,118065,alienado,automatico,medio,sedan,fantasia
+13991,2013,acura,tl,desconhecido,gasolina,114771,alienado,automatico,medio,sedan,fantasia
+14995,2012,acura,tl,excelente,gasolina,64998,alienado,automatico,medio,sedan,preto
+15000,2013,acura,tl,excelente,gasolina,80000,alienado,manual,grande,sedan,branco
+15000,2013,acura,tl,excelente,gasolina,64450,alienado,automatico,medio,sedan,preto
+18949,2014,acura,tl,desconhecido,gasolina,73317,restaurado,automatico,medio,sedan,preto
+1200,1996,acura,tl 2.5s,bom,gasolina,243000,desconhecido,automatico,medio,sedan,preto
+1200,2002,acura,tl 3.2,razoavel,gasolina,279000,desconhecido,automatico,medio,sedan,branco
+2450,1999,acura,tl 3.2,excelente,gasolina,295115,desconhecido,automatico,medio,sedan,vermelho
+3500,2006,acura,tl 3.2,bom,gasolina,294466,desconhecido,automatico,medio,coupe,prata
+3500,1998,acura,tl 3.2,bom,gasolina,129000,desconhecido,automatico,medio,sedan,preto
+10995,2006,acura,tl 3.2,seminovo,gasolina,64200,alienado,automatico,medio,sedan,prata
+8500,2008,acura,tl 3.2 4dr sedan,excelente,gasolina,66828,sucata,automatico,grande,sedan,cinza
+5495,2005,acura,tl 3.2 sedan,bom,gasolina,202398,sucata,automatico,medio,sedan,prata
+2490,1996,acura,tl 3.2 touring sedan,bom,gasolina,183519,desconhecido,automatico,medio,sedan,branco
+1850,2003,acura,tl 3.2 type s,razoavel,gasolina,305721,desconhecido,automatico,medio,sedan,preto
+4000,2005,acura,tl luxury sedan,bom,gasolina,110000,desconhecido,automatico,grande,sedan,azul
+9800,2012,acura,tl sh-awd,excelente,gasolina,114000,sucata,automatico,grande,sedan,cinza
+12300,2012,acura,tl sh-awd w/tech,excelente,gasolina,98884,alienado,automatico,compacto,sedan,cinza
+8700,2010,acura,tl technology,seminovo,gasolina,144200,sucata,automatico,grande,sedan,cinza
+4500,2003,acura,tl type s,bom,gasolina,172686,desconhecido,automatico,grande,sedan,preto
+4500,2008,acura,tl type s,excelente,gasolina,185000,desconhecido,automatico,medio,sedan,cinza
+5800,2007,acura,tl type s,excelente,gasolina,216300,sucata,automatico,medio,coupe,cinza
+9995,2007,acura,tl type s,excelente,gasolina,143900,sucata,automatico,medio,sedan,cinza
+17600,2008,acura,tl type s,excelente,gasolina,36500,alienado,automatico,grande,sedan,marrom
+7000,2008,acura,tl type-s,excelente,gasolina,180400,sucata,automatico,grande,sedan,prata
+9900,2008,acura,tl type-s,excelente,gasolina,125000,sucata,automatico,medio,sedan,cinza
+3999,2004,acura,tl w/navi,excelente,gasolina,192995,desconhecido,automatico,grande,sedan,cinza
+3999,2004,acura,tl w/navi,excelente,gasolina,192995,desconhecido,automatico,grande,sedan,cinza
+4999,2004,acura,tl w/navi,excelente,gasolina,192995,sucata,automatico,grande,sedan,cinza
+4999,2004,acura,tl w/navi,excelente,gasolina,192995,sucata,automatico,grande,sedan,cinza
+4999,2004,acura,tl w/navi,excelente,gasolina,192995,sucata,automatico,grande,sedan,cinza
+15000,2007,acura,tl-s,seminovo,gasolina,45800,alienado,automatico,grande,sedan,cinza
+2000,2002,acura,tls,bom,gasolina,340000,desconhecido,automatico,medio,sedan,azul
+6950,2018,acura,tlx,desconhecido,gasolina,30223,sucata,automatico,compacto,sedan,preto
+9950,2020,acura,tlx,desconhecido,gasolina,1,sucata,automatico,compacto,sedan,branco
+9950,2020,acura,tlx,desconhecido,gasolina,1,sucata,automatico,compacto,sedan,branco
+12995,2016,acura,tlx,seminovo,gasolina,132000,alienado,automatico,grande,sedan,preto
+13500,2015,acura,tlx,seminovo,gasolina,155596,alienado,automatico,medio,sedan,marrom
+14990,2015,acura,tlx,desconhecido,gasolina,128409,alienado,automatico,compacto,sedan,preto
+15941,2015,acura,tlx,desconhecido,gasolina,92127,alienado,automatico,compacto,sedan,fantasia
+15988,2015,acura,tlx,desconhecido,gasolina,90033,alienado,automatico,compacto,sedan,prata
+16995,2015,acura,tlx,desconhecido,gasolina,49467,alienado,automatico,compacto,sedan,prata
+16995,2015,acura,tlx,desconhecido,gasolina,49467,alienado,automatico,compacto,sedan,branco
+16998,2015,acura,tlx,desconhecido,gasolina,102196,alienado,automatico,compacto,sedan,branco
+16998,2015,acura,tlx,desconhecido,gasolina,102196,alienado,automatico,compacto,sedan,branco
+16998,2015,acura,tlx,desconhecido,gasolina,102196,alienado,automatico,compacto,sedan,branco
+17777,2015,acura,tlx,desconhecido,gasolina,87656,alienado,automatico,compacto,sedan,marrom
+17777,2015,acura,tlx,desconhecido,gasolina,87656,alienado,automatico,compacto,sedan,marrom
+17992,2019,acura,tlx,excelente,gasolina,12346,restaurado,automatico,grande,sedan,cinza
+18331,2015,acura,tlx,desconhecido,gasolina,73772,restaurado,automatico,compacto,sedan,fantasia
+18995,2015,acura,tlx,excelente,gasolina,34844,restaurado,automatico,medio,sedan,preto
+18995,2015,acura,tlx,excelente,gasolina,34844,restaurado,automatico,medio,sedan,preto
+18995,2015,acura,tlx,excelente,gasolina,34844,restaurado,automatico,medio,sedan,preto
+18998,2015,acura,tlx,desconhecido,gasolina,56476,restaurado,automatico,compacto,sedan,branco
+18998,2015,acura,tlx,desconhecido,gasolina,56476,restaurado,automatico,compacto,sedan,branco
+19777,2016,acura,tlx,desconhecido,gasolina,81083,restaurado,automatico,compacto,sedan,preto
+19777,2016,acura,tlx,desconhecido,gasolina,81083,restaurado,automatico,compacto,sedan,preto
+19929,2015,acura,tlx,desconhecido,gasolina,62677,restaurado,automatico,compacto,sedan,prata
+19985,2019,acura,tlx,desconhecido,gasolina,79495,restaurado,automatico,compacto,sedan,preto
+19995,2015,acura,tlx,excelente,gasolina,111750,restaurado,automatico,medio,sedan,prata
+20795,2017,acura,tlx,desconhecido,gasolina,36640,restaurado,automatico,compacto,sedan,azul
+20895,2016,acura,tlx,desconhecido,gasolina,36068,restaurado,automatico,compacto,sedan,preto
+20995,2018,acura,tlx,desconhecido,gasolina,40006,restaurado,automatico,compacto,sedan,branco
+21000,2016,acura,tlx,excelente,gasolina,39000,restaurado,automatico,medio,sedan,prata
+21895,2017,acura,tlx,desconhecido,gasolina,26810,restaurado,manual,compacto,sedan,vermelho
+21990,2016,acura,tlx,desconhecido,gasolina,56526,restaurado,automatico,compacto,sedan,azul
+21990,2016,acura,tlx,desconhecido,gasolina,56526,restaurado,automatico,compacto,sedan,azul
+21990,2016,acura,tlx,desconhecido,gasolina,56526,restaurado,automatico,compacto,sedan,azul
+21990,2016,acura,tlx,desconhecido,gasolina,56526,restaurado,automatico,compacto,sedan,azul
+21990,2016,acura,tlx,desconhecido,gasolina,56526,restaurado,automatico,compacto,sedan,azul
+21990,2016,acura,tlx,desconhecido,gasolina,56526,restaurado,automatico,compacto,sedan,azul
+21990,2016,acura,tlx,desconhecido,gasolina,56526,restaurado,automatico,compacto,sedan,azul
+21990,2016,acura,tlx,desconhecido,gasolina,56526,restaurado,automatico,compacto,sedan,azul
+21995,2017,acura,tlx,desconhecido,gasolina,36803,restaurado,automatico,compacto,sedan,branco
+22120,2017,acura,tlx,desconhecido,gasolina,51246,restaurado,automatico,compacto,sedan,prata
+22327,2017,acura,tlx,desconhecido,gasolina,26810,restaurado,manual,compacto,sedan,vermelho
+22987,2018,acura,tlx,desconhecido,gasolina,24968,restaurado,automatico,compacto,sedan,fantasia
+22990,2015,acura,tlx,desconhecido,gasolina,45940,restaurado,automatico,compacto,sedan,preto
+22990,2015,acura,tlx,desconhecido,gasolina,45940,restaurado,automatico,compacto,sedan,preto
+22990,2015,acura,tlx,desconhecido,gasolina,45940,restaurado,automatico,compacto,sedan,preto
+22990,2015,acura,tlx,desconhecido,gasolina,45940,restaurado,automatico,compacto,sedan,preto
+22990,2015,acura,tlx,desconhecido,gasolina,45940,restaurado,automatico,compacto,sedan,preto
+22990,2015,acura,tlx,desconhecido,gasolina,45940,restaurado,automatico,compacto,sedan,preto
+22990,2015,acura,tlx,desconhecido,gasolina,45940,restaurado,automatico,compacto,sedan,preto
+22990,2015,acura,tlx,desconhecido,gasolina,45940,restaurado,automatico,compacto,sedan,preto
+22995,2015,acura,tlx,desconhecido,gasolina,32361,restaurado,automatico,compacto,sedan,fantasia
+22995,2015,acura,tlx,desconhecido,gasolina,48489,restaurado,automatico,compacto,sedan,preto
+22995,2015,acura,tlx,desconhecido,gasolina,48489,restaurado,automatico,compacto,sedan,preto
+23990,2018,acura,tlx,desconhecido,gasolina,73430,restaurado,automatico,compacto,sedan,branco
+24995,2019,acura,tlx,desconhecido,gasolina,15683,restaurado,automatico,compacto,sedan,cinza
+25490,2018,acura,tlx,desconhecido,gasolina,31936,restaurado,automatico,compacto,sedan,branco
+25499,2018,acura,tlx,desconhecido,gasolina,27986,restaurado,automatico,compacto,sedan,preto
+25555,2018,acura,tlx,desconhecido,gasolina,26442,restaurado,automatico,compacto,sedan,vermelho
+25977,2019,acura,tlx,desconhecido,gasolina,18440,restaurado,automatico,compacto,sedan,fantasia
+25990,2019,acura,tlx,desconhecido,gasolina,60180,restaurado,automatico,compacto,sedan,branco
+25992,2018,acura,tlx,desconhecido,gasolina,16999,restaurado,automatico,compacto,sedan,branco
+25995,2018,acura,tlx,desconhecido,gasolina,44277,restaurado,automatico,compacto,sedan,preto
+26888,2019,acura,tlx,desconhecido,gasolina,9456,restaurado,automatico,compacto,sedan,cinza
+26990,2018,acura,tlx,excelente,gasolina,33000,restaurado,automatico,medio,sedan,preto
+27998,2018,acura,tlx,desconhecido,gasolina,13225,restaurado,automatico,compacto,sedan,prata
+28000,2018,acura,tlx,excelente,gasolina,55000,restaurado,automatico,compacto,sedan,branco
+29995,2018,acura,tlx,desconhecido,gasolina,14274,novo,automatico,compacto,sedan,branco
+32611,2019,acura,tlx,desconhecido,gasolina,46981,novo,automatico,compacto,sedan,branco
+36500,2020,acura,tlx,seminovo,gasolina,11500,novo,automatico,medio,sedan,azul
+23500,2018,acura,tlx 2.4l,excelente,gasolina,39800,restaurado,automatico,medio,sedan,vermelho
+23841,2019,acura,tlx 2.4l,seminovo,gasolina,28395,restaurado,automatico,compacto,sedan,preto
+28500,2018,acura,tlx 3.5 sedan 4d,excelente,gasolina,39000,restaurado,automatico,grande,sedan,prata
+18550,2016,acura,tlx 3.5l tech fwd,excelente,gasolina,65124,restaurado,automatico,medio,sedan,cinza
+19500,2015,acura,tlx 3.5l v6,seminovo,gasolina,90000,restaurado,automatico,grande,sedan,azul
+25900,2019,acura,tlx 3.5l v6,excelente,gasolina,17739,restaurado,automatico,medio,sedan,cinza
+29866,2018,acura,tlx 3.5l v6,excelente,gasolina,49800,novo,automatico,grande,sedan,branco
+35995,2018,acura,tlx 3.5l v6,excelente,gasolina,22026,novo,automatico,grande,sedan,preto
+35995,2018,acura,tlx 3.5l v6,excelente,gasolina,22026,novo,automatico,grande,sedan,preto
+35995,2018,acura,tlx 3.5l v6,excelente,gasolina,22026,novo,automatico,grande,sedan,preto
+22795,2016,acura,tlx sedan v6 tech,excelente,gasolina,35161,restaurado,automatico,medio,sedan,branco
+10500,2015,acura,tlx technology fwd,excelente,gasolina,140000,alienado,automatico,grande,sedan,marrom
+1500,2004,acura,tsx,bom,gasolina,160000,desconhecido,manual,medio,sedan,preto
+2000,2009,acura,tsx,seminovo,gasolina,113142,desconhecido,automatico,grande,sedan,preto
+2300,2006,acura,tsx,razoavel,gasolina,274000,desconhecido,outro,compacto,sedan,preto
+2500,2006,acura,tsx,razoavel,gasolina,184000,desconhecido,automatico,medio,sedan,branco
+3000,2006,acura,tsx,bom,gasolina,150000,desconhecido,automatico,medio,sedan,verde
+3200,2004,acura,tsx,razoavel,gasolina,230000,desconhecido,automatico,medio,sedan,prata
+3250,2005,acura,tsx,bom,gasolina,229000,desconhecido,automatico,grande,sedan,vermelho
+3375,2008,acura,tsx,bom,gasolina,233500,desconhecido,automatico,medio,sedan,vermelho
+3500,2004,acura,tsx,excelente,gasolina,220000,desconhecido,automatico,medio,sedan,vermelho
+3500,2005,acura,tsx,excelente,gasolina,114000,desconhecido,automatico,medio,sedan,prata
+3500,2004,acura,tsx,razoavel,gasolina,235000,desconhecido,automatico,grande,sedan,preto
+3900,2004,acura,tsx,excelente,gasolina,222490,desconhecido,automatico,medio,sedan,azul
+3900,2004,acura,tsx,bom,gasolina,270000,desconhecido,automatico,medio,sedan,preto
+4300,2004,acura,tsx,excelente,gasolina,123456,desconhecido,automatico,medio,sedan,cinza
+4500,2006,acura,tsx,excelente,gasolina,215576,desconhecido,automatico,compacto,sedan,prata
+4500,2006,acura,tsx,excelente,gasolina,116314,desconhecido,automatico,compacto,sedan,vermelho
+4500,2009,acura,tsx,seminovo,gasolina,120543,desconhecido,automatico,grande,sedan,preto
+4900,2004,acura,tsx,bom,gasolina,159000,sucata,automatico,compacto,sedan,prata
+5000,2004,acura,tsx,excelente,gasolina,104000,sucata,automatico,compacto,sedan,branco
+5200,2006,acura,tsx,bom,gasolina,123400,sucata,automatico,compacto,sedan,branco
+5400,2012,acura,tsx,bom,gasolina,221000,sucata,manual,medio,sedan,prata
+5500,2007,acura,tsx,bom,gasolina,216000,sucata,automatico,grande,sedan,prata
+5700,2004,acura,tsx,excelente,gasolina,201000,sucata,manual,grande,sedan,vermelho
+5900,2005,acura,tsx,bom,gasolina,145233,sucata,automatico,medio,sedan,azul
+5995,2006,acura,tsx,bom,gasolina,142971,sucata,automatico,medio,sedan,prata
+5995,2008,acura,tsx,desconhecido,gasolina,135691,sucata,automatico,compacto,sedan,branco
+5995,2006,acura,tsx,seminovo,gasolina,166692,sucata,automatico,medio,sedan,azul
+5999,2004,acura,tsx,excelente,gasolina,121163,sucata,automatico,grande,sedan,preto
+5999,2009,acura,tsx,excelente,gasolina,214021,sucata,automatico,grande,sedan,azul
+6495,2004,acura,tsx,desconhecido,gasolina,135700,sucata,automatico,compacto,sedan,preto
+6495,2004,acura,tsx,desconhecido,gasolina,135700,sucata,automatico,compacto,sedan,preto
+6499,2005,acura,tsx,desconhecido,gasolina,159545,sucata,automatico,compacto,sedan,branco
+6800,2008,acura,tsx,excelente,gasolina,163234,sucata,automatico,medio,sedan,prata
+6800,2009,acura,tsx,bom,gasolina,104000,sucata,automatico,medio,sedan,cinza
+6900,2009,acura,tsx,desconhecido,gasolina,86990,sucata,automatico,medio,sedan,branco
+6900,2009,acura,tsx,desconhecido,gasolina,86990,sucata,automatico,medio,sedan,branco
+6980,2010,acura,tsx,bom,diesel,155173,sucata,automatico,compacto,sedan,preto
+6980,2010,acura,tsx,bom,diesel,155173,sucata,automatico,compacto,sedan,preto
+6982,2010,acura,tsx,bom,gasolina,159720,sucata,automatico,medio,sedan,prata
+6995,2011,acura,tsx,excelente,gasolina,190000,sucata,automatico,grande,wagon,prata
+6995,2011,acura,tsx,excelente,gasolina,187127,sucata,automatico,compacto,sedan,cinza
+6999,2006,acura,tsx,excelente,gasolina,244405,sucata,automatico,compacto,sedan,preto
+6999,2006,acura,tsx,excelente,gasolina,244405,sucata,automatico,compacto,sedan,preto
+6999,2010,acura,tsx,excelente,gasolina,173241,sucata,automatico,grande,sedan,cinza
+7000,2007,acura,tsx,excelente,gasolina,133915,sucata,automatico,medio,sedan,prata
+7299,2010,acura,tsx,bom,gasolina,88000,sucata,automatico,grande,sedan,cinza
+7499,2009,acura,tsx,bom,gasolina,127099,sucata,automatico,grande,sedan,preto
+7850,2010,acura,tsx,excelente,gasolina,206401,sucata,automatico,compacto,sedan,preto
+7990,2009,acura,tsx,desconhecido,gasolina,128764,sucata,automatico,compacto,sedan,preto
+7992,2009,acura,tsx,desconhecido,gasolina,133338,sucata,automatico,compacto,sedan,prata
+7995,2005,acura,tsx,desconhecido,gasolina,101641,sucata,automatico,grande,sedan,branco
+7995,2011,acura,tsx,excelente,gasolina,118,sucata,automatico,medio,sedan,prata
+7999,2006,acura,tsx,excelente,gasolina,244405,sucata,automatico,compacto,sedan,preto
+7999,2009,acura,tsx,excelente,gasolina,197000,sucata,outro,medio,sedan,cinza
+8000,2011,acura,tsx,desconhecido,gasolina,110248,sucata,automatico,grande,sedan,preto
+8000,2013,acura,tsx,excelente,gasolina,152000,sucata,automatico,medio,sedan,branco
+8200,2012,acura,tsx,excelente,gasolina,134000,sucata,automatico,medio,sedan,prata
+8250,2009,acura,tsx,excelente,gasolina,176500,sucata,automatico,medio,sedan,prata
+8488,2007,acura,tsx,desconhecido,gasolina,129620,sucata,automatico,compacto,sedan,preto
+8488,2007,acura,tsx,desconhecido,gasolina,129620,sucata,automatico,compacto,sedan,preto
+8490,2010,acura,tsx,excelente,gasolina,83000,sucata,automatico,medio,sedan,branco
+8490,2010,acura,tsx,excelente,gasolina,83000,sucata,automatico,medio,sedan,cinza
+8490,2010,acura,tsx,excelente,gasolina,83000,sucata,automatico,medio,sedan,preto
+8495,2010,acura,tsx,bom,gasolina,160531,sucata,automatico,medio,sedan,preto
+8499,2010,acura,tsx,excelente,gasolina,152740,sucata,automatico,grande,sedan,prata
+8499,2010,acura,tsx,excelente,gasolina,152740,sucata,automatico,grande,sedan,prata
+8500,2010,acura,tsx,seminovo,gasolina,104075,sucata,automatico,grande,sedan,prata
+8611,2008,acura,tsx,desconhecido,gasolina,120244,sucata,automatico,compacto,sedan,preto
+8750,2010,acura,tsx,bom,gasolina,74000,sucata,automatico,grande,sedan,cinza
+8950,2010,acura,tsx,excelente,gasolina,74000,sucata,automatico,grande,sedan,preto
+8952,2011,acura,tsx,desconhecido,gasolina,144373,sucata,automatico,compacto,sedan,cinza
+8990,2009,acura,tsx,desconhecido,gasolina,128764,sucata,automatico,compacto,sedan,preto
+8990,2009,acura,tsx,desconhecido,gasolina,128764,sucata,automatico,compacto,sedan,preto
+9000,2011,acura,tsx,excelente,gasolina,114361,sucata,automatico,grande,sedan,branco
+9250,2011,acura,tsx,excelente,gasolina,130000,sucata,automatico,grande,sedan,preto
+9450,2010,acura,tsx,excelente,gasolina,123000,sucata,automatico,compacto,sedan,branco
+9500,2010,acura,tsx,excelente,gasolina,145020,sucata,automatico,medio,sedan,branco
+9590,2009,acura,tsx,desconhecido,gasolina,144172,sucata,automatico,compacto,sedan,azul
+9599,2010,acura,tsx,excelente,gasolina,91000,sucata,automatico,medio,sedan,vermelho
+9800,2010,acura,tsx,excelente,gasolina,142244,sucata,automatico,grande,sedan,prata
+9995,2010,acura,tsx,desconhecido,gasolina,153043,sucata,automatico,compacto,sedan,branco
+9995,2010,acura,tsx,desconhecido,gasolina,153043,sucata,automatico,compacto,sedan,azul
+9995,2012,acura,tsx,excelente,gasolina,141166,sucata,automatico,grande,wagon,preto
+10500,2012,acura,tsx,excelente,gasolina,100000,alienado,automatico,medio,sedan,preto
+10881,2012,acura,tsx,desconhecido,gasolina,136508,alienado,automatico,compacto,sedan,vermelho
+10931,2014,acura,tsx,desconhecido,gasolina,145766,alienado,automatico,compacto,sedan,preto
+10999,2010,acura,tsx,excelente,gasolina,116444,alienado,automatico,compacto,sedan,branco
+10999,2010,acura,tsx,excelente,gasolina,116444,alienado,automatico,compacto,sedan,branco
+10999,2010,acura,tsx,excelente,gasolina,116444,alienado,automatico,compacto,sedan,branco
+11200,2012,acura,tsx,excelente,gasolina,88650,alienado,automatico,grande,wagon,preto
+11300,2011,acura,tsx,excelente,gasolina,111530,alienado,automatico,medio,sedan,prata
+11481,2012,acura,tsx,desconhecido,gasolina,136508,alienado,automatico,compacto,sedan,vermelho
+11495,2012,acura,tsx,bom,gasolina,89000,alienado,automatico,medio,sedan,azul
+11980,2007,acura,tsx,desconhecido,gasolina,47753,alienado,automatico,compacto,sedan,prata
+11990,2013,acura,tsx,seminovo,gasolina,112460,alienado,automatico,grande,sedan,prata
+12990,2014,acura,tsx,excelente,gasolina,105000,alienado,automatico,medio,sedan,preto
+12990,2014,acura,tsx,excelente,gasolina,105000,alienado,automatico,medio,sedan,preto
+12995,2011,acura,tsx,excelente,gasolina,71741,alienado,automatico,grande,sedan,prata
+89000,2011,acura,tsx,excelente,gasolina,110000,novo,automatico,grande,sedan,branco
+3000,2012,acura,tsx 2.4,bom,gasolina,136359,desconhecido,automatico,grande,sedan,prata
+3000,2012,acura,tsx 2.4,bom,gasolina,136359,desconhecido,automatico,grande,sedan,prata
+7750,2006,acura,tsx 2.4,excelente,gasolina,93056,sucata,automatico,medio,sedan,cinza
+10990,2010,acura,tsx 2.4l w/tech,excelente,gasolina,104361,alienado,automatico,medio,sedan,branco
+3995,2004,acura,tsx navi,excelente,gasolina,228,desconhecido,automatico,medio,sedan,prata
+4495,2005,acura,tsx sedan,excelente,gasolina,168039,desconhecido,automatico,medio,sedan,prata
+6650,2008,acura,tsx sedan,excelente,gasolina,160223,sucata,automatico,compacto,sedan,cinza
+6650,2008,acura,tsx sedan,excelente,gasolina,160223,sucata,automatico,compacto,sedan,cinza
+9450,2010,acura,tsx sedan,excelente,gasolina,123000,sucata,automatico,compacto,sedan,branco
+13945,2013,acura,tsx sedan 4d,seminovo,gasolina,57189,alienado,automatico,grande,sedan,branco
+10800,2010,acura,tsx sport sedan,excelente,gasolina,90000,alienado,automatico,grande,sedan,preto
+7500,2012,acura,tsx sport wagon,excelente,gasolina,199368,sucata,automatico,medio,wagon,branco
+11900,2011,acura,tsx sport wagon,excelente,gasolina,108492,alienado,automatico,medio,wagon,cinza
+12488,2011,acura,tsx sport wagon,desconhecido,gasolina,99288,alienado,automatico,compacto,wagon,cinza
+23495,2012,acura,tsx sport wagon,seminovo,gasolina,21350,restaurado,automatico,medio,wagon,prata
+8450,2011,acura,tsx tech package,excelente,gasolina,168801,sucata,manual,grande,sedan,preto
+5999,2009,acura,tsx w/tech,excelente,gasolina,214021,sucata,automatico,grande,sedan,azul
+7500,2009,acura,tsx w/tech,seminovo,gasolina,237522,sucata,automatico,medio,sedan,branco
+9800,2011,acura,tsx w/tech,desconhecido,gasolina,145460,sucata,automatico,grande,sedan,branco
+11995,2012,acura,tsx wagon,bom,gasolina,139231,alienado,automatico,medio,wagon,vermel
