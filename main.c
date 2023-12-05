@@ -4,214 +4,143 @@
 #include <unistd.h>
 #include <stdbool.h>
 #include <time.h>
+typedef struct {
+    char venda[100];
+    char preco[100];
+    char ano[100];
+    char marca[100];
+    char modelo[100];
+    char condicao[100];
+    char combustivel[100];
+    char odometro[100];
+    char status[100];
+    char cambio[100];
+    char tamanho[100];
+    char tipo[100];
+    char cor[100];
+} Veiculo;
 
-char ***leArquivo(char arquivo[], int *linhas, int *colunas){
-    FILE *arq = NULL;
-    char linha[1000];
-    int tamanhoMaximo = 10000000;
-    int qtdItensPorLinha = 12;
-    int contador;
+typedef struct {
+    char nome[100];
+    float taxa;
+} Marca;
 
-    arq = fopen(arquivo, "r");
-
-    if(arq == NULL){
+void leArquivo(char arquivo[], Veiculo ***dados, int *linhas) {
+    FILE *arq = fopen(arquivo, "r");
+    if (arq == NULL) {
         printf("Falha ao abrir o arquivo para leitura.\n");
+        return;
     }
 
-    char **vetorLinhas = (char ** )malloc(tamanhoMaximo * sizeof(char *));
-    char ***dados = (char ***)malloc(tamanhoMaximo * sizeof(char **));
+    char linha[1000];
+    int tamanhoMaximo = 10000000;
 
-    if(vetorLinhas == NULL || dados == NULL){
+    *dados = (Veiculo **)malloc(tamanhoMaximo * sizeof(Veiculo *));
+    if (*dados == NULL) {
         printf("Erro ao alocar memoria.\n");
         fclose(arq);
+        return;
     }
 
     int contaLinhas = 0;
-    while (!feof(arq)){
-        fgets(linha, 1000, arq);
-        vetorLinhas[contaLinhas] = (char *)malloc(strlen(linha) +1 );
-        if(strlen(linha) > 1){
-            strcpy(vetorLinhas[contaLinhas], linha);
-            contaLinhas++;
+    while (fgets(linha, sizeof(linha), arq) != NULL) {
+        linha[strcspn(linha, "\r\n")] = 0;
+
+        (*dados)[contaLinhas] = (Veiculo *)malloc(sizeof(Veiculo));
+        if ((*dados)[contaLinhas] == NULL) {
+            printf("Erro ao alocar memoria para veiculo.\n");
+            fclose(arq);
+            return;
         }
+
+        sscanf(linha, "%[^,],%[^,],%[^,],%[^,],%[^,],%[^,],%[^,],%[^,],%[^,],%[^,],%[^,],%[^\n]",
+               (*dados)[contaLinhas]->preco, (*dados)[contaLinhas]->ano, (*dados)[contaLinhas]->marca,
+               (*dados)[contaLinhas]->modelo, (*dados)[contaLinhas]->condicao, (*dados)[contaLinhas]->combustivel,
+               (*dados)[contaLinhas]->odometro, (*dados)[contaLinhas]->status, (*dados)[contaLinhas]->cambio,
+               (*dados)[contaLinhas]->tamanho, (*dados)[contaLinhas]->tipo, (*dados)[contaLinhas]->cor);
+        contaLinhas++;
     }
 
-    for (int i = 0; i < contaLinhas; i++) {
-        dados[i] = (char **)malloc(qtdItensPorLinha * sizeof(char *));
-        
-    }
-    for (int i = 0; i < contaLinhas; i++) {
-        char *linha_copiada = strdup(vetorLinhas[i]);
-        char *token = strtok(linha_copiada, ",");
-        contador = 0;
-        while (token != NULL && contador < qtdItensPorLinha) {
-
-            dados[i][contador] = strdup(token);
-            contador++;
-            token = strtok(NULL, ",");
-        }
-        free(linha_copiada);
-    }
-
-    *linhas  = contaLinhas;
-    *colunas = qtdItensPorLinha;
+    *linhas = contaLinhas;
 
     fclose(arq);
-    return dados;
-
 }
 
-
-bool reescreArquivos(char ***dados[],char arq1[], char arq2[], int codigoVeiculo, int *linhas, int *colunas, char novoValor[]){
-    FILE *arquivo1 = NULL;
-    FILE *arquivo2 = NULL;
-    FILE *arquivo3 = NULL;
-    char historicoCompras[138] = "historico_compras.csv";
-
-    char ***ptrDados = *dados;   
-
-    if (access(arq2, F_OK) == -1) {
-        arquivo2 = fopen(arq2, "a+");
-        fprintf(arquivo2,"venda,ano,marca,modelo,condicao,combustivel,odometro,status,cambio,tamanho,tipo,cor\n");
-    }else{
-        arquivo2 = fopen(arq2, "a+");
-    }
-
-    arquivo1 = fopen(arq1, "w");
-    fflush(arquivo2);
-    fprintf(arquivo1,"preco,ano,marca,modelo,condicao,combustivel,odometro,status,cambio,tamanho,tipo,cor\n");
-    fflush(arquivo1);
-
-    if (access(historicoCompras, F_OK) == -1) {
-        arquivo3 = fopen(historicoCompras, "a+");
-        fprintf(arquivo3,"venda,ano,marca,modelo,condicao,combustivel,odometro,status,cambio,tamanho,tipo,cor, dataHora\n");
-    }else{
-        arquivo3 = fopen(historicoCompras, "a+");
-    }
-
-    if(arquivo1 == NULL  || arquivo2 == NULL || arquivo3 == NULL ){
-        printf("\n Nao foi possivel abrir arquivo\n");
-        return false;
-    }
-    fflush(arquivo3);
-
-
+bool reescreverArquivos(Veiculo **veiculos, int codigoVeiculo, int qtdVeiculos, FILE *arquivo1, FILE *arquivo2, FILE *arquivo3, char novoValor[]) {
     time_t currentTime;
     time(&currentTime);
     char *dateTimeString = ctime(&currentTime);
-    
-    int colunaData =(*colunas);
-    colunaData++; 
-    // Realoca memória para incluir uma coluna adicional apenas para a linha indicada por codigoVeiculo
+    dateTimeString[strcspn(dateTimeString, "\r\n")] = 0;
 
-    // Move os dados da cor do veículo (índice 10) para a nova coluna
-ptrDados[codigoVeiculo] = (char **)realloc(ptrDados[codigoVeiculo], colunaData * sizeof(char *));
+    fprintf(arquivo2, "venda,ano,marca,modelo,condicao,combustivel,odometro,status,cambio,tamanho,tipo,cor\n");
+    fprintf(arquivo1, "preco,ano,marca,modelo,condicao,combustivel,odometro,status,cambio,tamanho,tipo,cor\n");
 
-// Adiciona os dados à nova coluna (último índice)
-ptrDados[codigoVeiculo][colunaData - 1] = "NovaColuna";
+    char historicoCompras[138] = "historico_compras.csv";
+    fprintf(arquivo3, "venda,ano,marca,modelo,condicao,combustivel,odometro,status,cambio,tamanho,tipo,cor,dataHora\n");
 
-
-
-    char ***novaMatriz = (char ***)malloc(*linhas * sizeof(char **));
-    for (int i = 0; i < *linhas; i++) {
-        novaMatriz[i] = (char **)malloc(13 * sizeof(char *));
-        
-        for (int j = 0; j < *colunas; j++) {
-            novaMatriz[i][j] = strdup(ptrDados[i][j]);
-        }
-    }
-
-    
-    for (int i = 2; i < *linhas; i++) {
+    for (int i = 2; i < qtdVeiculos; i++) {
         if (i == codigoVeiculo) {
-            for (int k = 1; k < *colunas; k++) {
-                if (k == 1) {
-                    fprintf(arquivo2, "%s,", novoValor);
-                }
-
-                fprintf(arquivo2, "%s", ptrDados[i][k]);
-
-                if (k < *colunas - 1) {
-                    fprintf(arquivo2, ",");
-                }
-            }
-    
-            for (int m = 1; m < 12; m++) {
-
-                printf("%s,", ptrDados[i][m]);
-
-                if (m == 1) {
-                    fprintf(arquivo3, "%s,", novoValor);
-                }
-
-                fprintf(arquivo3, "%s", novaMatriz[i][m]);
-
-                if (m < 12) {
-                    fprintf(arquivo2, ",");
-                    fprintf(arquivo3, ",");
-                }
-                if(m==12){
-                    fprintf(arquivo3, ",%s", time(&currentTime));
-                }
-
-            }
-
-        }else{
-            for (int j = 0; j < *colunas; j++) {
-                fprintf(arquivo1, "%s", ptrDados[i][j]);
-                if (j < 11) {
-                    fprintf(arquivo1, ",");
-                }
-            }
+            fprintf(arquivo2, "%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s\n", veiculos[i]->venda, veiculos[i]->ano, veiculos[i]->marca,
+                    veiculos[i]->modelo, veiculos[i]->condicao, veiculos[i]->combustivel, veiculos[i]->odometro,
+                    veiculos[i]->status, veiculos[i]->cambio, veiculos[i]->tamanho, veiculos[i]->tipo, veiculos[i]->cor);
             
+            fprintf(arquivo3, "%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s\n", veiculos[i]->venda, veiculos[i]->ano, veiculos[i]->marca,
+                    veiculos[i]->modelo, veiculos[i]->condicao, veiculos[i]->combustivel, veiculos[i]->odometro,
+                    veiculos[i]->status, veiculos[i]->cambio, veiculos[i]->tamanho, veiculos[i]->tipo, veiculos[i]->cor, dateTimeString);
+        } else {
+            fprintf(arquivo1, "%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s\n", veiculos[i]->preco, veiculos[i]->ano, veiculos[i]->marca,
+                    veiculos[i]->modelo, veiculos[i]->condicao, veiculos[i]->combustivel, veiculos[i]->odometro,
+                    veiculos[i]->status, veiculos[i]->cambio, veiculos[i]->tamanho, veiculos[i]->tipo, veiculos[i]->cor);
         }
     }
-    
-    fclose(arquivo1);
-    fclose(arquivo2);
-    fclose(arquivo3);
 
     return true;
-
 }
 
-int compraVeiculos(FILE *arq,  char arquivo[]){
-
+int compraVeiculos(FILE *arq, char arquivo[]) {
+    Veiculo **dados;
+    int qtdVeiculos;
     int tamanhoMaximo = 10000;
-    char ***dados = (char***)malloc(tamanhoMaximo * sizeof(char**));
-    int linhas = 0, colunas =0;
-    char veiculoComprado[60];
+    int linhas = 0, colunas = 0;
     char marcaVeiculo[60];
-    int qtdVeicPorMarca=2;
+    int qtdVeicPorMarca = 2;
     bool encontrou = false;
 
     printf("Digite a marca do veiculo que quer comprar: ");
-    scanf(" %[^\n]", &marcaVeiculo); 
+    scanf(" %[^\n]", marcaVeiculo);
     fflush(stdin);
 
-    dados = leArquivo(arquivo, &linhas, &colunas);
+    leArquivo(arquivo, &dados, &qtdVeiculos);
+
+
+
     int codigoInterno[tamanhoMaximo];
-    for(int i = 2; i <= linhas;i++){
-        if(strcmp(marcaVeiculo, dados[i][2])==0){
+    for (int i = 2; i <= qtdVeiculos; i++) {
+        if (strcmp(marcaVeiculo, dados[i]->marca) == 0) {
             encontrou = true;
-            codigoInterno[qtdVeicPorMarca] = i; 
-        }else if (encontrou && strcmp(marcaVeiculo, dados[i][2]) != 0) {
+            codigoInterno[qtdVeicPorMarca] = i;
+        } else if (encontrou && strcmp(marcaVeiculo, dados[i]->marca) != 0) {
             break;
         }
         qtdVeicPorMarca++;
     }
 
-    if(!encontrou){
+    for (int i = 2; i <= qtdVeiculos; i++) {
+        for (int j = 2; j <= qtdVeiculos; i++) {
+       
+    }
+    }
+
+    if (!encontrou) {
         printf("\nMarca %s nao encontrada", marcaVeiculo);
         return 1;
     }
 
-
-    for(int i = 2; i < qtdVeicPorMarca;i++){
+    for (int i = 2; i < qtdVeicPorMarca; i++) {
         printf("Codigo: %d|", codigoInterno[i]);
-        for(int j = 0; j< colunas; j++){
-            printf("%-40s| ", dados[i][j]); 
-        }
+        printf("%-40s| ", dados[i]->marca);
+        printf("%-40s| ", dados[i]->modelo);
+
         printf("\n");
     }
 
@@ -221,21 +150,34 @@ int compraVeiculos(FILE *arq,  char arquivo[]){
 
     char veiculosEstoque[50] = "veiculos_estoque.csv";
     char veiculosOfertas[50] = "veiculos_ofertas.csv";
+    char historicoDeCompras[50] = "historico_compras.csv";
+    FILE *arq1;
+    FILE *arq2;
+    FILE *arq3;
+
+    arq1 = fopen('veiculosOfertas',"a+");
+    arq2 = fopen('veiculosEstoque',"a+");
+    arq3 = fopen('historicoDeCompras',"a+");
+
+
+
     remove(veiculosOfertas);
-    
+
     char novoValor[1000];
     printf("Digite o valor de venda pretendido: ");
-    scanf(" %[^\n]", &novoValor);
+    scanf(" %[^\n]", novoValor);
 
-    bool retorno = reescreArquivos(&dados, veiculosOfertas, veiculosEstoque, codigoVeiculo, &linhas, &colunas, novoValor);
+    bool retorno = reescreverArquivos(&dados, codigoVeiculo, qtdVeiculos, arq1, arq2, arq3, novoValor);
 
-    free(arq);
+    for (int i = 0; i < qtdVeiculos; i++) {
+        free(dados[i]);
+    }
     free(dados);
+
     fclose(arq);
 
     return 0;
 }
-
 
 int main()
 {
