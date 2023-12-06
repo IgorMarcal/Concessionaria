@@ -1,4 +1,2 @@
-venda,ano,marca,modelo,condicao,combustivel,odometro,status,cambio,tamanho,tipo,cor, dataHora
-15000,9800,2011,acura,zdx,bom,gasolina,220000,alienado,automatico,grande,SUV,prata
-,Mon Dec 04 22:41:43 2023
-
+venda,ano,marca,modelo,condicao,combustivel,odometro,status,cambio,tamanho,tipo,cor,dataHora
+9800,2011,acura,zdx,bom,gasolina,220000,alienado,automatico,grande,SUV,prata,Wed Dec 06 00:00:40 2023

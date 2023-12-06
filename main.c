@@ -78,20 +78,38 @@ void leArquivo(char arquivo[], Veiculo ***dados, int *linhas) {
     fclose(arq);
 }
 
-bool reescreverArquivos(Veiculo **veiculos, int codigoVeiculo, int qtdVeiculos, FILE *arquivo1, FILE *arquivo2, FILE *arquivo3, char novoValor[]) {
+bool reescreverArquivos(Veiculo **veiculos, int codigoVeiculo, int qtdVeiculos, char  veiculosEstoque[],char veiculosOfertas[],char historicoDeCompras[], char novoValor[]) {
     time_t currentTime;
     time(&currentTime);
     char *dateTimeString = ctime(&currentTime);
     dateTimeString[strcspn(dateTimeString, "\r\n")] = 0;
 
-    fprintf(arquivo2, "venda,ano,marca,modelo,condicao,combustivel,odometro,status,cambio,tamanho,tipo,cor\n");
-    fprintf(arquivo1, "preco,ano,marca,modelo,condicao,combustivel,odometro,status,cambio,tamanho,tipo,cor\n");
+    FILE *arquivo1;
+    FILE *arquivo2;
+    FILE *arquivo3;
 
-    char historicoCompras[138] = "historico_compras.csv";
-    fprintf(arquivo3, "venda,ano,marca,modelo,condicao,combustivel,odometro,status,cambio,tamanho,tipo,cor,dataHora\n");
+    if (access(veiculosEstoque, F_OK) == -1) {
+        arquivo2 = fopen(veiculosEstoque, "a+");
+        fprintf(arquivo2,"venda,ano,marca,modelo,condicao,combustivel,odometro,status,cambio,tamanho,tipo,cor\n");
+    }else{
+        arquivo2 = fopen(veiculosEstoque, "a+");
+    }
+
+    if (access(historicoDeCompras, F_OK) == -1) {
+        arquivo3 = fopen(historicoDeCompras, "a+");
+        fprintf(arquivo3, "venda,ano,marca,modelo,condicao,combustivel,odometro,status,cambio,tamanho,tipo,cor,dataHora\n");
+
+    }else{
+        arquivo2 = fopen(historicoDeCompras, "a+");
+    }
+    arquivo1 = fopen(veiculosOfertas, "w");
+    fflush(arquivo2);
+    fprintf(arquivo1,"preco,ano,marca,modelo,condicao,combustivel,odometro,status,cambio,tamanho,tipo,cor\n");
+    fflush(arquivo1);
 
     for (int i = 2; i < qtdVeiculos; i++) {
         if (i == codigoVeiculo) {
+            strcpy(veiculos[i]->venda, novoValor);
             fprintf(arquivo2, "%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s\n", veiculos[i]->venda, veiculos[i]->ano, veiculos[i]->marca,
                     veiculos[i]->modelo, veiculos[i]->condicao, veiculos[i]->combustivel, veiculos[i]->odometro,
                     veiculos[i]->status, veiculos[i]->cambio, veiculos[i]->tamanho, veiculos[i]->tipo, veiculos[i]->cor);
@@ -161,23 +179,12 @@ int compraVeiculos(FILE *arq, char arquivo[]) {
     char veiculosEstoque[50] = "veiculos_estoque.csv";
     char veiculosOfertas[50] = "veiculos_ofertas.csv";
     char historicoDeCompras[50] = "historico_compras.csv";
-    FILE *arq1;
-    FILE *arq2;
-    FILE *arq3;
-
-    arq1 = fopen('veiculosOfertas',"a+");
-    arq2 = fopen('veiculosEstoque',"a+");
-    arq3 = fopen('historicoDeCompras',"a+");
-
-
-
-    remove(veiculosOfertas);
 
     char novoValor[1000];
     printf("Digite o valor de venda pretendido: ");
     scanf(" %[^\n]", novoValor);
 
-    bool retorno = reescreverArquivos(&dados, codigoVeiculo, qtdVeiculos, arq1, arq2, arq3, novoValor);
+    bool retorno = reescreverArquivos(dados, codigoVeiculo, qtdVeiculos, veiculosEstoque, veiculosOfertas, historicoDeCompras, novoValor);
 
     for (int i = 0; i < qtdVeiculos; i++) {
         free(dados[i]);
