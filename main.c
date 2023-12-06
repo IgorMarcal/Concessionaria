@@ -53,13 +53,25 @@ void leArquivo(char arquivo[], Veiculo ***dados, int *linhas) {
             return;
         }
 
+        strcpy((*dados)[contaLinhas]->preco, linha);
+        strcpy((*dados)[contaLinhas]->ano, linha);
+        strcpy((*dados)[contaLinhas]->marca, linha);
+
         sscanf(linha, "%[^,],%[^,],%[^,],%[^,],%[^,],%[^,],%[^,],%[^,],%[^,],%[^,],%[^,],%[^\n]",
-               (*dados)[contaLinhas]->preco, (*dados)[contaLinhas]->ano, (*dados)[contaLinhas]->marca,
-               (*dados)[contaLinhas]->modelo, (*dados)[contaLinhas]->condicao, (*dados)[contaLinhas]->combustivel,
-               (*dados)[contaLinhas]->odometro, (*dados)[contaLinhas]->status, (*dados)[contaLinhas]->cambio,
-               (*dados)[contaLinhas]->tamanho, (*dados)[contaLinhas]->tipo, (*dados)[contaLinhas]->cor);
+            (*dados)[contaLinhas]->preco, (*dados)[contaLinhas]->ano, (*dados)[contaLinhas]->marca,
+            (*dados)[contaLinhas]->modelo, (*dados)[contaLinhas]->condicao, (*dados)[contaLinhas]->combustivel,
+            (*dados)[contaLinhas]->odometro, (*dados)[contaLinhas]->status, (*dados)[contaLinhas]->cambio,
+            (*dados)[contaLinhas]->tamanho, (*dados)[contaLinhas]->tipo, (*dados)[contaLinhas]->cor);
+
+        // printf("Veiculo %d:\n", contaLinhas + 1);
+        // printf("Preco: %s\n", (*dados)[contaLinhas]->preco);
+        // printf("Ano: %s\n", (*dados)[contaLinhas]->ano);
+        // printf("Marca: %s\n", (*dados)[contaLinhas]->marca);
+
         contaLinhas++;
     }
+  
+
 
     *linhas = contaLinhas;
 
@@ -113,9 +125,9 @@ int compraVeiculos(FILE *arq, char arquivo[]) {
     leArquivo(arquivo, &dados, &qtdVeiculos);
 
 
-
     int codigoInterno[tamanhoMaximo];
     for (int i = 2; i <= qtdVeiculos; i++) {
+
         if (strcmp(marcaVeiculo, dados[i]->marca) == 0) {
             encontrou = true;
             codigoInterno[qtdVeicPorMarca] = i;
@@ -125,12 +137,6 @@ int compraVeiculos(FILE *arq, char arquivo[]) {
         qtdVeicPorMarca++;
     }
 
-    for (int i = 2; i <= qtdVeiculos; i++) {
-        for (int j = 2; j <= qtdVeiculos; i++) {
-       
-    }
-    }
-
     if (!encontrou) {
         printf("\nMarca %s nao encontrada", marcaVeiculo);
         return 1;
@@ -138,8 +144,12 @@ int compraVeiculos(FILE *arq, char arquivo[]) {
 
     for (int i = 2; i < qtdVeicPorMarca; i++) {
         printf("Codigo: %d|", codigoInterno[i]);
+        printf("%-40s| ", dados[i]->preco);
+        printf("%-40s| ", dados[i]->ano);
         printf("%-40s| ", dados[i]->marca);
         printf("%-40s| ", dados[i]->modelo);
+        printf("%-40s| ", dados[i]->cor);
+
 
         printf("\n");
     }
