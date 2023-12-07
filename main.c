@@ -98,10 +98,10 @@ bool reescreverArquivos(Veiculo **veiculos, int codigoVeiculo, int qtdVeiculos, 
     if (access(historicoDeCompras, F_OK) == -1) {
         arquivo3 = fopen(historicoDeCompras, "a+");
         fprintf(arquivo3, "venda,ano,marca,modelo,condicao,combustivel,odometro,status,cambio,tamanho,tipo,cor,dataHora\n");
-
     }else{
-        arquivo2 = fopen(historicoDeCompras, "a+");
+        arquivo3 = fopen(historicoDeCompras, "a+");
     }
+
     arquivo1 = fopen(veiculosOfertas, "w");
     fflush(arquivo2);
     fprintf(arquivo1,"preco,ano,marca,modelo,condicao,combustivel,odometro,status,cambio,tamanho,tipo,cor\n");
@@ -111,16 +111,16 @@ bool reescreverArquivos(Veiculo **veiculos, int codigoVeiculo, int qtdVeiculos, 
         if (i == codigoVeiculo) {
             strcpy(veiculos[i]->venda, novoValor);
             fprintf(arquivo2, "%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s\n", veiculos[i]->venda, veiculos[i]->ano, veiculos[i]->marca,
-                    veiculos[i]->modelo, veiculos[i]->condicao, veiculos[i]->combustivel, veiculos[i]->odometro,
-                    veiculos[i]->status, veiculos[i]->cambio, veiculos[i]->tamanho, veiculos[i]->tipo, veiculos[i]->cor);
+                veiculos[i]->modelo, veiculos[i]->condicao, veiculos[i]->combustivel, veiculos[i]->odometro,
+                veiculos[i]->status, veiculos[i]->cambio, veiculos[i]->tamanho, veiculos[i]->tipo, veiculos[i]->cor);
             
             fprintf(arquivo3, "%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s\n", veiculos[i]->venda, veiculos[i]->ano, veiculos[i]->marca,
-                    veiculos[i]->modelo, veiculos[i]->condicao, veiculos[i]->combustivel, veiculos[i]->odometro,
-                    veiculos[i]->status, veiculos[i]->cambio, veiculos[i]->tamanho, veiculos[i]->tipo, veiculos[i]->cor, dateTimeString);
+                veiculos[i]->modelo, veiculos[i]->condicao, veiculos[i]->combustivel, veiculos[i]->odometro,
+                veiculos[i]->status, veiculos[i]->cambio, veiculos[i]->tamanho, veiculos[i]->tipo, veiculos[i]->cor, dateTimeString);
         } else {
             fprintf(arquivo1, "%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s\n", veiculos[i]->preco, veiculos[i]->ano, veiculos[i]->marca,
-                    veiculos[i]->modelo, veiculos[i]->condicao, veiculos[i]->combustivel, veiculos[i]->odometro,
-                    veiculos[i]->status, veiculos[i]->cambio, veiculos[i]->tamanho, veiculos[i]->tipo, veiculos[i]->cor);
+                veiculos[i]->modelo, veiculos[i]->condicao, veiculos[i]->combustivel, veiculos[i]->odometro,
+                veiculos[i]->status, veiculos[i]->cambio, veiculos[i]->tamanho, veiculos[i]->tipo, veiculos[i]->cor);
         }
     }
 
@@ -143,16 +143,15 @@ int compraVeiculos(FILE *arq, char arquivo[]) {
     leArquivo(arquivo, &dados, &qtdVeiculos);
 
 
-    int codigoInterno[tamanhoMaximo];
-    for (int i = 2; i <= qtdVeiculos; i++) {
-
+    int codigoInterno[qtdVeiculos];
+    for (int i = 1; i <= qtdVeiculos; i++) {
         if (strcmp(marcaVeiculo, dados[i]->marca) == 0) {
             encontrou = true;
             codigoInterno[qtdVeicPorMarca] = i;
+            qtdVeicPorMarca++;
         } else if (encontrou && strcmp(marcaVeiculo, dados[i]->marca) != 0) {
             break;
         }
-        qtdVeicPorMarca++;
     }
 
     if (!encontrou) {
@@ -160,15 +159,13 @@ int compraVeiculos(FILE *arq, char arquivo[]) {
         return 1;
     }
 
-    for (int i = 2; i < qtdVeicPorMarca; i++) {
+    for (int i = 1; i < qtdVeicPorMarca; i++) {
         printf("Codigo: %d|", codigoInterno[i]);
-        printf("%-40s| ", dados[i]->preco);
-        printf("%-40s| ", dados[i]->ano);
-        printf("%-40s| ", dados[i]->marca);
-        printf("%-40s| ", dados[i]->modelo);
-        printf("%-40s| ", dados[i]->cor);
-
-
+        printf("%-40s| ", dados[codigoInterno[i]]->preco);
+        printf("%-40s| ", dados[codigoInterno[i]]->ano);
+        printf("%-40s| ", dados[codigoInterno[i]]->marca);
+        printf("%-40s| ", dados[codigoInterno[i]]->modelo);
+        printf("%-40s| ", dados[codigoInterno[i]]->cor);
         printf("\n");
     }
 
@@ -196,6 +193,105 @@ int compraVeiculos(FILE *arq, char arquivo[]) {
     return 0;
 }
 
+int registrarVenda() {
+    char estoqueVeiculos[128] = "veiculos_estoque.csv";
+    int qtdVeiculos;
+    Veiculo **dados;
+    Veiculo **dadosEstoque;
+    char marcaVeiculo[128];
+
+    time_t currentTime;
+    time(&currentTime);
+    char *dateTimeString = ctime(&currentTime);
+    dateTimeString[strcspn(dateTimeString, "\r\n")] = 0;
+
+    printf("Digite a marca do veiculo que quer vender: ");
+    scanf(" %[^\n]", marcaVeiculo);
+    fflush(stdin);
+
+    leArquivo(estoqueVeiculos, &dados, &qtdVeiculos);
+
+    int codigoInterno[qtdVeiculos];
+    bool encontrou = false;
+    int qtdVeicPorMarca = 0;
+    for (int i = 0; i < qtdVeiculos; i++) {
+        if (strcmp(marcaVeiculo, dados[i]->marca) == 0) {
+            encontrou = true;
+            codigoInterno[qtdVeicPorMarca] = i;
+            qtdVeicPorMarca++;
+        } else if (encontrou && strcmp(marcaVeiculo, dados[i]->marca) != 0) {
+            break;
+        }
+
+    }
+
+    if (!encontrou) {
+        printf("\nMarca %s nao encontrada", marcaVeiculo);
+        return 1;
+    }
+
+    for (int i = 0; i < qtdVeicPorMarca; i++) {
+        printf("Codigo: %d|", codigoInterno[i]);
+        printf("%-40s| ", dados[codigoInterno[i]]->preco);
+        printf("%-40s| ", dados[codigoInterno[i]]->ano);
+        printf("%-40s| ", dados[codigoInterno[i]]->marca);
+        printf("%-40s| ", dados[codigoInterno[i]]->modelo);
+        printf("%-40s| ", dados[codigoInterno[i]]->cor);
+        printf("\n");
+    }
+
+    int codigoVeiculo = 0;
+    printf("Selecione por codigo qual veiculo deseja: \n");
+    scanf("%d", &codigoVeiculo);
+
+    leArquivo(estoqueVeiculos, &dadosEstoque, &qtdVeiculos);
+
+    FILE *arquivo2;
+    char historicoVendas[138] = "historico_vendas.csv";
+    if (access(historicoVendas, F_OK) == -1) {
+        arquivo2 = fopen(historicoVendas, "a+");
+        fprintf(arquivo2,"venda,ano,marca,modelo,condicao,combustivel,odometro,status,cambio,tamanho,tipo,cor, data\n");
+    }else{
+        arquivo2 = fopen(historicoVendas, "a+");
+    }
+
+    for (int i = 0; i < qtdVeiculos; i++) {
+        if (i == codigoVeiculo) {
+            fprintf(arquivo2, "%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s\n", dados[i]->venda, dados[i]->ano, dados[i]->marca,
+                    dados[i]->modelo, dados[i]->condicao, dados[i]->combustivel, dados[i]->odometro,
+                    dados[i]->status, dados[i]->cambio, dados[i]->tamanho, dados[i]->tipo, dados[i]->cor, dateTimeString);
+
+        }
+    }
+
+    FILE *arquivo = fopen("veiculos_estoque.csv", "r");
+    FILE *arquivo_temp = fopen("veiculos_estoque_temp.csv", "w");
+
+    if (arquivo == NULL || arquivo_temp == NULL) {
+        printf("Erro ao abrir os arquivos.\n");
+        return 1;
+    }
+
+    char linha[1000];
+    int contador = 0;
+
+    while (fgets(linha, sizeof(linha), arquivo) != NULL) {
+        if (contador != codigoVeiculo) {
+            fprintf(arquivo_temp, "%s", linha);
+        }
+        contador++;
+    }
+
+    fclose(arquivo);
+    fclose(arquivo_temp);
+
+    remove("veiculos_estoque.csv");
+    rename("veiculos_estoque_temp.csv", "veiculos_estoque.csv");
+    
+    return 0;
+}
+
+
 int main()
 {
     int opc = 0;
@@ -211,7 +307,7 @@ int main()
         printf("|                                                |\n");
         printf("|0 - Zero para sair                              |\n");
         printf("|1 - QUESTAO 1 - Comprar Veículos                |\n");
-        printf("|2 - QUESTAO 2 - Nome cientifico                 |\n");
+        printf("|2 - QUESTAO 2 - Vender Veículo                  |\n");
         printf("|3 - QUESTAO 3 - Dados de peso                   |\n");
         printf("|4 - QUESTAO 4 - Nome Popular                    |\n");
         printf("|5 - QUESTAO 5 - Compara com arquivo 2           |\n");
@@ -228,9 +324,9 @@ int main()
         case 1:
             compraVeiculos(arq, veiculosOfertas);
             break;
-        // case 2:
-        //     imprimeNomeCientifico(arq, arquivo1);
-        //     break;
+        case 2:
+            registrarVenda();
+            break;
         // case 3:
         //     dadosDePeso(arq,arquivo1);
         //     break;
