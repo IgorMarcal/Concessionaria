@@ -257,7 +257,7 @@ int registrarVenda() {
 
     for (int i = 0; i < qtdVeiculos; i++) {
         if (i == codigoVeiculo) {
-            fprintf(arquivo2, "%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s\n", dados[i]->venda, dados[i]->ano, dados[i]->marca,
+            fprintf(arquivo2, "%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s\n", dados[i]->preco, dados[i]->ano, dados[i]->marca,
                     dados[i]->modelo, dados[i]->condicao, dados[i]->combustivel, dados[i]->odometro,
                     dados[i]->status, dados[i]->cambio, dados[i]->tamanho, dados[i]->tipo, dados[i]->cor, dateTimeString);
 
@@ -291,14 +291,84 @@ int registrarVenda() {
     return 0;
 }
 
+void salvarTaxas() {
+    char veiculos[128] = "veiculos_ofertas.csv";
+    char marcas[128] = "marcas.csv";
+    FILE *arquivoMarcas;
+    FILE *arquivoVeiculos;
+
+    arquivoMarcas = fopen(marcas, "a+");
+    arquivoVeiculos = fopen(veiculos, "a+");
+
+    if (arquivoVeiculos == NULL || arquivoMarcas == NULL) {
+        printf("Erro ao abrir os arquivos.\n");
+        return;
+    }
+
+    char linha[1000];
+    Marca *marcasArray[100];  
+    int qtdMarcas = 0;
+
+    while (fgets(linha, sizeof(linha), arquivoVeiculos) != NULL) {
+        linha[strcspn(linha, "\r\n")] = 0;
+
+        Veiculo veiculo;
+        sscanf(linha, "%[^,],%[^,],%[^,],%[^,],%[^,],%[^,],%[^,],%[^,],%[^,],%[^,],%[^,],%[^,],%[^\n]",
+               veiculo.preco, veiculo.ano, veiculo.marca, veiculo.modelo, veiculo.condicao, veiculo.combustivel,
+               veiculo.odometro, veiculo.status, veiculo.cambio, veiculo.tamanho, veiculo.tipo, veiculo.cor);
+
+        int marcaExistente = 0;
+        for (int i = 0; i < qtdMarcas; i++) {
+            if (strcmp(veiculo.marca, marcasArray[i]->nome) == 0) {
+                marcaExistente = 1;
+                break;
+            }
+        }
+
+        if (!marcaExistente) {
+            Marca *novaMarca = malloc(sizeof(Marca));
+            strcpy(novaMarca->nome, veiculo.marca);
+            novaMarca->taxa = 0.0;  
+            marcasArray[qtdMarcas++] = novaMarca;
+        }
+    }
+
+    char marcaDesejada[100];
+    printf("Digite a marca desejada: ");
+    scanf("%s", marcaDesejada);
+
+    int indiceMarca = -1;
+    for (int i = 0; i < qtdMarcas; i++) {
+        if (strcmp(marcaDesejada, marcasArray[i]->nome) == 0) {
+            indiceMarca = i;
+            break;
+        }
+    }
+
+    if (indiceMarca != -1) {
+        printf("Digite a nova taxa para a marca %s: ", marcaDesejada);
+        scanf("%f", &marcasArray[indiceMarca]->taxa);
+    } else {
+        printf("Marca não encontrada.\n");
+    }
+
+    for (int i = 0; i < qtdMarcas; i++) {
+        fprintf(arquivoMarcas, "%s,%.2f\n", marcasArray[i]->nome, marcasArray[i]->taxa);
+    }
+
+    fclose(arquivoVeiculos);
+    fclose(arquivoMarcas);
+
+    for (int i = 0; i < qtdMarcas; i++) {
+        free(marcasArray[i]);
+    }
+}
 
 int main()
 {
     int opc = 0;
     FILE *arq = NULL;
     char veiculosOfertas[50] = "veiculos_ofertas.csv";
-    char arquivo2[20] = "arquivo2.txt";
-
 
     do {
         printf(" ________________________________________________\n");
@@ -327,9 +397,9 @@ int main()
         case 2:
             registrarVenda();
             break;
-        // case 3:
-        //     dadosDePeso(arq,arquivo1);
-        //     break;
+        case 3:
+            salvarTaxas();
+            break;
         // case 4:
         //     imprimeNomePopular(arq, arquivo1);
         //     break;
