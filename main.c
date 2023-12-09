@@ -4,6 +4,8 @@
 #include <unistd.h>
 #include <stdbool.h>
 #include <time.h>
+#include <ctype.h>
+
 typedef struct {
     char venda[100];
     char preco[100];
@@ -364,6 +366,148 @@ void salvarTaxas() {
     }
 }
 
+void listarVeiculos(Veiculo **dados, int qtdVeiculos) {
+    char marcaDesejada[100];
+    
+    printf("Digite a marca desejada para filtrar os veículos: ");
+    scanf(" %[^\n]", marcaDesejada);
+
+    printf("Veículos disponíveis da marca %s:\n", marcaDesejada);
+    for (int i = 0; i < qtdVeiculos; i++) {
+        if (strcmp(dados[i]->marca, marcaDesejada) == 0) {
+            printf("%d | ", i);
+            printf("%s | %s | %s | %s | %s | %s | %s | %s | %s | %s | %s | %s\n", 
+                dados[i]->preco, dados[i]->ano, dados[i]->marca, dados[i]->modelo,
+                dados[i]->condicao, dados[i]->combustivel, dados[i]->odometro,
+                dados[i]->status, dados[i]->cambio, dados[i]->tamanho,
+                dados[i]->tipo, dados[i]->cor);
+        }
+    }
+}
+
+
+void alterarAtributos() {
+    char opcao[2];
+    char arquivo[50];
+    char atributo[50];
+    char novoValor[1000];
+
+    printf("Deseja alterar de estoque_veiculos.csv (1) ou veiculos_ofertas.csv (2)? ");
+    scanf("%s", opcao);
+
+    if (strcmp(opcao, "1") == 0) {
+        strcpy(arquivo, "estoque_veiculos.csv");
+    } else if (strcmp(opcao, "2") == 0) {
+        strcpy(arquivo, "veiculos_ofertas.csv");
+    } else {
+        printf("Opcao invalida.\n");
+        return;
+    }
+
+    Veiculo **dados;
+    int qtdVeiculos;
+    
+    leArquivo(arquivo, &dados, &qtdVeiculos);
+    listarVeiculos(dados, qtdVeiculos);
+
+    int codigoVeiculo;
+    printf("Digite o codigo do veiculo que deseja alterar: ");
+    scanf("%d", &codigoVeiculo);
+    
+    printf("Atributos disponíveis para alteracaoo:\n");
+    printf("Preco\n");
+    printf("Ano\n");
+    printf("Marca\n");
+    printf("Modelo\n");
+    printf("Condição\n");
+    printf("Combustivel\n");
+    printf("Odometro\n");
+    printf("Status\n");
+    printf("Cambio\n");
+    printf("Tamanho\n");
+    printf("Tipo\n");
+    printf("Cor\n");
+
+    printf("Digite o atributo que deseja alterar: ");
+    scanf("%s", atributo);
+    int indiceVeiculo = codigoVeiculo;
+
+    printf("Digite o novo valor para %s: ", atributo);
+    scanf(" %[^\n]", novoValor);
+    char atributoLower[50];
+    for (int i = 0; i < strlen(atributo); i++) {
+        atributoLower[i] = tolower(atributo[i]);
+    }
+    atributoLower[strlen(atributo)] = '\0';
+
+    if (indiceVeiculo >= 0 && indiceVeiculo < qtdVeiculos) {
+        if (strcmp(atributoLower, "preco") == 0) {
+            strcpy(dados[indiceVeiculo]->preco, novoValor);
+        } else if (strcmp(atributoLower, "ano") == 0) {
+            strcpy(dados[indiceVeiculo]->ano, novoValor);
+        } else if (strcmp(atributoLower, "marca") == 0) {
+            strcpy(dados[indiceVeiculo]->marca, novoValor);
+        } else if (strcmp(atributoLower, "modelo") == 0) {
+            strcpy(dados[indiceVeiculo]->modelo, novoValor);
+        } else if (strcmp(atributoLower, "condicao") == 0) {
+            strcpy(dados[indiceVeiculo]->condicao, novoValor);
+        } else if (strcmp(atributoLower, "combustivel") == 0) {
+            strcpy(dados[indiceVeiculo]->combustivel, novoValor);
+        } else if (strcmp(atributoLower, "odometro") == 0) {
+            strcpy(dados[indiceVeiculo]->odometro, novoValor);
+        } else if (strcmp(atributoLower, "status") == 0) {
+            strcpy(dados[indiceVeiculo]->status, novoValor);
+        } else if (strcmp(atributoLower, "cambio") == 0) {
+            strcpy(dados[indiceVeiculo]->cambio, novoValor);
+        } else if (strcmp(atributoLower, "tamanho") == 0) {
+            strcpy(dados[indiceVeiculo]->tamanho, novoValor);
+        } else if (strcmp(atributoLower, "tipo") == 0) {
+            strcpy(dados[indiceVeiculo]->tipo, novoValor);
+        } else if (strcmp(atributoLower, "cor") == 0) {
+            strcpy(dados[indiceVeiculo]->cor, novoValor);
+        } else {
+            printf("Atributo invalido.\n");
+            return;
+        }
+        
+
+        FILE *arq = fopen(arquivo, "w");
+        if (arq == NULL) {
+            printf("Erro ao abrir o arquivo para escrita.\n");
+            return;
+        }
+
+        fprintf(arq, "preco,ano,marca,modelo,condicao,combustivel,odometro,status,cambio,tamanho,tipo,cor\n");
+
+        for (int i = 0; i < qtdVeiculos; i++) {
+            fprintf(arq, "%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s\n", dados[i]->preco, dados[i]->ano, dados[i]->marca,
+                    dados[i]->modelo, dados[i]->condicao, dados[i]->combustivel, dados[i]->odometro,
+                    dados[i]->status, dados[i]->cambio, dados[i]->tamanho, dados[i]->tipo, dados[i]->cor);
+        }
+
+        fclose(arq);
+
+        printf("Atributo alterado com sucesso. Segue veiculo com novos valores\n");
+        printf("%s | %s | %s | %s | %s | %s | %s | %s | %s | %s | %s | %s | %s\n", 
+                dados[indiceVeiculo]->preco, dados[indiceVeiculo]->ano, dados[indiceVeiculo]->marca, dados[indiceVeiculo]->modelo,
+                dados[indiceVeiculo]->condicao, dados[indiceVeiculo]->combustivel, dados[indiceVeiculo]->odometro,
+                dados[indiceVeiculo]->status, dados[indiceVeiculo]->cambio, dados[indiceVeiculo]->tamanho,
+                dados[indiceVeiculo]->tipo, dados[indiceVeiculo]->cor);
+    } else {
+        printf("Codigo de veículo invalido.\n");
+    }
+
+
+    printf("Veiculos disponiveis após a alteração:\n");
+    listarVeiculos(dados, qtdVeiculos);
+
+
+    for (int i = 0; i < qtdVeiculos; i++) {
+        free(dados[i]);
+    }
+    free(dados);
+}
+
 int main()
 {
     int opc = 0;
@@ -376,10 +520,10 @@ int main()
         printf("|________________________________________________|\n");
         printf("|                                                |\n");
         printf("|0 - Zero para sair                              |\n");
-        printf("|1 - QUESTAO 1 - Comprar Veículos                |\n");
-        printf("|2 - QUESTAO 2 - Vender Veículo                  |\n");
+        printf("|1 - QUESTAO 1 - Comprar Veiculos                |\n");
+        printf("|2 - QUESTAO 2 - Vender Veiculo                  |\n");
         printf("|3 - QUESTAO 3 - Dados de peso                   |\n");
-        printf("|4 - QUESTAO 4 - Nome Popular                    |\n");
+        printf("|4 - QUESTAO 4 - Alterar atributo de veiculo     |\n");
         printf("|5 - QUESTAO 5 - Compara com arquivo 2           |\n");
         printf("|6 - QUESTAO 6 - Backup do arquivo 1             |\n");
         printf("|7 - QUESTAO 7 - Backup binario                  |\n");
@@ -400,9 +544,9 @@ int main()
         case 3:
             salvarTaxas();
             break;
-        // case 4:
-        //     imprimeNomePopular(arq, arquivo1);
-        //     break;
+        case 4:
+            alterarAtributos();
+            break;
         // case 5:
         //     imprimeFelinos(arq, arquivo1, arquivo2);
         //     break;
