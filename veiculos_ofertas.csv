@@ -1,6 +1,4 @@
-preco,ano,marca,modelo,condicao,combustivel,odometro,status,cambio,tamanho,tipo,cor
-3500,1997,acura,3.0cl,excelente,gasolina,190000,desconhecido,automatico,compacto,coupe,cinza
-6000,2003,acura,3.2 cl type s,excelente,gasolina,186567,sucata,manual,medio,coupe,fantasia
+venda,ano,marca,modelo,condicao,combustivel,odometro,status,cambio,tamanho,tipo,cor
 9999,2003,acura,3.2 cl type s,excelente,gasolina,136371,alienado,manual,grande,coupe,prata
 9999,2003,acura,3.2 cl type s,excelente,gasolina,136371,alienado,manual,grande,coupe,prata
 1299,2003,acura,3.2 tl,razoavel,gasolina,388931,desconhecido,automatico,grande,sedan,azul
@@ -952,4 +950,3 @@ preco,ano,marca,modelo,condicao,combustivel,odometro,status,cambio,tamanho,tipo,
 5999,2009,acura,tsx w/tech,excelente,gasolina,214021,sucata,automatico,grande,sedan,azul
 7500,2009,acura,tsx w/tech,seminovo,gasolina,237522,sucata,automatico,medio,sedan,branco
 9800,2011,acura,tsx w/tech,desconhecido,gasolina,145460,sucata,automatico,grande,sedan,branco
-11995,2012,acura,tsx wagon,bom,gasolina,139231,alienado,automatico,medio,wagon,vermel
