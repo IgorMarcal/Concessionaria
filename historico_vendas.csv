@@ -1,3 +1,9 @@
 venda,ano,marca,modelo,condicao,combustivel,odometro,status,cambio,tamanho,tipo,cor, data
-8500,2013,acura,ilx,bom,gasolina,169000,sucata,automatico,grande,sedan,preto,Sat Dec 09 15:58:02 2023
-98765,2012,acura,tsx wagon,bom,gasolina,139231,alienado,automatico,medio,wagon,vermelho,Sat Dec 09 15:59:08 2023
+9457700,1995,jeep,yj wrangler,excelente,gasolina,110000,sucata,manual,grande,SUV,fantasia,09/12/2023
+11556164,2005,acura,3.2 tl,excelente,gasolina,161260,sucata,automatico,medio,sedan,prata,09/12/2023
+12211524,2003,acura,3.2 tl,excelente,gasolina,154100,sucata,automatico,grande,sedan,branco,09/12/2023
+12210212,2006,acura,3.2 tl,seminovo,gasolina,185000,sucata,automatico,grande,sedan,verde,09/12/2023
+12682084,2003,acura,cl type s,bom,gasolina,322000,sucata,manual,compacto,coupe,cinza,09/12/2023
+0.000000,acura,cl type s,bom,gasolina,99000,desconhecido,automatico,medio,coupe,fantasia,09/12/2023,
+3000.00,2002,acura,cl type s,bom,gasolina,179000,desconhecido,automatico,medio,coupe,vermelho,09/12/2023
+5994.00,2003,acura,cl 3.2 type s,excelente,gasolina,182842,sucata,automatico,compacto,coupe,preto,09/12/2023

@@ -1,6 +1,8 @@
 venda,ano,marca,modelo,condicao,combustivel,odometro,status,cambio,tamanho,tipo,cor
-4995,2003,acura,cl 3.2 type s,excelente,gasolina,182842,sucata,automatico,compacto,coupe,preto
-2500,2002,acura,cl type s,bom,gasolina,179000,desconhecido,automatico,medio,coupe,vermelho
-3990,2003,acura,cl type s,bom,gasolina,99000,desconhecido,automatico,medio,coupe,fantasia
-7500,2003,acura,cl type s,bom,gasolina,322000,sucata,manual,compacto,coupe,cinza
-8000,2013,acura,ilx,excelente,gasolina,140044,sucata,automatico,medio,sedan,branco
+3500,2000,acura,3.5rl,excelente,gasolina,179000,desconhecido,automatico,grande,sedan,marrom
+3500,2000,acura,3.5rl,excelente,gasolina,178000,desconhecido,automatico,grande,sedan,marrom
+5200,2004,acura,3.5rl,excelente,gasolina,125300,sucata,automatico,grande,sedan,cinza
+3500,1999,acura,cl,bom,gasolina,206100,desconhecido,automatico,medio,coupe,fantasia
+3900,2001,acura,cl,bom,gasolina,151500,desconhecido,automatico,medio,coupe,branco
+10995,2003,acura,cl,bom,gasolina,46000,alienado,automatico,medio,coupe,vermelho
+3750,1997,acura,cl 3.0,excelente,gasolina,145000,desconhecido,automatico,compacto,coupe,verde

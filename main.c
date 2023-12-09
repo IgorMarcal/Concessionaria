@@ -5,6 +5,8 @@
 #include <stdbool.h>
 #include <time.h>
 #include <ctype.h>
+#include <sys/types.h>
+#include <sys/stat.h>
 
 typedef struct {
     char venda[100];
@@ -27,6 +29,23 @@ typedef struct {
     char nome[100];
     float taxa;
 } Marca;
+
+typedef struct {
+     char preco[100];
+    char ano[100];
+    char marca[100];
+    char modelo[100];
+    char condicao[100];
+    char combustivel[100];
+    char odometro[100];
+    char status[100];
+    char cambio[100];
+    char tamanho[100];
+    char tipo[100];
+    char cor[100];
+    char dataHora[30];
+} Transacao;
+
 
 void leArquivo(char arquivo[], Veiculo ***dados, int *linhas) {
     FILE *arq = fopen(arquivo, "r");
@@ -80,8 +99,10 @@ void leArquivo(char arquivo[], Veiculo ***dados, int *linhas) {
 bool reescreverArquivos(Veiculo **todosVeiculos, int *qtdeTotalVeiculos, int codigoVeiculo, int qtdVeiculos, char veiculosEstoque[], char veiculosOfertas[], char historicoDeCompras[], char novoValor[]) {
     time_t currentTime;
     time(&currentTime);
-    char *dateTimeString = ctime(&currentTime);
-    dateTimeString[strcspn(dateTimeString, "\r\n")] = 0;
+    struct tm *localTime = localtime(&currentTime);
+    char dateTimeString[20];
+    strftime(dateTimeString, sizeof(dateTimeString), "%d/%m/%Y", localTime);
+
 
     FILE *arquivo1;
     FILE *arquivo2;
@@ -742,6 +763,26 @@ int compraVeiculos(FILE *arq, char arquivo[]) {
     return 0;
 }
 
+float obterTaxaPorMarca(char *marca) {
+    FILE *arquivoMarcas = fopen("marcas.csv", "r");
+
+    if (arquivoMarcas == NULL) {
+        printf("Erro ao abrir o arquivo de marcas.\n");
+        exit(EXIT_FAILURE);
+    }
+
+    Marca marcaAtual;
+    while (fscanf(arquivoMarcas, "%99[^,],%f\n", marcaAtual.nome, &marcaAtual.taxa) == 2) {
+        if (strcmp(marca, marcaAtual.nome) == 0) {
+            fclose(arquivoMarcas);
+            return marcaAtual.taxa;
+        }
+    }
+
+    fclose(arquivoMarcas);
+    return 0.0;  
+}
+
 int registrarVenda() {
     char estoqueVeiculos[128] = "veiculos_estoque.csv";
     int qtdVeiculos;
@@ -751,8 +792,9 @@ int registrarVenda() {
 
     time_t currentTime;
     time(&currentTime);
-    char *dateTimeString = ctime(&currentTime);
-    dateTimeString[strcspn(dateTimeString, "\r\n")] = 0;
+    struct tm *localTime = localtime(&currentTime);
+    char dateTimeString[20];
+    strftime(dateTimeString, sizeof(dateTimeString), "%d/%m/%Y", localTime);
 
     int qtdFiltros = 0;
     leArquivo(estoqueVeiculos, &dados, &qtdVeiculos);
@@ -879,11 +921,18 @@ int registrarVenda() {
     }else{
         arquivo2 = fopen(historicoVendas, "a+");
     }
+
+
     for (int i = 0; i < qtdVeiculos; i++) {
         if (codigoVeiculo == resultados[i]->codigoInterno) {
+            float taxa = obterTaxaPorMarca(resultados[i]->marca);
+            if(taxa > 0){
+                float precoFinal = atof(resultados[i]->preco) * (taxa);
+                sprintf(resultados[i]->preco, "%.2f", precoFinal);
+            }   
             fprintf(arquivo2, "%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s\n", resultados[i]->preco, resultados[i]->ano, 
-                    resultados[i]->marca,resultados[i]->modelo, resultados[i]->condicao, resultados[i]->combustivel,
-                    resultados[i]->odometro,resultados[i]->status, resultados[i]->cambio, resultados[i]->tamanho,
+                    resultados[i]->marca, resultados[i]->modelo, resultados[i]->condicao, resultados[i]->combustivel,
+                    resultados[i]->odometro, resultados[i]->status, resultados[i]->cambio, resultados[i]->tamanho,
                     resultados[i]->tipo, resultados[i]->cor, dateTimeString);
         }
     }
@@ -1130,11 +1179,157 @@ void alterarAtributos() {
     free(dados);
 }
 
+void criarBackup(char *nomeArquivo) {
+    struct stat st = {0};
+    if (stat("backup", &st) == -1) {
+        if (mkdir("backup") != 0) {
+            perror("Erro ao criar a pasta 'backup'");
+            exit(EXIT_FAILURE);
+        }
+    }
+
+    char nomeBackup[128];
+    snprintf(nomeBackup, sizeof(nomeBackup), "backup/%s_backup.csv", nomeArquivo);
+
+    Veiculo **dados;
+    int qtdVeiculos;
+    leArquivo(nomeArquivo, &dados, &qtdVeiculos);
+
+    FILE *arquivoBackup = fopen(nomeBackup, "w");
+    if (arquivoBackup == NULL) {
+        perror("Erro ao abrir o arquivo de backup");
+        exit(EXIT_FAILURE);
+    }
+
+    for (int i = 0; i < qtdVeiculos; i++) {
+        fprintf(arquivoBackup, "%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s\n",
+                dados[i]->preco, dados[i]->ano, dados[i]->marca, dados[i]->modelo,
+                dados[i]->condicao, dados[i]->combustivel, dados[i]->odometro,
+                dados[i]->status, dados[i]->cambio, dados[i]->tamanho,
+                dados[i]->tipo, dados[i]->cor);
+    }
+
+    fclose(arquivoBackup);
+    printf("Backup criado com sucesso.\n");
+
+    for (int i = 0; i < qtdVeiculos; i++) {
+        free(dados[i]);
+    }
+    free(dados);
+}
+
+void apagarBackup(char *nomeArquivo) {
+    char nomeBackup[128];
+    snprintf(nomeBackup, sizeof(nomeBackup), "backup/%s_backup.csv", nomeArquivo);
+
+    if (remove(nomeBackup) != 0) {
+        perror("Erro ao apagar o arquivo de backup");
+        exit(EXIT_FAILURE);
+    }
+
+    printf("Backup apagado com sucesso.\n");
+}
+
+float calcularSaldoCompras(char *arquivoHistorico, char *dataInicio, char *dataFim) {
+    FILE *arqHistorico = fopen(arquivoHistorico, "r");
+    if (arqHistorico == NULL) {
+        printf("Erro ao abrir o arquivo de histórico.\n");
+        exit(EXIT_FAILURE);
+    }
+
+    Transacao transacao;
+    float saldoCompras = 0;
+
+    while (fscanf(arqHistorico, "%[^,],%[^,],%[^,],%[^,],%[^,],%[^,],%[^,],%[^,],%[^,],%[^,],%[^,],%[^\n]",
+                  transacao.tipo, transacao.ano, transacao.marca, transacao.modelo, transacao.condicao, transacao.combustivel,
+                  transacao.odometro, transacao.status, transacao.cambio, transacao.tamanho, transacao.tipo, transacao.cor,
+                  transacao.dataHora) == 12) {
+        float preco = atof(transacao.preco);
+        if (strcmp(transacao.tipo, "compra") == 0 &&
+            strcmp(transacao.dataHora, dataInicio) >= 0 && strcmp(transacao.dataHora, dataFim) <= 0) {
+            saldoCompras += preco;
+        }
+    }
+
+    fclose(arqHistorico);
+    return saldoCompras;
+}
+
+float calcularSaldoVendas(char *arquivoHistorico, char *dataInicio, char *dataFim) {
+    FILE *arqHistorico = fopen(arquivoHistorico, "r");
+    if (arqHistorico == NULL) {
+        printf("Erro ao abrir o arquivo de histórico.\n");
+        exit(EXIT_FAILURE);
+    }
+
+    Transacao transacao;
+    float saldoVendas = 0;
+
+    while (fscanf(arqHistorico, "%[^,],%[^,],%[^,],%[^,],%[^,],%[^,],%[^,],%[^,],%[^,],%[^,],%[^,],%[^\n]",
+                  transacao.tipo, transacao.ano, transacao.marca, transacao.modelo, transacao.condicao, transacao.combustivel,
+                  transacao.odometro, transacao.status, transacao.cambio, transacao.tamanho, transacao.tipo, transacao.cor,
+                  transacao.dataHora) == 12) {
+        float preco = atof(transacao.preco);
+        if (strcmp(transacao.tipo, "venda") == 0 &&
+            strcmp(transacao.dataHora, dataInicio) >= 0 && strcmp(transacao.dataHora, dataFim) <= 0) {
+            saldoVendas += preco;
+        }
+    }
+
+    fclose(arqHistorico);
+    return saldoVendas;
+}
+
+void imprimirRelatorio(FILE *output, Veiculo *veiculo, Transacao *transacao, float saldoFinal) {
+    fprintf(output, "\nVeiculo: %s %s %s %s\n", veiculo->ano, veiculo->marca, veiculo->modelo, veiculo->cor);
+    fprintf(output, "Preco: %s\n", veiculo->preco);
+    fprintf(output, "Status: %s\n", veiculo->status);
+    fprintf(output, "Odometro: %s\n", veiculo->odometro);
+    fprintf(output, "Data da Transacao: %s\n", transacao->dataHora);
+    fprintf(output, "Tipo da Transacao: %s\n", transacao->tipo);
+    fprintf(output, "\nSaldo Final: R$ %.2f\n", saldoFinal);
+
+}
+
+void gerarRelatorio(char *arquivoHistoricoCompras, char *arquivoHistoricoVendas, char *dataInicio, char *dataFim, int opcao) {
+    float saldoCompras = calcularSaldoCompras(arquivoHistoricoCompras, dataInicio, dataFim);
+    float saldoVendas = calcularSaldoVendas(arquivoHistoricoVendas, dataInicio, dataFim);
+
+    float saldoFinal = saldoVendas - saldoCompras;
+
+    if (opcao == 1) {
+        printf("Relatório de Compras e Vendas\n");
+        printf("----------------------------\n");
+        // Adicione aqui a parte para imprimir na tela
+    } else if (opcao == 2) {
+        FILE *arquivoSaida = fopen("relatorio_saida.txt", "a");
+        if (arquivoSaida == NULL) {
+            printf("Erro ao abrir o arquivo de saída.\n");
+            exit(EXIT_FAILURE);
+        }
+
+        printf("Saldo Final: R$ %.2f\n", saldoFinal);
+
+        // Adicione aqui a parte para imprimir no arquivo
+        fclose(arquivoSaida);
+    } else {
+        printf("Opção inválida.\n");
+    }
+}
+
+
 int main()
 {
     int opc = 0;
     FILE *arq = NULL;
     char veiculosOfertas[50] = "veiculos_ofertas.csv";
+    char arquivoBackup[50] = "";
+    char arquivoHistorico[] = "historico_compras.csv";
+    char arquivoVeiculos[] = "historico_vendas.csv";
+    char dataInicio[20];
+    char dataFim[20];
+    int opcao;
+    char arquivo[100];
 
     do {
         printf(" ________________________________________________\n");
@@ -1144,49 +1339,61 @@ int main()
         printf("|0 - Zero para sair                              |\n");
         printf("|1 - QUESTAO 1 - Comprar Veiculos                |\n");
         printf("|2 - QUESTAO 2 - Vender Veiculo                  |\n");
-        printf("|3 - QUESTAO 3 - Dados de peso                   |\n");
+        printf("|3 - QUESTAO 3 - Alterar taxa                    |\n");
         printf("|4 - QUESTAO 4 - Alterar atributo de veiculo     |\n");
-        printf("|5 - QUESTAO 5 - Compara com arquivo 2           |\n");
-        printf("|6 - QUESTAO 6 - Backup do arquivo 1             |\n");
-        printf("|7 - QUESTAO 7 - Backup binario                  |\n");
+        printf("|5 - QUESTAO 5 - Cria Backup                     |\n");
+        printf("|6 - QUESTAO 6 - Remover Backup                  |\n");
+        printf("|7 - QUESTAO 7 - Relatorio                       |\n");
         printf("|8 - QUESTAO 8 - Struct De pessoa                |\n");
         printf("|9 - QUESTAO 9 - Struct De materia               |\n");
         printf("|10 - QUESTAO 10 - Imprime todos os dados arq 1  |\n");
         printf("|________________________________________________|\n");
         scanf("%d", &opc);
-    }while(opc <0 || opc > 10);
+    
 
-    switch(opc){
-        case 1:
-            compraVeiculos(arq, veiculosOfertas);
-            break;
-        case 2:
-            registrarVenda();
-            break;
-        case 3:
-            salvarTaxas();
-            break;
-        case 4:
-            alterarAtributos();
-            break;
-        // case 5:
-        //     imprimeFelinos(arq, arquivo1, arquivo2);
-        //     break;
-        // case 6:
-        //     backupArquivo(arq, arquivo1, arquivo2);
-        //     break;
-        // case 7:
-        //     backupArquivoBinario(arq, arquivo1, arquivo2);
-        //     break;
-        // case 8:
-        //     lePessoa();
-        //     break;
-        // case 9:
-        //     MediaAlunos();
-        //     break;
-        // case 10:
-        //     imprimeDadosArquivo(arq, arquivo1);
-        //     break;
-    }
+        switch(opc){
+            case 1:
+                compraVeiculos(arq, veiculosOfertas);
+                break;
+            case 2:
+                registrarVenda();
+                break;
+            case 3:
+                salvarTaxas();
+                break;
+            case 4:
+                alterarAtributos();
+                break;
+            case 5:
+                printf("Qual arquivo deseja criar o backup?\n");
+                scanf(" %s", arquivoBackup);
+                criarBackup(arquivoBackup);
+                break;
+            case 6:
+                printf("Qual arquivo deseja remover o backup?\n");
+                scanf(" %s", arquivoBackup);
+                apagarBackup(arquivoBackup);
+                break;
+            case 7: 
+                printf("Relatorio de vendas ou de compras: ");
+                scanf(" %19[^\n]", arquivo);
+
+                printf("Digite a data de início (dd/mm/aaaa): ");
+                scanf(" %19[^\n]", dataInicio);
+                printf("Digite a data de fim (dd/mm/aaaa): ");
+                scanf(" %19[^\n]", dataFim);
+
+                printf("Escolha a opção:\n");
+                printf("1 - Visualizar na Tela\n");
+                printf("2 - Salvar em Arquivo\n");
+                scanf("%d", &opcao);
+                if (opcao == 1 || opcao == 2) {
+                    gerarRelatorio(arquivoHistorico, arquivoVeiculos, dataInicio, dataFim, opcao);
+                } else {
+                    printf("Opção inválida.\n");
+                }
+                break;
+        }
+    }while(opc <0 || opc > 7);
 
 }
