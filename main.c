@@ -20,6 +20,7 @@ typedef struct {
     char tamanho[100];
     char tipo[100];
     char cor[100];
+    int codigoInterno;
 } Veiculo;
 
 typedef struct {
@@ -36,6 +37,7 @@ void leArquivo(char arquivo[], Veiculo ***dados, int *linhas) {
 
     char linha[1000];
     int tamanhoMaximo = 10000000;
+    int codigoInternoAtual = 1; 
 
     *dados = (Veiculo **)malloc(tamanhoMaximo * sizeof(Veiculo *));
     if (*dados == NULL) {
@@ -58,17 +60,14 @@ void leArquivo(char arquivo[], Veiculo ***dados, int *linhas) {
         strcpy((*dados)[contaLinhas]->preco, linha);
         strcpy((*dados)[contaLinhas]->ano, linha);
         strcpy((*dados)[contaLinhas]->marca, linha);
-
-        sscanf(linha, "%[^,],%[^,],%[^,],%[^,],%[^,],%[^,],%[^,],%[^,],%[^,],%[^,],%[^,],%[^\n]",
+        (*dados)[contaLinhas]->codigoInterno = codigoInternoAtual;
+        codigoInternoAtual++;
+        
+        sscanf(linha, "%[^,],%[^,],%[^,],%[^,],%[^,],%[^,],%[^,],%[^,],%[^,],%[^,],%[^,],%[^,],%[^\n]",
             (*dados)[contaLinhas]->preco, (*dados)[contaLinhas]->ano, (*dados)[contaLinhas]->marca,
             (*dados)[contaLinhas]->modelo, (*dados)[contaLinhas]->condicao, (*dados)[contaLinhas]->combustivel,
             (*dados)[contaLinhas]->odometro, (*dados)[contaLinhas]->status, (*dados)[contaLinhas]->cambio,
             (*dados)[contaLinhas]->tamanho, (*dados)[contaLinhas]->tipo, (*dados)[contaLinhas]->cor);
-
-        // printf("Veiculo %d:\n", contaLinhas + 1);
-        // printf("Preco: %s\n", (*dados)[contaLinhas]->preco);
-        // printf("Ano: %s\n", (*dados)[contaLinhas]->ano);
-        // printf("Marca: %s\n", (*dados)[contaLinhas]->marca);
 
         contaLinhas++;
     }
@@ -129,6 +128,464 @@ bool reescreverArquivos(Veiculo **veiculos, int codigoVeiculo, int qtdVeiculos, 
     return true;
 }
 
+char *filtrosVeiculos(int *qtdFiltros) {
+    char *filtrosUtilizados = (char *)malloc(200 * sizeof(char));
+    filtrosUtilizados[0] = '\0'; 
+    char filtroMarca[20], filtroAno[20], filtroPreco[20], filtroModelo[20];
+    char filtroCondicao[20], filtroCombustivel[20], filtroOdometro[20], filtroStatus[20];
+    char filtroCambio[20], filtroTamanho[20], filtroTipo[20], filtroCor[20];
+    *qtdFiltros = 0;
+
+    printf("Quer utilizar filtro de marca? (sim/nao): ");
+    scanf(" %s", filtroMarca);
+    if (strcmp(filtroMarca, "sim") == 0) {
+        printf("Digite a marca do veiculo que deseja: ");
+        scanf(" %[^\n]", filtroMarca);
+        strcat(filtrosUtilizados, "Marca ");
+        strcat(filtrosUtilizados, filtroMarca);
+        strcat(filtrosUtilizados, ", ");
+        (*qtdFiltros)++;
+    }
+
+    printf("Quer utilizar filtro de ano? (sim/nao): ");
+    scanf(" %s", filtroAno);
+    if (strcmp(filtroAno, "sim") == 0) {
+        printf("Digite o ano do veiculo que deseja: ");
+        scanf(" %[^\n]", filtroAno);
+        strcat(filtrosUtilizados, "Ano ");
+        strcat(filtrosUtilizados, filtroAno);
+        strcat(filtrosUtilizados, ", ");
+        (*qtdFiltros)++;
+    }
+
+    printf("Quer utilizar filtro de preco? (sim/nao): ");
+    scanf(" %s", filtroPreco);
+    if (strcmp(filtroPreco, "sim") == 0) {
+        printf("Digite o preco desejado: ");
+        scanf(" %[^\n]", filtroPreco);
+        strcat(filtrosUtilizados, "Preco ");
+        strcat(filtrosUtilizados, filtroPreco);
+        strcat(filtrosUtilizados, ", ");
+        (*qtdFiltros)++;
+    }
+
+    printf("Quer utilizar filtro de modelo? (sim/nao): ");
+    scanf(" %s", filtroModelo);
+    if (strcmp(filtroModelo, "sim") == 0) {
+        printf("Digite o modelo do veiculo que deseja: ");
+        scanf(" %[^\n]", filtroModelo);
+        strcat(filtrosUtilizados, "Modelo ");
+        strcat(filtrosUtilizados, filtroModelo);
+        strcat(filtrosUtilizados, ", ");
+        (*qtdFiltros)++;
+    }
+
+    printf("Quer utilizar filtro de condicão? (sim/nao): ");
+    scanf(" %s", filtroCondicao);
+    if (strcmp(filtroCondicao, "sim") == 0) {
+        printf("Digite a condicão do veiculo que deseja: ");
+        scanf(" %[^\n]", filtroCondicao);
+        strcat(filtrosUtilizados, "Condicão ");
+        strcat(filtrosUtilizados, filtroCondicao);
+        strcat(filtrosUtilizados, ", ");
+        (*qtdFiltros)++;
+    }
+
+    printf("Quer utilizar filtro de combustivel? (sim/nao): ");
+    scanf(" %s", filtroCombustivel);
+    if (strcmp(filtroCombustivel, "sim") == 0) {
+        printf("Digite o tipo de combustivel desejado: ");
+        scanf(" %[^\n]", filtroCombustivel);
+        strcat(filtrosUtilizados, "Combustivel ");
+        strcat(filtrosUtilizados, filtroCombustivel);
+        strcat(filtrosUtilizados, ", ");
+        (*qtdFiltros)++;
+    }
+
+    printf("Quer utilizar filtro de odometro? (sim/nao): ");
+    scanf(" %s", filtroOdometro);
+    if (strcmp(filtroOdometro, "sim") == 0) {
+        printf("Digite a faixa de odometro desejada: ");
+        scanf(" %[^\n]", filtroOdometro);
+        strcat(filtrosUtilizados, "Odometro ");
+        strcat(filtrosUtilizados, filtroOdometro);
+        strcat(filtrosUtilizados, ", ");
+        (*qtdFiltros)++;
+    }
+
+    printf("Quer utilizar filtro de status? (sim/nao): ");
+    scanf(" %s", filtroStatus);
+    if (strcmp(filtroStatus, "sim") == 0) {
+        printf("Digite o status desejado: ");
+        scanf(" %[^\n]", filtroStatus);
+        strcat(filtrosUtilizados, "Status ");
+        strcat(filtrosUtilizados, filtroStatus);
+        strcat(filtrosUtilizados, ", ");
+        (*qtdFiltros)++;
+    }
+
+    printf("Quer utilizar filtro de cambio? (sim/nao): ");
+    scanf(" %s", filtroCambio);
+    if (strcmp(filtroCambio, "sim") == 0) {
+        printf("Digite o tipo de cambio desejado: ");
+        scanf(" %[^\n]", filtroCambio);
+        strcat(filtrosUtilizados, "Cambio ");
+        strcat(filtrosUtilizados, filtroCambio);
+        strcat(filtrosUtilizados, ", ");
+        (*qtdFiltros)++;
+    }
+
+    printf("Quer utilizar filtro de tamanho? (sim/nao): ");
+    scanf(" %s", filtroTamanho);
+    if (strcmp(filtroTamanho, "sim") == 0) {
+        printf("Digite o tamanho desejado: ");
+        scanf(" %[^\n]", filtroTamanho);
+        strcat(filtrosUtilizados, "Tamanho ");
+        strcat(filtrosUtilizados, filtroTamanho);
+        strcat(filtrosUtilizados, ", ");
+        (*qtdFiltros)++;
+    }
+
+    printf("Quer utilizar filtro de tipo? (sim/nao): ");
+    scanf(" %s", filtroTipo);
+    if (strcmp(filtroTipo, "sim") == 0) {
+        printf("Digite o tipo desejado: ");
+        scanf(" %[^\n]", filtroTipo);
+        strcat(filtrosUtilizados, "Tipo ");
+        strcat(filtrosUtilizados, filtroTipo);
+        strcat(filtrosUtilizados, ", ");
+        (*qtdFiltros)++;
+    }
+
+    printf("Quer utilizar filtro de cor? (sim/nao): ");
+    scanf(" %s", filtroCor);
+    if (strcmp(filtroCor, "sim") == 0) {
+        printf("Digite a cor desejada: ");
+        scanf(" %[^\n]", filtroCor);
+        strcat(filtrosUtilizados, "Cor ");
+        strcat(filtrosUtilizados, filtroCor);
+        strcat(filtrosUtilizados, ", ");
+        (*qtdFiltros)++;
+    }
+
+    int tamanho = strlen(filtrosUtilizados);
+    if (tamanho > 0) {
+        filtrosUtilizados[tamanho - 2] = '\0'; 
+    }
+
+
+    return filtrosUtilizados;
+}
+
+Veiculo **buscaMarca(Veiculo **dados, int *qtdVeiculos) {
+    int qtdVeicPorMarca = 0;
+    Veiculo **resultados = malloc(*qtdVeiculos * sizeof(Veiculo *));
+    char marca[50];
+    printf("Qual marca deseja buscar? \n");
+    scanf(" %[^\n]", marca);
+    for (int i = 0; i < *qtdVeiculos; i++) {
+        if (strcmp(marca, dados[i]->marca) == 0) {
+            resultados[qtdVeicPorMarca] = dados[i];
+            qtdVeicPorMarca++;
+        }
+    }
+
+    if (qtdVeicPorMarca == 0) {
+        printf("Nenhum veiculo encontrado para a marca %s\n", marca);
+        free(resultados);
+        return NULL;
+    }
+
+    resultados = realloc(resultados, qtdVeicPorMarca * sizeof(Veiculo *));
+    
+    *qtdVeiculos = qtdVeicPorMarca;
+    return resultados;
+}
+
+Veiculo **buscaPreco(Veiculo **dados, int *qtdVeiculos) {
+    int qtdVeicPorPreco = 0;
+    Veiculo **resultados = malloc(*qtdVeiculos * sizeof(Veiculo *));
+    char preco[20];
+    printf("Qual preco deseja buscar? \n");
+    scanf(" %[^\n]", preco);
+    
+    for (int i = 0; i < *qtdVeiculos; i++) {
+        if (strcmp(preco, dados[i]->preco) == 0) {
+            resultados[qtdVeicPorPreco] = dados[i];
+            qtdVeicPorPreco++;
+        }
+    }
+
+    if (qtdVeicPorPreco == 0) {
+        printf("Nenhum veiculo encontrado para o preco %s\n", preco);
+        free(resultados);
+        return NULL;
+    }
+
+    resultados = realloc(resultados, qtdVeicPorPreco * sizeof(Veiculo *));
+    
+    *qtdVeiculos = qtdVeicPorPreco;
+    return resultados;
+}
+
+Veiculo **buscaAno(Veiculo **dados, int *qtdVeiculos) {
+    int qtdVeicPorAno = 0;
+    Veiculo **resultados = malloc(*qtdVeiculos * sizeof(Veiculo *));
+    char ano[20];
+    printf("Qual ano deseja buscar? \n");
+    scanf(" %[^\n]", ano);
+
+    for (int i = 0; i < *qtdVeiculos; i++) {
+        if (strcmp(ano, dados[i]->ano) == 0) {
+            resultados[qtdVeicPorAno] = dados[i];
+            qtdVeicPorAno++;
+        }
+    }
+
+    if (qtdVeicPorAno == 0) {
+        printf("Nenhum veiculo encontrado para o ano %s\n", ano);
+        free(resultados);
+        return NULL;
+    }
+
+    resultados = realloc(resultados, qtdVeicPorAno * sizeof(Veiculo *));
+    
+    *qtdVeiculos = qtdVeicPorAno;
+    return resultados;
+}
+
+Veiculo **buscaModelo(Veiculo **dados, int *qtdVeiculos) {
+    int qtdVeicPorModelo = 0;
+    Veiculo **resultados = malloc(*qtdVeiculos * sizeof(Veiculo *));
+    char modelo[50];
+    printf("Qual modelo deseja buscar? \n");
+    scanf(" %s", modelo);
+
+    for (int i = 0; i < *qtdVeiculos; i++) {
+        if (strcmp(modelo, dados[i]->modelo) == 0) {
+            resultados[qtdVeicPorModelo] = dados[i];
+            qtdVeicPorModelo++;
+        }
+    }
+
+    if (qtdVeicPorModelo == 0) {
+        printf("Nenhum veiculo encontrado para o modelo %s\n", modelo);
+        free(resultados);
+        return NULL;
+    }
+
+    resultados = realloc(resultados, qtdVeicPorModelo * sizeof(Veiculo *));
+    
+    *qtdVeiculos = qtdVeicPorModelo;
+    return resultados;
+}
+
+
+Veiculo **buscaCombustivel(Veiculo **dados, int *qtdVeiculos) {
+    int qtdVeicPorCombustivel = 0;
+    Veiculo **resultados = malloc(*qtdVeiculos * sizeof(Veiculo *));
+    char combustivel[50];
+    printf("Qual tipo de combustivel deseja buscar? \n");
+    scanf(" %[^\n]", combustivel);
+
+    for (int i = 0; i < *qtdVeiculos; i++) {
+        if (strcmp(combustivel, dados[i]->combustivel) == 0) {
+            resultados[qtdVeicPorCombustivel] = dados[i];
+            qtdVeicPorCombustivel++;
+        }
+    }
+
+    if (qtdVeicPorCombustivel == 0) {
+        printf("Nenhum veiculo encontrado para o tipo de combustivel %s\n", combustivel);
+        free(resultados);
+        return NULL;
+    }
+
+    resultados = realloc(resultados, qtdVeicPorCombustivel * sizeof(Veiculo *));
+    
+    *qtdVeiculos = qtdVeicPorCombustivel;
+    return resultados;
+}
+
+
+Veiculo **buscaOdometro(Veiculo **dados, int *qtdVeiculos) {
+    int qtdVeicPorOdometro = 0;
+    Veiculo **resultados = malloc(*qtdVeiculos * sizeof(Veiculo *));
+    char odometro[50];
+    printf("Digite a faixa de odometro desejada: ");
+    scanf(" %[^\n]", odometro);
+
+    for (int i = 0; i < *qtdVeiculos; i++) {
+        if (strstr(dados[i]->odometro, odometro) != NULL) {
+            resultados[qtdVeicPorOdometro] = dados[i];
+            qtdVeicPorOdometro++;
+        }
+    }
+
+    if (qtdVeicPorOdometro == 0) {
+        printf("Nenhum veiculo encontrado para a faixa de odometro %s\n", odometro);
+        free(resultados);
+        return NULL;
+    }
+
+    resultados = realloc(resultados, qtdVeicPorOdometro * sizeof(Veiculo *));
+    
+    *qtdVeiculos = qtdVeicPorOdometro;
+    return resultados;
+}
+
+Veiculo **buscaStatus(Veiculo **dados, int *qtdVeiculos) {
+    int qtdVeicPorStatus = 0;
+    Veiculo **resultados = malloc(*qtdVeiculos * sizeof(Veiculo *));
+    char status[50];
+    printf("Digite o status desejado: ");
+    scanf(" %[^\n]", status);
+
+    for (int i = 0; i < *qtdVeiculos; i++) {
+        if (strcmp(dados[i]->status, status) == 0) {
+            resultados[qtdVeicPorStatus] = dados[i];
+            qtdVeicPorStatus++;
+        }
+    }
+
+    if (qtdVeicPorStatus == 0) {
+        printf("Nenhum veiculo encontrado para o status %s\n", status);
+        free(resultados);
+        return NULL;
+    }
+
+    resultados = realloc(resultados, qtdVeicPorStatus * sizeof(Veiculo *));
+    
+    *qtdVeiculos = qtdVeicPorStatus;
+    return resultados;
+}
+
+Veiculo **buscaCambio(Veiculo **dados, int *qtdVeiculos) {
+    int qtdVeicPorCambio = 0;
+    Veiculo **resultados = malloc(*qtdVeiculos * sizeof(Veiculo *));
+    char cambio[50];
+    printf("Digite o tipo de cambio desejado: ");
+    scanf(" %[^\n]", cambio);
+
+    for (int i = 0; i < *qtdVeiculos; i++) {
+        if (strcmp(dados[i]->cambio, cambio) == 0) {
+            resultados[qtdVeicPorCambio] = dados[i];
+            qtdVeicPorCambio++;
+        }
+    }
+
+    if (qtdVeicPorCambio == 0) {
+        printf("Nenhum veiculo encontrado para o tipo de cambio %s\n", cambio);
+        free(resultados);
+        return NULL;
+    }
+
+    resultados = realloc(resultados, qtdVeicPorCambio * sizeof(Veiculo *));
+    
+    *qtdVeiculos = qtdVeicPorCambio;
+    return resultados;
+}
+
+Veiculo **buscaTamanho(Veiculo **dados, int *qtdVeiculos) {
+    int qtdVeicPorTamanho = 0;
+    Veiculo **resultados = malloc(*qtdVeiculos * sizeof(Veiculo *));
+    char tamanho[50];
+    printf("Digite o tamanho desejado: ");
+    scanf(" %[^\n]", tamanho);
+
+    for (int i = 0; i < *qtdVeiculos; i++) {
+        if (strcmp(dados[i]->tamanho, tamanho) == 0) {
+            resultados[qtdVeicPorTamanho] = dados[i];
+            qtdVeicPorTamanho++;
+        }
+    }
+
+    if (qtdVeicPorTamanho == 0) {
+        printf("Nenhum veiculo encontrado para o tamanho %s\n", tamanho);
+        free(resultados);
+        return NULL;
+    }
+
+    resultados = realloc(resultados, qtdVeicPorTamanho * sizeof(Veiculo *));
+    
+    *qtdVeiculos = qtdVeicPorTamanho;
+    return resultados;
+}
+
+Veiculo **buscaTipo(Veiculo **dados, int *qtdVeiculos) {
+    int qtdVeicPorTipo = 0;
+    Veiculo **resultados = malloc(*qtdVeiculos * sizeof(Veiculo *));
+    char tipo[50];
+    printf("Digite o tipo desejado: ");
+    scanf(" %[^\n]", tipo);
+
+    for (int i = 0; i < *qtdVeiculos; i++) {
+        if (strcmp(dados[i]->tipo, tipo) == 0) {
+            resultados[qtdVeicPorTipo] = dados[i];
+            qtdVeicPorTipo++;
+        }
+    }
+
+    if (qtdVeicPorTipo == 0) {
+        printf("Nenhum veiculo encontrado para o tipo %s\n", tipo);
+        free(resultados);
+        return NULL;
+    }
+
+    resultados = realloc(resultados, qtdVeicPorTipo * sizeof(Veiculo *));
+    
+    *qtdVeiculos = qtdVeicPorTipo;
+    return resultados;
+}
+
+Veiculo **buscaCor(Veiculo **dados, int *qtdVeiculos) {
+    int qtdVeicPorCor = 0;
+    Veiculo **resultados = malloc(*qtdVeiculos * sizeof(Veiculo *));
+    char cor[50];
+    printf("Digite a cor desejada: ");
+    scanf(" %[^\n]", cor);
+
+    for (int i = 0; i < *qtdVeiculos; i++) {
+        if (strcmp(dados[i]->cor, cor) == 0) {
+            resultados[qtdVeicPorCor] = dados[i];
+            qtdVeicPorCor++;
+        }
+    }
+
+    if (qtdVeicPorCor == 0) {
+        printf("Nenhum veiculo encontrado para a cor %s\n", cor);
+        free(resultados);
+        return NULL;
+    }
+
+    resultados = realloc(resultados, qtdVeicPorCor * sizeof(Veiculo *));
+    
+    *qtdVeiculos = qtdVeicPorCor;
+    return resultados;
+}
+
+
+void listarVeiculosEncontrados(Veiculo **resultados, int qtdVeiculos) {
+    if (resultados == NULL || qtdVeiculos == 0) {
+        printf("Nenhum veiculo encontrado.\n");
+        return;
+    }
+
+    printf("Veiculos encontrados:\n");
+
+    for (int i = 0; i < qtdVeiculos; i++) {
+        printf("Codigo: %d | Marca: %s | Preco: %s | Modelo: %s | Ano: %s | Cor: %s | Odometro: %s\n",
+               resultados[i]->codigoInterno,
+               resultados[i]->preco,
+               resultados[i]->marca,
+               resultados[i]->modelo,
+               resultados[i]->ano,
+               resultados[i]->cor,
+               resultados[i]->odometro);
+    }
+}
+
+
 int compraVeiculos(FILE *arq, char arquivo[]) {
     Veiculo **dados;
     int qtdVeiculos;
@@ -138,40 +595,120 @@ int compraVeiculos(FILE *arq, char arquivo[]) {
     int qtdVeicPorMarca = 2;
     bool encontrou = false;
 
-    printf("Digite a marca do veiculo que quer comprar: ");
-    scanf(" %[^\n]", marcaVeiculo);
-    fflush(stdin);
-
+    int qtdFiltros = 0;
     leArquivo(arquivo, &dados, &qtdVeiculos);
+    char filtroMarca[20], filtroAno[20], filtroPreco[20], filtroModelo[20];
+    char filtroCondicao[20], filtroCombustivel[20], filtroOdometro[20], filtroStatus[20];
+    char filtroCambio[20], filtroTamanho[20], filtroTipo[20], filtroCor[20];
+    Veiculo **resultados = NULL;
 
+    printf("Quer utilizar filtro de marca? (sim/nao): ");
+    scanf(" %s", filtroMarca);
+    Veiculo **resultadosMarca = NULL;
+    if(strcmp(filtroMarca,"sim") == 0){ 
+        resultadosMarca = buscaMarca(dados, &qtdVeiculos);
+        printf("%d", qtdVeiculos);
+        listarVeiculosEncontrados(resultadosMarca, qtdVeiculos);
+        resultados = resultadosMarca;
+    } 
 
-    int codigoInterno[qtdVeiculos];
-    for (int i = 1; i <= qtdVeiculos; i++) {
-        if (strcmp(marcaVeiculo, dados[i]->marca) == 0) {
-            encontrou = true;
-            codigoInterno[qtdVeicPorMarca] = i;
-            qtdVeicPorMarca++;
-        } else if (encontrou && strcmp(marcaVeiculo, dados[i]->marca) != 0) {
-            break;
-        }
+    printf("Quer utilizar filtro de preco? (sim/nao): ");
+    scanf(" %s", filtroPreco); 
+    Veiculo **resultadosPreco = NULL;
+    if(strcmp(filtroPreco, "sim") == 0) {
+        resultadosPreco = buscaPreco(resultados, &qtdVeiculos);
+        listarVeiculosEncontrados(resultadosPreco, qtdVeiculos);
+        resultados = resultadosPreco;
+
     }
 
-    if (!encontrou) {
-        printf("\nMarca %s nao encontrada", marcaVeiculo);
-        return 1;
+    printf("Quer utilizar filtro de ano? (sim/nao): ");
+    scanf(" %s", filtroAno);
+    Veiculo **resultadosAno = NULL;
+    if(strcmp(filtroAno, "sim") == 0) {
+        resultadosAno = buscaAno(resultados, &qtdVeiculos);
+        listarVeiculosEncontrados(resultadosAno, qtdVeiculos);
+        resultados = resultadosAno;
+    }
+    
+    
+    printf("Quer utilizar filtro de modelo? (sim/nao): ");
+    scanf(" %s", filtroModelo);
+    Veiculo **resultadosModelo = NULL;
+    if(strcmp(filtroModelo, "sim") == 0) {
+        resultadosModelo = buscaModelo(resultadosAno, &qtdVeiculos);
+        listarVeiculosEncontrados(resultadosModelo, qtdVeiculos);
+        resultados = resultadosModelo;
+    }
+    
+
+
+    printf("Quer utilizar filtro de combustivel? (sim/nao): ");
+    scanf(" %s", filtroCombustivel);
+    Veiculo **resultadosCombustivel = NULL;
+    if(strcmp(filtroCombustivel, "sim") == 0) {
+        resultadosCombustivel = buscaCombustivel(dados, &qtdVeiculos);
+        listarVeiculosEncontrados(resultadosCombustivel, qtdVeiculos);
+        resultados = resultadosCombustivel;
+    }
+    
+    
+    printf("Quer utilizar filtro de odometro? (sim/nao): ");
+    scanf(" %s", filtroOdometro);
+    Veiculo **resultadosOdometro = NULL;
+    if(strcmp(filtroOdometro, "sim") == 0) {
+        resultadosOdometro = buscaOdometro(dados, &qtdVeiculos);
+        listarVeiculosEncontrados(resultadosOdometro, qtdVeiculos);
+        resultados = resultadosOdometro;
     }
 
-    for (int i = 1; i < qtdVeicPorMarca; i++) {
-        printf("Codigo: %d|", codigoInterno[i]);
-        printf("%-40s| ", dados[codigoInterno[i]]->preco);
-        printf("%-40s| ", dados[codigoInterno[i]]->ano);
-        printf("%-40s| ", dados[codigoInterno[i]]->marca);
-        printf("%-40s| ", dados[codigoInterno[i]]->modelo);
-        printf("%-40s| ", dados[codigoInterno[i]]->cor);
-        printf("\n");
+    printf("Quer utilizar filtro de status? (sim/nao): ");
+    scanf(" %s", filtroStatus);
+    Veiculo **resultadosStatus = NULL;
+    if(strcmp(filtroStatus, "sim") == 0) {
+        resultadosStatus = buscaStatus(dados, &qtdVeiculos);
+        listarVeiculosEncontrados(resultadosStatus, qtdVeiculos);
+        resultados = resultadosStatus;
     }
 
+    printf("Quer utilizar filtro de cambio? (sim/nao): ");
+    scanf(" %s", filtroCambio);
+    Veiculo **resultadosCambio = NULL;
+    if(strcmp(filtroCambio, "sim") == 0) {
+        resultadosCambio = buscaCambio(dados, &qtdVeiculos);
+        listarVeiculosEncontrados(resultadosCambio, qtdVeiculos);
+        resultados = resultadosCambio;
+    }
+
+    printf("Quer utilizar filtro de tamanho? (sim/nao): ");
+    scanf(" %s", filtroTamanho);   
+    Veiculo **resultadosTamanho = NULL;
+    if(strcmp(filtroTamanho, "sim") == 0) {
+        resultadosTamanho = buscaTamanho(dados, &qtdVeiculos);
+        listarVeiculosEncontrados(resultadosTamanho, qtdVeiculos);
+        resultados = resultadosTamanho;
+    }
+
+    printf("Quer utilizar filtro de tipo? (sim/nao): ");
+    scanf(" %s", filtroTipo);
+    Veiculo **resultadosTipo =  NULL;
+    if(strcmp(filtroTipo, "sim") == 0) {
+        resultadosTipo = buscaTipo(dados, &qtdVeiculos);
+        listarVeiculosEncontrados(resultadosTipo, qtdVeiculos);
+        resultados = resultadosTamanho;
+    }
+
+    printf("Quer utilizar filtro de cor? (sim/nao): ");
+    scanf(" %s", filtroCor);
+    Veiculo **resultadosCor = NULL;
+    if(strcmp(filtroCor, "sim") == 0) {
+        resultadosCor = buscaCor(dados, &qtdVeiculos);
+        listarVeiculosEncontrados(resultadosCor, qtdVeiculos);
+        resultados = resultadosTamanho;
+    }
+    
     int codigoVeiculo = 0;
+    listarVeiculosEncontrados(resultados, qtdVeiculos);
     printf("Selecione por codigo qual veiculo deseja: \n");
     scanf("%d", &codigoVeiculo);
 
@@ -369,10 +906,10 @@ void salvarTaxas() {
 void listarVeiculos(Veiculo **dados, int qtdVeiculos) {
     char marcaDesejada[100];
     
-    printf("Digite a marca desejada para filtrar os veículos: ");
+    printf("Digite a marca desejada para filtrar os veiculos: ");
     scanf(" %[^\n]", marcaDesejada);
 
-    printf("Veículos disponíveis da marca %s:\n", marcaDesejada);
+    printf("Veiculos disponiveis da marca %s:\n", marcaDesejada);
     for (int i = 0; i < qtdVeiculos; i++) {
         if (strcmp(dados[i]->marca, marcaDesejada) == 0) {
             printf("%d | ", i);
@@ -414,12 +951,12 @@ void alterarAtributos() {
     printf("Digite o codigo do veiculo que deseja alterar: ");
     scanf("%d", &codigoVeiculo);
     
-    printf("Atributos disponíveis para alteracaoo:\n");
+    printf("Atributos disponiveis para alteracaoo:\n");
     printf("Preco\n");
     printf("Ano\n");
     printf("Marca\n");
     printf("Modelo\n");
-    printf("Condição\n");
+    printf("Condicão\n");
     printf("Combustivel\n");
     printf("Odometro\n");
     printf("Status\n");
@@ -494,11 +1031,11 @@ void alterarAtributos() {
                 dados[indiceVeiculo]->status, dados[indiceVeiculo]->cambio, dados[indiceVeiculo]->tamanho,
                 dados[indiceVeiculo]->tipo, dados[indiceVeiculo]->cor);
     } else {
-        printf("Codigo de veículo invalido.\n");
+        printf("Codigo de veiculo invalido.\n");
     }
 
 
-    printf("Veiculos disponiveis após a alteração:\n");
+    printf("Veiculos disponiveis apos a alteracão:\n");
     listarVeiculos(dados, qtdVeiculos);
 
 
