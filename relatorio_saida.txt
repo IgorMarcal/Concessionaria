@@ -1,0 +1,59 @@
+**Vendas: **
+
+Veiculo: 1995 jeep yj wrangler fantasia
+Preco: 1000
+Status: sucata
+Odometro: 110000
+Data da Transacao: 09/12/2023
+
+Veiculo: 2005 acura 3.2 tl prata
+Preco: 1000
+Status: sucata
+Odometro: 161260
+Data da Transacao: 09/12/2023
+
+Veiculo: 2003 acura 3.2 tl branco
+Preco: 1000
+Status: sucata
+Odometro: 154100
+Data da Transacao: 09/12/2023
+
+Veiculo: 2006 acura 3.2 tl verde
+Preco: 1000
+Status: sucata
+Odometro: 185000
+Data da Transacao: 09/12/2023
+
+Veiculo: 2003 acura cl type s cinza
+Preco: 1000
+Status: sucata
+Odometro: 322000
+Data da Transacao: 09/12/2023
+
+Veiculo: 2005 acura cl type s fantasia
+Preco: 1000
+Status: desconhecido
+Odometro: 99000
+Data da Transacao: 09/12/2023
+
+Veiculo: 2002 acura cl type s vermelho
+Preco: 1000.00
+Status: desconhecido
+Odometro: 179000
+Data da Transacao: 09/12/2023
+
+Veiculo: 2003 acura cl 3.2 type s preto
+Preco: 1000.00
+Status: sucata
+Odometro: 182842
+Data da Transacao: 09/12/2023
+
+**Compras: **
+
+Veiculo: 1995 jeep yj wrangler fantasia
+Preco: 10000
+Status: sucata
+Odometro: 110000
+Data da Transacao: 09/12/2023
+
+Saldo Final Total: R$ -2000.00
